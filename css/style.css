@@ -183,19 +183,27 @@ html {
 }
 
 #footer-copy a,
-#footer-nav a, #footer-main {
+#footer-nav a, #footer-main,
+#footer-copy {
   color: #FFF;
 }
 
-#footer-copy ul,
+partner-carousel,
+client-carousel, #footer-copy ul,
 #footer-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-#footer-copy ul a,
+partner-carousel a,
+client-carousel a, #footer-copy ul a,
 #footer-nav ul a {
   text-decoration: none;
+}
+
+#footer-main p,
+#footer-copy p {
+  margin: 0;
 }
 
 #footer-main {
@@ -204,4 +212,19 @@ html {
 
 #footer-copy {
   background-color: #212330;
+}
+
+#footer-nav h4 {
+  margin-bottom: 1rem;
+}
+
+#footer-social img {
+  display: block;
+}
+
+#footer-social a {
+  background-color: #212330;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
 }/*# sourceMappingURL=style.css.map */
