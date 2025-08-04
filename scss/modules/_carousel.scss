@@ -1,9 +1,13 @@
 #partner-list,
 #client-list {
     ul {
+        width: 95dvw;
         @extend %link-list;
         display: flex;
         flex-wrap: nowrap;
-        overflow: auto;
+        overflow-x: auto;
+        li {
+            min-width: 0;
+        }
     }
 }
