@@ -1,9 +1,19 @@
-@import 'mixin/index';
-
+// ****
+// ** Import Base
+// ****
 @import 'base/index';
 
+// ****
+// ** Import Layout
+// ****
 @import 'layout/index';
 
+// ****
+// ** Import Modules
+// ****
 @import 'modules/index';
 
+// ****
+// ** Import States
+// ****
 @import 'states/index';

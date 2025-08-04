@@ -1,0 +1,21 @@
+#footer-main {
+    @extend %text--light;
+    background-color: $color-brand--normal;
+}
+
+#footer-copy {
+    background-color: $color-brand--dark;
+}
+
+#footer-copy,
+#footer-nav {
+
+    ul {
+        @extend %link-list;
+    }
+
+    a {
+        @extend %text--light;
+    }
+}
+
