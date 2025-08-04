@@ -1,0 +1,19 @@
+.read-more {
+    
+}
+
+#section-news {
+    
+    h2 {
+        flex-grow: 100%;
+        font-weight: bold;
+
+        &::after {
+            content: "\2192";
+        }
+    }
+}
+
+.container {
+    display: flex;
+}

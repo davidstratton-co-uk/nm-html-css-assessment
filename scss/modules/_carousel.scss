@@ -1,4 +1,9 @@
-partner-carousel,
-client-carousel {
-    @extend %link-list;
+#partner-list,
+#client-list {
+    ul {
+        @extend %link-list;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: auto;
+    }
 }

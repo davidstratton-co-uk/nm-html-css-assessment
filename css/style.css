@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -188,17 +189,40 @@ html {
   color: #FFF;
 }
 
-partner-carousel,
-client-carousel, #footer-copy ul,
-#footer-nav ul {
+#footer-copy ul,
+#footer-nav ul, #partner-list ul,
+#client-list ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-partner-carousel a,
-client-carousel a, #footer-copy ul a,
-#footer-nav ul a {
+#footer-copy ul a,
+#footer-nav ul a, #partner-list ul a,
+#client-list ul a {
   text-decoration: none;
+}
+
+main {
+  background-color: #FFFFFF;
+}
+
+#partner-list ul,
+#client-list ul {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+}
+
+#section-news h2 {
+  flex-grow: 100%;
+  font-weight: bold;
+}
+#section-news h2::after {
+  content: "→";
+}
+
+.container {
+  display: flex;
 }
 
 #footer-main p,
