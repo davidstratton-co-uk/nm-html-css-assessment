@@ -1,13 +1,27 @@
 #partner-list,
 #client-list {
     ul {
-        width: 95dvw;
         @extend %link-list;
         display: flex;
         flex-wrap: nowrap;
-        overflow-x: auto;
-        li {
-            min-width: 0;
-        }
+        width: 90dvh;
+        min-width: 100%;
+        overflow-x: hidden;
+        align-items: center;
+    }
+
+    li {
+        padding: 1rem 50px;
+        max-width: 100%;
+        height: auto;
+        min-width: max-content;
+    }
+
+    img {
+        filter: grayscale(1);
+    }
+
+    img:hover {
+        filter: grayscale(0);
     }
 }
