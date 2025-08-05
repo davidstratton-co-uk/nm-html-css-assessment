@@ -185,7 +185,9 @@ html {
 
 #footer-copy a,
 #footer-nav a, #footer-main,
-#footer-copy {
+#footer-copy, #section-hero h2,
+#section-hero p,
+#section-hero a {
   color: #FFF;
 }
 
@@ -253,6 +255,32 @@ body {
 }
 
 nav {
+  display: none;
+}
+
+#section-hero {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 550px;
+  background-image: url("../img/hero/hero-1.png");
+  background-position: center;
+}
+#section-hero h2 {
+  font-size: 3rem;
+}
+#section-hero p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+#section-hero h2,
+#section-hero p,
+#section-hero a {
+  padding: 0 3rem;
+  text-align: center;
+}
+#section-hero div {
   display: none;
 }
 
