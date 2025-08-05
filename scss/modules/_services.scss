@@ -1,0 +1,33 @@
+#section-services {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    header {
+        justify-self: left;
+    }
+
+    h2 {
+        font-size: 2.7rem;
+    }
+
+}
+
+.services-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
+    border: 1px solid #ccc;
+    border-radius: 15px;
+
+    > div {
+        border-radius: 50%;
+        background-color: blue;
+        padding: 10px;
+        width: 70px;
+        height: 70px;
+    }
+}

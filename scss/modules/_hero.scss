@@ -1,14 +1,33 @@
 #section-hero {
     display:grid;
-    justify-content: center;
+    position: relative;
+    z-index: -1;
     align-content: center;
+    justify-items: center;
     height: 550px;
-
-    background-image: url("../img/hero/hero-1.png");
+    background: url("../img/hero/hero-1.png");
     background-position: center;
 
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: -1;
+    }
+
+    h2,
+    p,
+    a {
+        text-align: center;
+        @extend %text--light;
+    }
+
     h2 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     p {
@@ -17,12 +36,14 @@
         font-weight: 600;
     }
 
-    h2,
-    p,
     a {
-        padding: 0 3rem;
-        @extend %text--light;
-        text-align: center;
+        font-size: 1.25rem;
+        padding: 5px 20px;
+        background-color: #926fb1;
+        line-height: 50px;
+
+        @extend %right-arrow;
+
     }
 
     div {

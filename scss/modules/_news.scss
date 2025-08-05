@@ -8,9 +8,7 @@
         flex-grow: 100%;
         font-weight: bold;
 
-        &::after {
-            content: "\2192";
-        }
+        @extend %right-arrow;
     }
 }
 

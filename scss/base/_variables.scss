@@ -6,3 +6,15 @@ $color-brand--normal: #323544;
 $color-brand--dark: #212330;
 
 $color-bg-light: #FFFFFF;
+
+
+// ****
+// ** Right Arrow Icon
+// ****
+
+%right-arrow {
+
+    &::after {
+        content: "\2192";
+    }
+}

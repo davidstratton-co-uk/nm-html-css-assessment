@@ -1,4 +1,8 @@
 @charset "UTF-8";
+#section-news h2::after, #section-hero a::after {
+  content: "→";
+}
+
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -260,28 +264,75 @@ nav {
 
 #section-hero {
   display: grid;
-  justify-content: center;
+  position: relative;
+  z-index: -1;
   align-content: center;
+  justify-items: center;
   height: 550px;
-  background-image: url("../img/hero/hero-1.png");
+  background: url("../img/hero/hero-1.png");
   background-position: center;
 }
+#section-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+#section-hero h2,
+#section-hero p,
+#section-hero a {
+  text-align: center;
+}
 #section-hero h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 #section-hero p {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
 }
-#section-hero h2,
-#section-hero p,
 #section-hero a {
-  padding: 0 3rem;
-  text-align: center;
+  font-size: 1.25rem;
+  padding: 5px 20px;
+  background-color: #926fb1;
+  line-height: 50px;
 }
 #section-hero div {
   display: none;
+}
+
+#section-services {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+#section-services header {
+  justify-self: left;
+}
+#section-services h2 {
+  font-size: 2.7rem;
+}
+
+.services-item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 1rem;
+  padding: 2rem;
+  box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+.services-item > div {
+  border-radius: 50%;
+  background-color: blue;
+  padding: 10px;
+  width: 70px;
+  height: 70px;
 }
 
 #partner-list ul,
@@ -299,9 +350,6 @@ nav {
 #section-news h2 {
   flex-grow: 100%;
   font-weight: bold;
-}
-#section-news h2::after {
-  content: "→";
 }
 
 .container {
