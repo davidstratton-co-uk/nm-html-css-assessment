@@ -4,33 +4,45 @@
     grid-template-areas: 
     "logo icon menu"
     "search search search";
+    align-items: center;
+    padding: 1rem;
+}
+
+.header-logo {
+    grid-area: logo;
+    display: block;
+    max-height: 70px;
+}
+
+.header-icon {
+    grid-area: icon;
+    height: 32px;
+}
+
+.header-menu {
+    grid-area: menu;
+    background-color: $color-brand--dark;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+        svg {
+            margin: 0;
+            padding: 0;  
+        }
+}
+
+.header-form {
+    width: 100%;
+    grid-area: search;
     
-    .header-logo {
-        display: block;
+    input {
+        padding: 1rem;
+        background-color: #e5e5e5;
         width: 100%;
-        grid-area: logo;
     }
+}
 
-    .header-icon {
-        grid-area: icon;
-        width: 50px;
-        height: 50px;
-        background-color: yellow;
-    }
-
-    .header-menu {
-        grid-area: menu;
-        width: 50px;
-        height: 50px;
-        background-color: orange;
-    }
-
-    .header-form {
-        width: 100%;
-        grid-area: search;
-    }
-
-    nav {
-        display: none;
-    }
+nav {
+    display: none;
 }
