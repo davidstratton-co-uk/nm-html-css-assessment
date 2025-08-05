@@ -4,9 +4,9 @@
         @extend %link-list;
         display: flex;
         flex-wrap: nowrap;
-        width: 90dvh;
+        width: 100dvw;
         min-width: 100%;
-        overflow-x: hidden;
+        overflow-x: scroll;
         align-items: center;
     }
 

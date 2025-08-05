@@ -46,7 +46,13 @@
 // ** Social Icons
 // ****
 
-#footer-social img{
+#footer-logo img{
+    width: 100%;
+    max-width: 400px;
+    min-width: 150px;
+}
+
+#footer-main img{
     display: block;
 }
 

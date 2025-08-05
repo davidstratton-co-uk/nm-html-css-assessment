@@ -11,6 +11,9 @@
 .header-logo {
     grid-area: logo;
     display: block;
+    width: 100%;
+    min-width: 100px;
+    max-width: 402px;
     max-height: 70px;
 }
 
