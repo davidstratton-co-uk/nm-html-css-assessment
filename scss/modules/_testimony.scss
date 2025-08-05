@@ -1,0 +1,57 @@
+#section-testimony {
+    display: grid;
+    gap: 2rem;
+    padding: 50px 1rem;
+    background-color: $color-brand--normal;
+
+    h2 {
+        color: #fff;
+        font-size: 2.25rem;
+        font-weight: 600;
+        margin: 0 0 2rem;
+    }
+
+    p {
+        color: #fff;
+        font-weight: 600;
+        line-height: 1.5rem;
+        margin-bottom: 20px; 
+
+    }
+
+}
+
+.testimony-author {
+    color: #a3a8ac !important;
+
+    a {
+    text-decoration: none;
+    color: #fff;
+    }
+}
+
+.link-dark,
+.link-google,
+.link-trustpilot {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    background-color: $color-brand--dark;
+    padding: 10px 30px;
+    margin: 0.5rem 0rem;
+    border-radius: 5px;
+    font-size: 20px;
+    line-height: 35px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+
+    @extend %right-arrow;
+}
+
+.link-google {
+    background-color: #4387f6;
+}
+
+.link-trustpilot {
+    background-color: #00b67b;
+}
