@@ -322,6 +322,7 @@ nav {
 }
 
 #section-news {
+  padding-top: 50px;
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -329,9 +330,10 @@ nav {
   justify-self: left;
 }
 #section-news h2 {
+  margin: 0 0 1rem 0;
   padding-left: 1rem;
-  font-size: 2.7rem;
-  font-weight: 400;
+  font-size: 2rem;
+  font-weight: 600;
 }
 #section-news > a {
   font-size: 1.5rem;
@@ -448,6 +450,10 @@ article[data-news-type=careers] .news-readmore {
   background-color: #4183d7;
 }
 
+#footer-main,
+#footer-copy {
+  padding: 1rem;
+}
 #footer-main p,
 #footer-copy p {
   margin: 0;
@@ -461,23 +467,45 @@ article[data-news-type=careers] .news-readmore {
   background-color: #212330;
 }
 
-#footer-nav h4 {
+#footer-main h4 {
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
+#footer-copy,
+#footer-nav {
+  font-size: 0.8125rem;
+  line-height: 1.375;
+  margin: 0;
+  padding: 0;
+}
+#footer-copy ul,
+#footer-nav ul {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
 #footer-logo img {
-  width: 100%;
-  max-width: 400px;
-  min-width: 150px;
+  width: 250px;
 }
 
 #footer-main img {
   display: block;
 }
 
+#footer-social div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
 #footer-social a {
   background-color: #212330;
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  padding: 12px 3rem 16px;
+}
+#footer-social img {
+  width: auto;
+  height: 30px;
 }/*# sourceMappingURL=style.css.map */

@@ -4,6 +4,7 @@
 #footer-main,
 #footer-copy {
     @extend %text--light;
+    padding: 1rem;
 
     p {
         margin: 0;
@@ -26,15 +27,24 @@
 // ****
 // ** Footer Link Lists
 // ****
-#footer-nav h4{ 
+#footer-main h4{ 
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 #footer-copy,
 #footer-nav {
+    font-size: .8125rem;
+    line-height: 1.375;
+    margin: 0;
+    padding: 0;
 
     ul {
         @extend %link-list;
+        font-size: .8125rem;
+        line-height: 1.4;
     }
 
     a {
@@ -47,18 +57,29 @@
 // ****
 
 #footer-logo img{
-    width: 100%;
-    max-width: 400px;
-    min-width: 150px;
+    width: 250px;
 }
 
 #footer-main img{
     display: block;
 }
 
-#footer-social a{
-    background-color: $color-brand--dark;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
+#footer-social {
+    div {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    
+    a{
+        background-color: $color-brand--dark;
+        display: inline-block;
+        padding: 12px 3rem 16px;
+    }
+
+    img {
+        width: auto;
+        height: 30px;
+    }
 }
