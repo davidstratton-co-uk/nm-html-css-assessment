@@ -3,6 +3,7 @@
     ul {
         @extend %link-list;
         display: flex;
+        column-gap: 3rem;
         flex-wrap: nowrap;
         width: 100dvw;
         min-width: 100%;
@@ -11,7 +12,6 @@
     }
 
     li {
-        padding: 1rem 50px;
         max-width: 100%;
         height: auto;
         min-width: max-content;

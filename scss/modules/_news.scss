@@ -22,6 +22,12 @@
     }
 }
 
+.news-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+
 .news-item {
     display: flex;
     flex-direction: column;
@@ -46,9 +52,22 @@
         margin-bottom: 2rem;
     }
 
-    h3,
+    h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    h3 a{
+        color: #4183d7;
+        text-decoration: none;
+    }
+
     p {
         color: #666;
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 1.8;
     }
 
     & > h3,
@@ -64,8 +83,20 @@
 }
 
 .news-footer {
-    border-top: 1px solid #666;
+    border-top: 1px solid #ccc;
     display: grid;
+    column-gap: 1rem;
+    grid-template-columns: min-content 1fr;
+    grid-template-areas: 
+    "avatar posted"
+    "avatar date";
+    
+
+    img {
+        align-self: center;
+        width: 45px;
+        grid-area: avatar;
+    }
 
     p {
         color: #333645;
@@ -73,7 +104,9 @@
     }
 
     & p:first-of-type {
+        grid-area: posted;
         font-weight: 600;
+        align-self: baseline;
     }
 }
 
@@ -111,9 +144,4 @@ article[data-news-type="insights"] .news-readmore {
 article[data-news-type="careers"] .news-type,
 article[data-news-type="careers"] .news-readmore {
     background-color: #4183d7;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
 }
