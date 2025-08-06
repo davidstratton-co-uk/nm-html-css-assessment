@@ -304,6 +304,10 @@ nav {
 .news-item img {
   width: 100%;
 }
+.news-item .news-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
 .news-item .news-header,
 .news-item .news-footer {
   position: relative;
@@ -316,7 +320,13 @@ nav {
 .news-item > h3, .news-item > p, .news-item > .news-readmore, .news-item > footer {
   margin: 0 2rem;
 }
+.news-item p {
+  margin: 1rem 2rem;
+}
 
+.news-footer {
+  border-top: 1px solid #666;
+}
 .news-footer p {
   color: #333645;
   margin: 0;

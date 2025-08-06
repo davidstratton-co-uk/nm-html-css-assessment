@@ -35,6 +35,11 @@
         width: 100%;
     }
 
+    .news-footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+    }
+
     .news-header,
     .news-footer {
         position: relative;
@@ -53,18 +58,21 @@
         margin: 0 2rem;
     }
 
-
+    p {
+        margin: 1rem 2rem;
+    }
 }
 
 .news-footer {
-    
+    border-top: 1px solid #666;
+    display: grid;
+
     p {
         color: #333645;
         margin: 0;
     }
 
     & p:first-of-type {
-        
         font-weight: 600;
     }
 }
@@ -82,7 +90,6 @@
 }
 
 .news-readmore {
-
     width: fit-content;
     color: #fff;
     font-weight: 400;
