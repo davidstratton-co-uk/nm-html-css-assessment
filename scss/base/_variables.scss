@@ -5,8 +5,18 @@
 $color-brand--normal: #323544;
 $color-brand--dark: #212330;
 
-$color-bg-light: #FFFFFF;
+$color-bg--normal: $color-brand--normal;
+$color-bg--dark: $color-brand--dark;
+$color-bg--light: #FFFFFF;
 
+$color-default: #f7b322;
+$color-dev: #526781;
+$color-support: #286abd;
+$color-marketing: #25a25a;
+$color-telecoms: #bc2c28;
+$color-webdesign: #79539a;
+$color-security:#de093f;
+$color-course: #a3331d;
 
 // ****
 // ** Right Arrow Icon

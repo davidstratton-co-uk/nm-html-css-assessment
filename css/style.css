@@ -115,6 +115,8 @@ nav {
 #section-hero h2,
 #section-hero p,
 #section-hero a {
+  margin: 1rem 0;
+  padding: 0 1rem;
   text-align: center;
 }
 #section-hero h2 {
@@ -130,6 +132,7 @@ nav {
   padding: 5px 20px;
   background-color: #926fb1;
   line-height: 50px;
+  text-transform: uppercase;
 }
 #section-hero div {
   display: none;
@@ -157,6 +160,7 @@ nav {
 
 .services-item {
   display: flex;
+  row-gap: 1rem;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
@@ -168,13 +172,13 @@ nav {
 }
 .services-item > div {
   border-radius: 50%;
-  background-color: blue;
-  padding: 10px;
-  width: 60px;
-  height: 60px;
+  padding: 15px;
+  width: 40px;
+  height: 40px;
 }
 .services-item h3,
 .services-item p {
+  margin: 0;
   text-align: center;
 }
 .services-item h3 {
@@ -190,9 +194,33 @@ nav {
   text-transform: uppercase;
   border-radius: 5px;
   padding: 5px 15px;
-  background-color: tomato;
   font-weight: 400;
   border: 1px solid transparent;
+}
+
+.service-default {
+  background-color: #f7b322;
+}
+.service-dev {
+  background-color: #526781;
+}
+.service-support {
+  background-color: #286abd;
+}
+.service-marketing {
+  background-color: #25a25a;
+}
+.service-telecoms {
+  background-color: #bc2c28;
+}
+.service-webdesign {
+  background-color: #79539a;
+}
+.service-security {
+  background-color: #de093f;
+}
+.service-course {
+  background-color: #a3331d;
 }
 
 #section-testimony {
@@ -326,6 +354,7 @@ nav {
 
 .news-footer {
   border-top: 1px solid #666;
+  display: grid;
 }
 .news-footer p {
   color: #333645;
@@ -355,12 +384,14 @@ nav {
   padding: 15px 15px;
   text-transform: uppercase;
   border-radius: 3px;
-  background-color: orange;
 }
 
-article[data-news-type=insights] .news-type,
-article[data-news-type=insights] .news-readmore {
+article[data-news-type=insights] .news-type {
   background-color: #67809f;
+}
+
+article[data-news-type=insights] .news-readmore {
+  background-color: #f7b322;
 }
 
 article[data-news-type=careers] .news-type,

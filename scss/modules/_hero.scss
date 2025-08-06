@@ -22,6 +22,8 @@
     h2,
     p,
     a {
+        margin: 1rem 0;
+        padding: 0 1rem;
         text-align: center;
         @extend %text--light;
     }
@@ -41,7 +43,7 @@
         padding: 5px 20px;
         background-color: #926fb1;
         line-height: 50px;
-
+        text-transform: uppercase;
         @extend %right-arrow;
 
     }
