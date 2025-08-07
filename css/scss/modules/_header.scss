@@ -6,6 +6,7 @@
     "search search search";
     align-items: center;
     padding: 1rem;
+    column-gap: 1rem;
 }
 
 .header-logo {
@@ -19,30 +20,53 @@
 
 .header-icon {
     grid-area: icon;
-    height: 32px;
+    font-size: 32px;
 }
 
 .header-menu {
     grid-area: menu;
     background-color: $color-brand--dark;
     display: flex;
+    flex-direction: column;
+    row-gap: 5px;
     justify-content: center;
-    padding: 10px;
-    margin: 10px;
-        svg {
-            margin: 0;
-            padding: 0;  
-        }
+    border-radius: 3px;
+    padding: 15px;
+    height: 56px;
 }
+
+.menu-top,
+.menu-middle,
+.menu-bottom {
+    content: "";
+    background-color: #fff;
+    display: block;
+    padding: 2px 15px;
+    overflow: hidden;
+}
+
 
 .header-form {
     width: 100%;
     grid-area: search;
-    
+    border-color: 1px solid #e5e5e5;
+    position: relative;
     input {
-        padding: 1rem;
+        padding: 5px 15px;
+        height: 47px;
         background-color: #e5e5e5;
+        border: 2px solid rgba(0,0,0,.1);
         width: 100%;
+        display: inline-block;
+    }
+    button {
+        border: none;
+        background-color: transparent;
+        position:absolute;
+        right: 5px;
+        font-size: 20px;
+        height: 100%;
+
     }
 }
 

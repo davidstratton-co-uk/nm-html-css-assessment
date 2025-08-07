@@ -1,3 +1,183 @@
+/*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/*
+Document
+========
+*/
+/**
+Use a better box model (opinionated).
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.15; /* 1. Correct the line height in all browsers. */
+  -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
+}
+
+/*
+Sections
+========
+*/
+body {
+  margin: 0; /* Remove the margin in all browsers. */
+}
+
+/*
+Text-level semantics
+====================
+*/
+/**
+Add the correct font weight in Chrome and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+/**
+Correct table border color inheritance in Chrome and Safari. (https://issues.chromium.org/issues/40615503, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+table {
+  border-color: currentcolor;
+}
+
+/*
+Forms
+=====
+*/
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+legend {
+  padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+
 html {
   font-size: 16px;
 }
@@ -30,6 +210,11 @@ body {
   text-decoration: none;
 }
 
+/*!
+ * Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2025 Fonticons, Inc.
+ */
 .fa-solid,
 .fa-regular,
 .fa-brands,
@@ -8382,7 +8567,7 @@ body {
  */
 :root, :host {
   --fa-family-classic: "Font Awesome 7 Free";
-  --fa-font-regular: normal 400 1em/1 var(--fa-family-classic);
+  --fa-font-solid: normal 900 1em/1 var(--fa-family-classic);
   /* deprecated: this older custom property will be removed next major release */
   --fa-style-family-classic: var(--fa-family-classic);
 }
@@ -8390,21 +8575,21 @@ body {
 @font-face {
   font-family: "Font Awesome 7 Free";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 900;
   font-display: block;
-  src: url("../webfonts/fa-regular-400.woff2");
+  src: url("../assets/fonts/fa-solid-900.woff2");
 }
-.far {
+.fas {
   --fa-family: var(--fa-family-classic);
-  --fa-style: 400;
+  --fa-style: 900;
 }
 
 .fa-classic {
   --fa-family: var(--fa-family-classic);
 }
 
-.fa-regular {
-  --fa-style: 400;
+.fa-solid {
+  --fa-style: 900;
 }
 
 /*!
@@ -8422,7 +8607,7 @@ body {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("../webfonts/fa-brands-400.woff2");
+  src: url("../assets/fonts/fa-brands-400.woff2");
 }
 .fab,
 .fa-brands,
@@ -10627,38 +10812,6 @@ body {
   --fa: "\f8e8";
 }
 
-/*!
- * Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com
- * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- * Copyright 2025 Fonticons, Inc.
- */
-:root, :host {
-  --fa-family-classic: "Font Awesome 7 Free";
-  --fa-font-solid: normal 900 1em/1 var(--fa-family-classic);
-  /* deprecated: this older custom property will be removed next major release */
-  --fa-style-family-classic: var(--fa-family-classic);
-}
-
-@font-face {
-  font-family: "Font Awesome 7 Free";
-  font-style: normal;
-  font-weight: 900;
-  font-display: block;
-  src: url("../webfonts/fa-solid-900.woff2");
-}
-.fas {
-  --fa-family: var(--fa-family-classic);
-  --fa-style: 900;
-}
-
-.fa-classic {
-  --fa-family: var(--fa-family-classic);
-}
-
-.fa-solid {
-  --fa-style: 900;
-}
-
 body {
   width: 100dvw;
   max-width: 100%;
@@ -10673,6 +10826,8 @@ body {
   grid-template-areas: "logo icon menu" "search search search";
   align-items: center;
   padding: 1rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
 }
 
 .header-logo {
@@ -10686,30 +10841,52 @@ body {
 
 .header-icon {
   grid-area: icon;
-  height: 32px;
+  font-size: 32px;
 }
 
 .header-menu {
   grid-area: menu;
   background-color: #212330;
   display: flex;
+  flex-direction: column;
+  row-gap: 5px;
   justify-content: center;
-  padding: 10px;
-  margin: 10px;
+  border-radius: 3px;
+  padding: 15px;
+  height: 56px;
 }
-.header-menu svg {
-  margin: 0;
-  padding: 0;
+
+.menu-top,
+.menu-middle,
+.menu-bottom {
+  content: "";
+  background-color: #fff;
+  display: block;
+  padding: 2px 15px;
+  overflow: hidden;
 }
 
 .header-form {
   width: 100%;
   grid-area: search;
+  border-color: 1px solid #e5e5e5;
+  position: relative;
 }
 .header-form input {
-  padding: 1rem;
+  padding: 5px 15px;
+  height: 47px;
   background-color: #e5e5e5;
+  border: 2px solid rgba(0, 0, 0, 0.1);
   width: 100%;
+  display: inline-block;
+}
+.header-form button {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 5px;
+  font-size: 20px;
+  height: 100%;
 }
 
 nav {
@@ -10723,7 +10900,7 @@ nav {
   align-content: center;
   justify-items: center;
   height: 550px;
-  background: url("../img/hero/hero-1.png");
+  background: url("../assets/img/hero/hero-1.png");
   background-position: center;
 }
 #section-hero::before {
