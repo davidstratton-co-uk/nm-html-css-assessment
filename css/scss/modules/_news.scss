@@ -1,3 +1,5 @@
+@use '../vars/color';
+
 #section-news {
     padding-top: 50px;
     display: grid;
@@ -17,7 +19,7 @@
     > a {
         font-size: 1.5rem;
         font-weight: 600;
-        color: #333645;
+        color: color.$text--dark;
         text-decoration: none;
         justify-self: center;
     }
@@ -100,7 +102,7 @@
     }
 
     p {
-        color: #333645;
+        color: color.$text--dark;
         margin: 0;
     }
 
@@ -117,7 +119,7 @@
     top: 0.5rem;
     padding: 0.25rem 0.5rem;
     background-color: orange;
-    color: $color-bg--light;
+    color: color.$bg--light;
     text-transform: uppercase;
     font-size: .75rem;
     font-weight: 600;
@@ -125,7 +127,7 @@
 
 .news-readmore {
     width: fit-content;
-    color: #fff;
+    color: color.$text--light;
     font-weight: 400;
     padding: 15px 15px;
     text-transform: uppercase;
@@ -139,7 +141,7 @@ article[data-news-type="insights"] .news-type {
 }
 
 article[data-news-type="insights"] .news-readmore {
-    background-color: $color-default;
+    background-color: color.$default;
 }
 
 article[data-news-type="careers"] .news-type,

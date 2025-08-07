@@ -1,9 +1,12 @@
+@use '../vars/color';
+@use '../helpers/typography';
+
 // ****
 // ** Footer Text
 // ****
 #footer-main,
 #footer-copy {
-    @extend %text--light;
+    color: color.$text--light;
     
     p {
         margin: 0;
@@ -21,15 +24,15 @@
 // ****
 #footer-main {
     padding: 2rem 1rem 0 1rem;
-    @extend %text--light;
-    background-color: $color-brand--normal;
+    color: color.$text--light;
+    background-color: color.$brand--normal;
     overflow: hidden;
 }
 
 #footer-copy {
     padding: 1rem;
-    @extend %text--light;
-    background-color: $color-brand--dark;
+    color: color.$text--light;
+    background-color: color.$brand--dark;
 }
 
 // ****
@@ -63,7 +66,7 @@
     }
 
     a {
-        @extend %text--light;
+        color: color.$text--light;
     }
 }
 
@@ -91,7 +94,7 @@
     
     a{
         color: #fff;
-        background-color: $color-brand--dark;
+        background-color: color.$brand--dark;
         display: inline-block;
         width: 35%;
         padding: 12px 2rem;

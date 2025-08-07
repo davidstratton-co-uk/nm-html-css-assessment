@@ -1,3 +1,5 @@
+@use '../vars/color';
+
 #site-header {
     display: grid;
     grid-template-columns: 1fr min-content min-content;
@@ -25,7 +27,7 @@
 
 .header-menu {
     grid-area: menu;
-    background-color: $color-brand--dark;
+    background-color: color.$brand--dark;
     display: flex;
     flex-direction: column;
     row-gap: 6px;
@@ -39,7 +41,7 @@
 .menu-middle,
 .menu-bottom {
     content: "";
-    background-color: #fff;
+    background-color: color.$bg--light;
     display: block;
     padding: 2px 17px;
     overflow: hidden;
@@ -49,12 +51,12 @@
 .header-form {
     width: 100%;
     grid-area: search;
-    border-color: 1px solid #e5e5e5;
+    border-color: 1px solid color.$border--light;
     position: relative;
     input {
         padding: 5px 15px;
         height: 47px;
-        background-color: #e5e5e5;
+        background-color: color.$border--light;
         border: 2px solid rgba(0,0,0,.1);
         width: 100%;
         display: inline-block;

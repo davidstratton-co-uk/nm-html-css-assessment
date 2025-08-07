@@ -1,49 +1,49 @@
 // ****
 // ** Import Header
 // ****
-@import 'header';
+@use 'header';
 
 // ****
 // ** Import Sidebar
 // ****
-@import 'sidebar';
+// @use 'sidebar';
 
 // ****
 // ** Import Hero
 // ****
-@import 'hero';
+@use 'hero';
 
 // ****
 // ** Import Services
 // ****
-@import 'services';
+@use 'services';
 
 // ****
 // ** Import Carousel
 // ****
-@import 'carousel';
+@use 'carousel';
 
 // ****
 // ** Import Partners
 // ****
-@import 'partners';
+@use 'partners';
 
 // ****
 // ** Import Testimony
 // ****
-@import 'testimony';
+@use 'testimony';
 
 // ****
 // ** Import Partners
 // ****
-@import 'clients';
+@use 'clients';
 
 // ****
 // ** Import News
 // ****
-@import 'news';
+@use 'news';
 
 // ****
 // ** Import Footer
 // ****
-@import 'footer';
+@use 'footer';

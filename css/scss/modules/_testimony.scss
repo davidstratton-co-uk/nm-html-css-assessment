@@ -1,8 +1,10 @@
+@use '../vars/color';
+
 #section-testimony {
     display: grid;
     gap: 2rem;
     padding: 50px 1rem;
-    background-color: $color-brand--normal;
+    background-color: color.$brand--normal;
 
     h2 {
         color: #fff;
@@ -55,7 +57,7 @@
     display: inline-block;
     color: #fff;
     text-decoration: none;
-    background-color: $color-brand--dark;
+    background-color: color.$brand--dark;
     padding: 10px 30px;
     margin: 0.5rem 0rem;
     border-radius: 5px;

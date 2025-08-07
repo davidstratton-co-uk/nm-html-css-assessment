@@ -1,19 +1,4 @@
-// ****
-// ** Import Mixins
-// ****
-@import 'mixins';
-
-// ****
-// ** Import Variables
-// ****
-@import 'variables';
-
-// ****
-// ** Import Modern-Normalize
-// ****
-@import 'modern-normalize';
-
-// ****
-// ** Import Typography
-// ****
-@import 'typography';
+//****
+//** Forward Root Styles
+//****
+@forward 'root';

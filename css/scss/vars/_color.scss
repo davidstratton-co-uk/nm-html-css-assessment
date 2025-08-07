@@ -1,0 +1,41 @@
+// ****
+// ** Site Colours
+// ****
+$color--light: #FFF;
+$color--dark: #333645;
+
+// ****
+// ** Brand Colours
+// ****
+$brand--normal: #323544;
+$brand--dark: #212330;
+
+// ****
+// ** Text Colours
+// ****
+$text--light: $color--light;
+$text--dark: $color--dark;
+
+// ****
+// ** Background Colours
+// ****
+$bg--normal: $brand--normal;
+$bg--dark: $brand--dark;
+$bg--light: $color--light;
+
+// ****
+// ** Border Colours
+// ***
+$border--light: #e5e5e5;
+
+// ****
+// ** Service Colours
+// ****
+$default: #f7b322;
+$dev: #526781;
+$support: #286abd;
+$marketing: #25a25a;
+$telecoms: #bc2c28;
+$webdesign: #79539a;
+$security:#de093f;
+$course: #a3331d;

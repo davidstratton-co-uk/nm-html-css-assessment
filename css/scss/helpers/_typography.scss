@@ -1,21 +1,8 @@
-// ****
-// ** Default Text
-// ****
-html {
-    font-size: 16px;
-}
-
-body {
-    font-family: Poppins, sans-serif;
-    letter-spacing: .4px;
-    margin: 0;
-    padding: 0;
-}
+@use '../vars/config';
 
 // ****
-// ** Text Colours
+// ** Font Families;
 // ****
-
 %poppins-regular {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -28,14 +15,6 @@ body {
   font-style: italic;
 }
 
-
-// ****
-// ** Text Colours
-// ****
-%text--light {
-    color: #FFF;
-}
-
 // ****
 // ** Link Lists
 // ****
@@ -43,6 +22,7 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+
     a {
        text-decoration: none; 
     }

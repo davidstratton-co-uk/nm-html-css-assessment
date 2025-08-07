@@ -1,24 +1,19 @@
 // ****
-// ** Import Base
-// ****
-@import 'base/index';
-
-// ****
 // ** Import Vendor
 // ****
-@import 'vendor/index';
+// @use 'vendor';
+
+// ****
+// ** Import Base
+// ****
+@use 'base';
 
 // ****
 // ** Import Layout
 // ****
-@import 'layout/index';
+@use 'layout';
 
 // ****
 // ** Import Modules
 // ****
-@import 'modules/index';
-
-// ****
-// ** Import States
-// ****
-@import 'states/index';
+@use 'modules';

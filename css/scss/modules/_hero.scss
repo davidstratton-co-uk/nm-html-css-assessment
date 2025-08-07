@@ -1,3 +1,5 @@
+@use '../vars/color';
+
 #section-hero {
     display:grid;
     position: relative;
@@ -25,7 +27,7 @@
         margin: 1rem 0;
         padding: 0 1rem;
         text-align: center;
-        @extend %text--light;
+        color: color.$text--light;
     }
 
     h2 {

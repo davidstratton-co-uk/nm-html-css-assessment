@@ -1,0 +1,19 @@
+// ****
+// ** Root Styles
+// ****
+@use '../vars/config';
+@use '../helpers/typography' as font;
+// ****
+// ** Default Font
+// ****
+html {
+    font-size: config.$font-size;
+}
+
+body {
+    letter-spacing: .4px;
+    margin: 0;
+    padding: 0;
+
+    @extend %poppins-regular;
+}
