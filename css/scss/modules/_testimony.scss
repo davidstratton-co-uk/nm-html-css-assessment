@@ -11,13 +11,17 @@
         margin: 0 0 2rem;
         line-height: 1.1;
     }
-
+    
     p {
         color: #fff;
-        font-weight: 600;
+        font-weight: 400;
         line-height: 1.875rem;
         margin-bottom: 20px; 
 
+    }
+
+    p:first-of-type {
+        font-weight: 600;
     }
 
 }
@@ -25,11 +29,8 @@
 .testimony-rating {
     display: flex;
     flex-wrap: wrap;
-
-    img {
-        display: inline-block;
-        height: 50px;
-    }
+    font-size: 50px;
+    color: orange;
 }
 
 .testimony-content {

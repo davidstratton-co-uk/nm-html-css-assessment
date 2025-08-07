@@ -80,6 +80,8 @@
 }
 
 #footer-social {
+    font-size: 26px;
+
     div {
         display: flex;
         flex-direction: row;
@@ -88,13 +90,12 @@
     }
     
     a{
+        color: #fff;
         background-color: $color-brand--dark;
         display: inline-block;
-        padding: 12px 3rem 16px;
+        width: 35%;
+        padding: 12px 2rem;
+        text-align: center;
     }
 
-    img {
-        width: auto;
-        height: 30px;
-    }
 }

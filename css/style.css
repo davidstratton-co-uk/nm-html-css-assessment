@@ -10849,7 +10849,7 @@ body {
   background-color: #212330;
   display: flex;
   flex-direction: column;
-  row-gap: 5px;
+  row-gap: 6px;
   justify-content: center;
   border-radius: 3px;
   padding: 15px;
@@ -10862,7 +10862,7 @@ body {
   content: "";
   background-color: #fff;
   display: block;
-  padding: 2px 15px;
+  padding: 2px 17px;
   overflow: hidden;
 }
 
@@ -10978,8 +10978,8 @@ nav {
 .services-item > div {
   border-radius: 50%;
   padding: 15px;
-  width: 40px;
-  height: 40px;
+  color: #fff;
+  font-size: 32px;
 }
 .services-item h3,
 .services-item p {
@@ -11079,18 +11079,19 @@ nav {
 }
 #section-testimony p {
   color: #fff;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.875rem;
   margin-bottom: 20px;
+}
+#section-testimony p:first-of-type {
+  font-weight: 600;
 }
 
 .testimony-rating {
   display: flex;
   flex-wrap: wrap;
-}
-.testimony-rating img {
-  display: inline-block;
-  height: 50px;
+  font-size: 50px;
+  color: orange;
 }
 
 .testimony-content {
@@ -11319,6 +11320,9 @@ article[data-news-type=careers] .news-readmore {
   display: block;
 }
 
+#footer-social {
+  font-size: 26px;
+}
 #footer-social div {
   display: flex;
   flex-direction: row;
@@ -11326,11 +11330,10 @@ article[data-news-type=careers] .news-readmore {
   flex-wrap: wrap;
 }
 #footer-social a {
+  color: #fff;
   background-color: #212330;
   display: inline-block;
-  padding: 12px 3rem 16px;
-}
-#footer-social img {
-  width: auto;
-  height: 30px;
+  width: 35%;
+  padding: 12px 2rem;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
