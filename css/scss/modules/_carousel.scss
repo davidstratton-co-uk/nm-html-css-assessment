@@ -1,5 +1,6 @@
 @use '../helpers/typography';
 
+#partner-list,
 #client-list {
     ul {
         @extend %link-list;
