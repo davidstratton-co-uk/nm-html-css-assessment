@@ -22,7 +22,24 @@
 
 }
 
+.testimony-rating {
+    display: flex;
+    flex-wrap: wrap;
+
+    img {
+        display: inline-block;
+        height: 50px;
+    }
+}
+
+.testimony-content {
+    font-weight: 600;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
 .testimony-author {
+    font-size: 1.1rem;
     color: #a3a8ac !important;
 
     a {
@@ -45,8 +62,6 @@
     line-height: 35px;
     text-transform: uppercase;
     border: 1px solid transparent;
-
-    @extend %right-arrow;
 }
 
 .link-google {

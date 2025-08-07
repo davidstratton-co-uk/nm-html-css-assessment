@@ -17,14 +17,3 @@ $color-telecoms: #bc2c28;
 $color-webdesign: #79539a;
 $color-security:#de093f;
 $color-course: #a3331d;
-
-// ****
-// ** Right Arrow Icon
-// ****
-
-%right-arrow {
-
-    &::after {
-        content: "\2192";
-    }
-}
