@@ -2,7 +2,8 @@
 @use '../helpers/media-query' as mq;
 
 #section-news {
-    padding: 50px 15px 0 15px;
+    padding: 50px 15px;
+    position: relative;
     margin: auto;
 
     display: grid;
@@ -29,6 +30,7 @@
         color: color.$text--dark;
         text-decoration: none;
         justify-self: center;
+        margin-top: 50px;
     }
 
     @include mq.set-breakpoint('768') {
@@ -37,8 +39,10 @@
         grid-template-columns: 2fr;
         grid-template-areas:
             "news-header news-link"
-            "news-container news-container"
-
+            "news-container news-container";
+        > a {
+            margin-top: 50px;
+        }
     }
 }
 
@@ -50,8 +54,6 @@
     gap: 2rem;
 
     padding-top: 50px;
-    padding-bottom: 2rem;
-
 
     @include mq.set-breakpoint('768') {
 

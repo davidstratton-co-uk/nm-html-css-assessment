@@ -8,7 +8,8 @@
     justify-items: center;
     height: 550px;
     background: url("../assets/img/hero/hero-1.png");
-    background-position: center;
+    background-position: top;
+    background-size: cover;
 
     &::before {
         content: '';
