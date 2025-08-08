@@ -1,3 +1,4 @@
+@use '../helpers/media-query' as mq;
 // ****
 // ** Main Grid
 // ****
@@ -6,5 +7,10 @@ body {
     max-width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3,max-content);
+    grid-template-rows: repeat(4,max-content);
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
 }

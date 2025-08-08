@@ -1,49 +1,54 @@
 // ****
-// ** Import Header
+// ** Forward Header
 // ****
-@use 'header';
+@forward 'header';
 
 // ****
-// ** Import Sidebar
+// ** Forward Nav
 // ****
-// @use 'sidebar';
+@forward 'nav';
 
 // ****
-// ** Import Hero
+// ** Forward Sidebar
 // ****
-@use 'hero';
+// @forward 'sidebar';
 
 // ****
-// ** Import Services
+// ** Forward Hero
 // ****
-@use 'services';
+@forward 'hero';
 
 // ****
-// ** Import Carousel
+// ** Forward Services
 // ****
-@use 'carousel';
+@forward 'services';
 
 // ****
-// ** Import Partners
+// ** Forward Carousel
 // ****
-@use 'partners';
+@forward 'carousel';
 
 // ****
-// ** Import Testimony
+// ** Forward Partners
 // ****
-@use 'testimony';
+@forward 'partners';
 
 // ****
-// ** Import Partners
+// ** Forward Testimony
 // ****
-@use 'clients';
+@forward 'testimony';
 
 // ****
-// ** Import News
+// ** Forward Partners
 // ****
-@use 'news';
+@forward 'clients';
 
 // ****
-// ** Import Footer
+// ** Forward News
 // ****
-@use 'footer';
+@forward 'news';
+
+// ****
+// ** Forward Footer
+// ****
+@forward 'footer';

@@ -1,16 +1,19 @@
 @use '../vars/color';
+@use '../helpers/media-query' as mq;
 
 #section-services {
-    padding: 50px 0 50px 0;
+    padding: 50px 15px;
+    margin: 0 auto;
+
     display: grid;
     grid-template-columns: 1fr;
 
-    header {
+    > header {
         justify-self: left;
+        padding-bottom: 25px;
     }
 
     h2 {
-        padding-left: 1rem;
         font-size: 2.7rem;
         font-weight: 400;
         margin: 0 0 1rem 0;
@@ -25,6 +28,17 @@
         margin: 25px 0 -75px 0;
     }
 
+    @include mq.set-breakpoint('768') {
+        width: 750px;
+        
+    }
+
+}
+
+#services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .services-item {
@@ -33,7 +47,6 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    margin: 1rem;
     padding: 2rem;
     box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
     border: 1px solid #ccc;
