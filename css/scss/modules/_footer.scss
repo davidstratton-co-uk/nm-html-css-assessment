@@ -33,8 +33,8 @@
 // ****
 // ** Footer Link Lists
 // ****
-#footer-main h4{ 
-    margin: 0 0 2rem;
+#footer-main h4 { 
+    margin-bottom: 26px;
     text-transform: uppercase;
     font-size: 1rem;
     font-weight: 400;
@@ -65,28 +65,20 @@
     }
 }
 
-// ****
-// ** Social Icons
-// ****
-
 #footer-logo img{
     width: 250px;
-
+    margin-bottom: 24px;
+    
     @include mq.set-breakpoint('480') {
         width: 320px
     }
 }
 
-#footer-main img{
-    display: block;
-}
-
+// ****
+// ** Social Icons
+// ****
 #footer-social {
     font-size: 26px;
-
-    h4 {
-        margin: 1rem 0 !important; 
-    }
 
     div {
         display: flex;
@@ -107,9 +99,28 @@
 
 }
 
+#footer-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    @include mq.set-breakpoint('768') {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 #footer-copy {
 
     p:last-of-type {
         display: none;
+    }
+
+    @include mq.set-breakpoint('768') {
+
+        p,
+        p:last-of-type,
+        ul {
+            display: inline-block;
+        }
+    
     }
 }

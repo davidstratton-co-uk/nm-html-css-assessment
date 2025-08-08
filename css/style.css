@@ -10810,7 +10810,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   padding: 0;
   margin: 0;
 }
@@ -11239,38 +11240,57 @@ body {
 }
 
 #section-news {
-  padding-top: 50px;
+  padding: 50px 15px 0 15px;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-areas: "news-header" "news-container" "news-link";
 }
 #section-news header {
+  grid-area: news-header;
   justify-self: left;
 }
 #section-news h2 {
-  margin: 0 0 1rem 0;
-  padding-left: 1rem;
   font-size: 2.25rem;
   font-weight: 600;
 }
 #section-news > a {
+  grid-area: news-link;
   font-size: 1.5rem;
   font-weight: 600;
   color: #333645;
   text-decoration: none;
   justify-self: center;
 }
+@media only screen and (min-width: 768px) {
+  #section-news {
+    width: 750px;
+    grid-template-columns: 2fr;
+    grid-template-areas: "news-header news-link" "news-container news-container";
+  }
+}
 
 .news-container {
-  display: flex;
-  flex-direction: column;
+  grid-area: news-container;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-top: 50px;
   padding-bottom: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  .news-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .news-container > :last-child {
+    display: none;
+  }
 }
 
 .news-item {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin: 1rem;
   box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -11288,6 +11308,7 @@ body {
   margin-bottom: 2rem;
 }
 .news-item h3 {
+  min-height: 3rem;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5;
@@ -11390,7 +11411,7 @@ article[data-news-type=careers] .news-readmore {
 }
 
 #footer-main h4 {
-  margin: 0 0 2rem;
+  margin-bottom: 26px;
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 400;
@@ -11422,6 +11443,7 @@ article[data-news-type=careers] .news-readmore {
 
 #footer-logo img {
   width: 250px;
+  margin-bottom: 24px;
 }
 @media only screen and (min-width: 480px) {
   #footer-logo img {
@@ -11429,15 +11451,8 @@ article[data-news-type=careers] .news-readmore {
   }
 }
 
-#footer-main img {
-  display: block;
-}
-
 #footer-social {
   font-size: 26px;
-}
-#footer-social h4 {
-  margin: 1rem 0 !important;
 }
 #footer-social div {
   display: flex;
@@ -11455,6 +11470,23 @@ article[data-news-type=careers] .news-readmore {
   text-align: center;
 }
 
+#footer-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media only screen and (min-width: 768px) {
+  #footer-nav {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 #footer-copy p:last-of-type {
   display: none;
+}
+@media only screen and (min-width: 768px) {
+  #footer-copy p,
+  #footer-copy p:last-of-type,
+  #footer-copy ul {
+    display: inline-block;
+  }
 }/*# sourceMappingURL=style.css.map */
