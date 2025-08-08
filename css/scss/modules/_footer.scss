@@ -68,7 +68,7 @@
 #footer-logo img{
     width: 250px;
     margin-bottom: 24px;
-    
+
     @include mq.set-breakpoint('480') {
         width: 320px
     }
@@ -88,13 +88,23 @@
         width: 250px;
     }
     
-    a{
+    a {
         color: #fff;
         background-color: color.$brand--dark;
         display: inline-block;
-        width: 35%;
         padding: 12px 2rem;
         text-align: center;
+    }
+
+    @include mq.set-breakpoint('768') {
+        
+        a {
+            padding: 12px 1rem;
+        }
+
+        div {
+            width: auto;
+        }
     }
 
 }

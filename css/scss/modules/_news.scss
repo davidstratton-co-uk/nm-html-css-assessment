@@ -41,7 +41,7 @@
             "news-header news-link"
             "news-container news-container";
         > a {
-            margin-top: 50px;
+            margin-top: 0;
         }
     }
 }
@@ -68,11 +68,17 @@
 
 .news-item {
     display: flex;
+    position: relative;
     flex-direction: column;
     flex-wrap: nowrap;
     box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
     border: 1px solid #ccc;
     border-radius: 3px;
+
+    &:hover {
+        top: -10px;
+        transition: .5s ease;
+    }
 
     img {
         width: 100%;
@@ -90,7 +96,6 @@
     }
 
     h3 {
-        min-height: 3rem;
         font-size: 1rem;
         font-weight: 600;
         line-height: 1.5;
@@ -117,6 +122,12 @@
 
     p {
         margin: 1rem 2rem;
+    }
+
+    @include mq.set-breakpoint('768') {
+        > h3 {
+            min-height: 3rem;
+        }
     }
 }
 

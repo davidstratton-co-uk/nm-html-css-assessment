@@ -7,6 +7,7 @@
 
 #site-header header {
     display: grid;
+    padding: 0 15px;
     grid-template-columns: 1fr min-content min-content;
     grid-template-areas: 
     "logo icon menu"

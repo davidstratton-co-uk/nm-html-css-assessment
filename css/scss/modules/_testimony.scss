@@ -3,7 +3,7 @@
 #section-testimony {
     display: grid;
     gap: 2rem;
-    padding: 50px 1rem;
+    padding: 50px 15px;
     background-color: color.$brand--normal;
 
     h2 {
@@ -31,7 +31,7 @@
 .testimony-rating {
     display: flex;
     flex-wrap: wrap;
-    font-size: 50px;
+    font-size: 40px;
     color: orange;
 }
 

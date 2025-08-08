@@ -10831,6 +10831,7 @@ body {
 
 #site-header header {
   display: grid;
+  padding: 0 15px;
   grid-template-columns: 1fr min-content min-content;
   grid-template-areas: "logo icon menu" "search search search";
   -moz-column-gap: 1rem;
@@ -11023,8 +11024,9 @@ body {
   #section-services > a {
     font-size: 2.25rem;
     margin: 0;
-    align-self: flex-end;
     position: relative;
+    bottom: -15px;
+    align-self: auto;
   }
 }
 
@@ -11052,6 +11054,14 @@ body {
   box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   border-radius: 15px;
+  position: relative;
+}
+.services-item-course > a, .services-item-security > a, .services-item-webdesign > a, .services-item-telecoms > a, .services-item-marketing > a, .services-item-support > a, .services-item-dev > a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .services-item-course > div, .services-item-security > div, .services-item-webdesign > div, .services-item-telecoms > div, .services-item-marketing > div, .services-item-support > div, .services-item-dev > div {
   border-radius: 50%;
@@ -11082,52 +11092,158 @@ body {
   font-size: 0.8rem;
   line-height: 1.37;
 }
-.services-item-course a, .services-item-security a, .services-item-webdesign a, .services-item-telecoms a, .services-item-marketing a, .services-item-support a, .services-item-dev a {
+.services-item-course .read-more, .services-item-security .read-more, .services-item-webdesign .read-more, .services-item-telecoms .read-more, .services-item-marketing .read-more, .services-item-support .read-more, .services-item-dev .read-more {
   color: #FFF;
   line-height: 35px;
   text-transform: uppercase;
   border-radius: 5px;
   padding: 5px 15px;
   font-weight: 400;
+  font-size: 1rem;
   border: 1px solid transparent;
 }
 
 .services-item-dev div,
-.services-item-dev a {
+.services-item-dev .read-more {
   background-color: #67809f;
 }
 
+.services-item-dev:hover {
+  background-color: #67809f;
+  top: -10px;
+  transition: 0.5s ease;
+}
+.services-item-dev:hover h3,
+.services-item-dev:hover p {
+  color: #FFF;
+}
+.services-item-dev:hover div,
+.services-item-dev:hover .read-more {
+  background-color: #FFF;
+  color: #67809f;
+}
+
 .services-item-support div,
-.services-item-support a {
+.services-item-support .read-more {
   background-color: #4183d7;
 }
 
+.services-item-support:hover {
+  background-color: #4183d7;
+  top: -10px;
+  transition: 0.5s ease;
+}
+.services-item-support:hover h3,
+.services-item-support:hover p {
+  color: #FFF;
+}
+.services-item-support:hover div,
+.services-item-support:hover .read-more {
+  background-color: #FFF;
+  color: #4183d7;
+}
+
 .services-item-marketing div,
-.services-item-marketing a {
+.services-item-marketing .read-more {
   background-color: #2ecc71;
 }
 
+.services-item-marketing:hover {
+  background-color: #2ecc71;
+  top: -10px;
+  transition: 0.5s ease;
+}
+.services-item-marketing:hover h3,
+.services-item-marketing:hover p {
+  color: #FFF;
+}
+.services-item-marketing:hover div,
+.services-item-marketing:hover .read-more {
+  background-color: #FFF;
+  color: #2ecc71;
+}
+
 .services-item-telecoms div,
-.services-item-telecoms a {
+.services-item-telecoms .read-more {
   background-color: #d64541;
 }
 
+.services-item-telecoms:hover {
+  background-color: #d64541;
+  top: -10px;
+  transition: 0.5s ease;
+}
+.services-item-telecoms:hover h3,
+.services-item-telecoms:hover p {
+  color: #FFF;
+}
+.services-item-telecoms:hover div,
+.services-item-telecoms:hover .read-more {
+  background-color: #FFF;
+  color: #d64541;
+}
+
 .services-item-webdesign div,
-.services-item-webdesign a {
+.services-item-webdesign .read-more {
   background-color: #926fb1;
 }
 
+.services-item-webdesign:hover {
+  background-color: #926fb1;
+  top: -10px;
+  transition: 0.5s ease;
+}
+.services-item-webdesign:hover h3,
+.services-item-webdesign:hover p {
+  color: #FFF;
+}
+.services-item-webdesign:hover div,
+.services-item-webdesign:hover .read-more {
+  background-color: #FFF;
+  color: #926fb1;
+}
+
 .services-item-security div,
-.services-item-security a {
+.services-item-security .read-more {
   background-color: #f62459;
 }
 
+.services-item-security:hover {
+  background-color: #f62459;
+  top: -10px;
+  transition: 0.5s ease;
+}
+.services-item-security:hover h3,
+.services-item-security:hover p {
+  color: #FFF;
+}
+.services-item-security:hover div,
+.services-item-security:hover .read-more {
+  background-color: #FFF;
+  color: #f62459;
+}
+
 .services-item-course div,
-.services-item-course a {
+.services-item-course .read-more {
   background-color: #ce4125;
 }
 
-.services-item-dev a {
+.services-item-course:hover {
+  background-color: #ce4125;
+  top: -10px;
+  transition: 0.5s ease;
+}
+.services-item-course:hover h3,
+.services-item-course:hover p {
+  color: #FFF;
+}
+.services-item-course:hover div,
+.services-item-course:hover .read-more {
+  background-color: #FFF;
+  color: #ce4125;
+}
+
+.services-item-dev .read-more {
   background-color: #f7b322;
 }
 
@@ -11173,7 +11289,7 @@ body {
 #section-testimony {
   display: grid;
   gap: 2rem;
-  padding: 50px 1rem;
+  padding: 50px 15px;
   background-color: #323544;
 }
 #section-testimony h2 {
@@ -11196,7 +11312,7 @@ body {
 .testimony-rating {
   display: flex;
   flex-wrap: wrap;
-  font-size: 50px;
+  font-size: 40px;
   color: orange;
 }
 
@@ -11243,7 +11359,7 @@ body {
   padding: 50px 0 50px 0;
 }
 #section-clients img {
-  height: 70px;
+  max-height: 70px;
 }
 
 #section-news {
@@ -11278,7 +11394,7 @@ body {
     grid-template-areas: "news-header news-link" "news-container news-container";
   }
   #section-news > a {
-    margin-top: 50px;
+    margin-top: 0;
   }
 }
 
@@ -11300,11 +11416,16 @@ body {
 
 .news-item {
   display: flex;
+  position: relative;
   flex-direction: column;
   flex-wrap: nowrap;
   box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   border-radius: 3px;
+}
+.news-item:hover {
+  top: -10px;
+  transition: 0.5s ease;
 }
 .news-item img {
   width: 100%;
@@ -11319,7 +11440,6 @@ body {
   margin-bottom: 2rem;
 }
 .news-item h3 {
-  min-height: 3rem;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5;
@@ -11339,6 +11459,11 @@ body {
 }
 .news-item p {
   margin: 1rem 2rem;
+}
+@media only screen and (min-width: 768px) {
+  .news-item > h3 {
+    min-height: 3rem;
+  }
 }
 
 .news-footer {
@@ -11476,9 +11601,16 @@ article[data-news-type=careers] .news-readmore {
   color: #fff;
   background-color: #212330;
   display: inline-block;
-  width: 35%;
   padding: 12px 2rem;
   text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  #footer-social a {
+    padding: 12px 1rem;
+  }
+  #footer-social div {
+    width: auto;
+  }
 }
 
 #footer-nav {
