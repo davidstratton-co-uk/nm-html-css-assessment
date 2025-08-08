@@ -10808,7 +10808,9 @@ body {
   padding: 0;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   padding: 0;
   margin: 0;
 }
@@ -10986,37 +10988,56 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-areas: "services-header" "services-container" "services-link";
+}
+@media only screen and (min-width: 768px) {
+  #section-services {
+    grid-template-columns: 2fr;
+    grid-template-areas: "services-header services-link" "services-container services-container";
+    width: 750px;
+  }
 }
 #section-services > header {
+  grid-area: services-header;
   justify-self: left;
-  padding-bottom: 25px;
 }
 #section-services h2 {
   font-size: 2.7rem;
   font-weight: 400;
-  margin: 0 0 1rem 0;
 }
 #section-services > a {
+  grid-area: services-link;
   font-size: 1.5rem;
   font-weight: 600;
   color: #333645;
   text-decoration: none;
   justify-self: center;
   margin: 25px 0 -75px 0;
+  color: #333645;
 }
 @media only screen and (min-width: 768px) {
-  #section-services {
-    width: 750px;
+  #section-services > a {
+    font-size: 2.25rem;
+    margin: 0;
+    align-self: flex-end;
   }
 }
 
 #services-container {
-  display: flex;
-  flex-direction: column;
+  grid-area: services-container;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
+  padding-top: 25px;
+}
+@media only screen and (min-width: 768px) {
+  #services-container {
+    padding-top: 50px;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.services-item {
+.services-item-course, .services-item-security, .services-item-webdesign, .services-item-telecoms, .services-item-marketing, .services-item-support, .services-item-dev {
   display: flex;
   row-gap: 1rem;
   flex-direction: column;
@@ -11027,18 +11048,24 @@ body {
   border: 1px solid #ccc;
   border-radius: 15px;
 }
-.services-item > div {
+.services-item-course > div, .services-item-security > div, .services-item-webdesign > div, .services-item-telecoms > div, .services-item-marketing > div, .services-item-support > div, .services-item-dev > div {
   border-radius: 50%;
   padding: 15px;
   color: #FFF;
   font-size: 32px;
 }
-.services-item h3,
-.services-item p {
+.services-item-course h3, .services-item-security h3, .services-item-webdesign h3, .services-item-telecoms h3, .services-item-marketing h3, .services-item-support h3, .services-item-dev h3,
+.services-item-course p,
+.services-item-security p,
+.services-item-webdesign p,
+.services-item-telecoms p,
+.services-item-marketing p,
+.services-item-support p,
+.services-item-dev p {
   margin: 0;
   text-align: center;
 }
-.services-item h3 {
+.services-item-course h3, .services-item-security h3, .services-item-webdesign h3, .services-item-telecoms h3, .services-item-marketing h3, .services-item-support h3, .services-item-dev h3 {
   margin: 0;
   padding: 0;
   font-size: 1.3rem;
@@ -11046,11 +11073,11 @@ body {
   font-weight: 400;
   line-height: 1.1;
 }
-.services-item p {
+.services-item-course p, .services-item-security p, .services-item-webdesign p, .services-item-telecoms p, .services-item-marketing p, .services-item-support p, .services-item-dev p {
   font-size: 0.8rem;
   line-height: 1.37;
 }
-.services-item a {
+.services-item-course a, .services-item-security a, .services-item-webdesign a, .services-item-telecoms a, .services-item-marketing a, .services-item-support a, .services-item-dev a {
   color: #FFF;
   line-height: 35px;
   text-transform: uppercase;
@@ -11060,29 +11087,51 @@ body {
   border: 1px solid transparent;
 }
 
-.service-default {
+.services-item-dev div,
+.services-item-dev a {
+  background-color: #67809f;
+}
+
+.services-item-support div,
+.services-item-support a {
+  background-color: #4183d7;
+}
+
+.services-item-marketing div,
+.services-item-marketing a {
+  background-color: #2ecc71;
+}
+
+.services-item-telecoms div,
+.services-item-telecoms a {
+  background-color: #d64541;
+}
+
+.services-item-webdesign div,
+.services-item-webdesign a {
+  background-color: #926fb1;
+}
+
+.services-item-security div,
+.services-item-security a {
+  background-color: #f62459;
+}
+
+.services-item-course div,
+.services-item-course a {
+  background-color: #ce4125;
+}
+
+.services-item-dev a {
   background-color: #f7b322;
 }
-.service-dev {
-  background-color: #526781;
-}
-.service-support {
-  background-color: #286abd;
-}
-.service-marketing {
-  background-color: #25a25a;
-}
-.service-telecoms {
-  background-color: #bc2c28;
-}
-.service-webdesign {
-  background-color: #79539a;
-}
-.service-security {
-  background-color: #de093f;
-}
-.service-course {
-  background-color: #a3331d;
+
+@media only screen and (min-width: 768px) {
+  .services-item-dev,
+  .services-item-support,
+  .services-item-marketing {
+    grid-column: span 2;
+  }
 }
 
 #partner-list ul,

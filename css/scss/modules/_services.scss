@@ -1,5 +1,8 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
+@use 'sass:map';
+@use '../vars/services';
+
 
 #section-services {
     padding: 50px 15px;
@@ -7,41 +10,65 @@
 
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-areas:
+        "services-header"
+        "services-container"
+        "services-link";
+
+    @include mq.set-breakpoint('768') {
+            grid-template-columns: 2fr;
+            grid-template-areas:
+                "services-header services-link"  
+                "services-container services-container";
+                width: 750px;
+    }
 
     > header {
+        grid-area: services-header;
         justify-self: left;
-        padding-bottom: 25px;
     }
 
     h2 {
         font-size: 2.7rem;
         font-weight: 400;
-        margin: 0 0 1rem 0;
     }
 
     > a {
+        grid-area: services-link;
+
         font-size: 1.5rem;
         font-weight: 600;
         color: color.$text--dark;
         text-decoration: none;
         justify-self: center;
         margin: 25px 0 -75px 0;
-    }
-
-    @include mq.set-breakpoint('768') {
-        width: 750px;
+        color: #333645;
         
+        @include mq.set-breakpoint('768') {
+            font-size: 2.25rem;
+            margin: 0;
+            align-self:flex-end;
+        }
     }
 
 }
 
 #services-container {
-    display: flex;
-    flex-direction: column;
+    grid-area: services-container;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
     gap: 2rem;
+    padding-top: 25px;
+
+    @include mq.set-breakpoint('768') {
+        padding-top: 50px;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
-.services-item {
+%services-item {
     display: flex;
     row-gap: 1rem;
     flex-direction: column;
@@ -90,37 +117,28 @@
 
 }
 
-.service-{
+@each $service, $color in services.$list {
+    .services-item-#{$service} {
 
-    &default {
-        background-color: color.$default;
-    }
+        @extend %services-item;
 
-    &dev {
-        background-color: color.$dev;
+        div,
+        a {
+            background-color: $color;
+        }
     }
+}
 
-    &support {
-        background-color: color.$support;
-    }
-    
-    &marketing {
-        background-color: color.$marketing;
-    }
+.services-item-dev a {
+    background-color: #f7b322;
+}
 
-    &telecoms {
-        background-color: color.$telecoms;
-    }
+.services-item-dev,
+.services-item-support,
+.services-item-marketing {
 
-    &webdesign {
-        background-color: color.$webdesign;
-    }
+    @include mq.set-breakpoint('768') {
+        grid-column: span 2;
+    }    
 
-    &security {
-        background-color: color.$security;
-    }
-
-    &course {
-        background-color: color.$course;
-    }
 }

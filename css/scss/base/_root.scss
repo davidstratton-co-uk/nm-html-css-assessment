@@ -18,7 +18,9 @@ body {
     @extend %poppins-regular;
 }
 
-h1 {
+h1,
+h2,
+h3 {
     padding: 0;
     margin: 0;
 }
