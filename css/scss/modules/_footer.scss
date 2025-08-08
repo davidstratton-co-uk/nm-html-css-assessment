@@ -1,5 +1,6 @@
 @use '../vars/color';
 @use '../helpers/typography';
+@use '../helpers/media-query' as mq;
 
 // ****
 // ** Footer Text
@@ -10,12 +11,6 @@
     
     p {
         margin: 0;
-    }
-}
-
-#footer-social {
-    h4 {
-        margin: 1rem 0 !important; 
     }
 }
 
@@ -76,6 +71,10 @@
 
 #footer-logo img{
     width: 250px;
+
+    @include mq.set-breakpoint('480') {
+        width: 320px
+    }
 }
 
 #footer-main img{
@@ -85,11 +84,16 @@
 #footer-social {
     font-size: 26px;
 
+    h4 {
+        margin: 1rem 0 !important; 
+    }
+
     div {
         display: flex;
         flex-direction: row;
         gap: 0.5rem;
         flex-wrap: wrap;
+        width: 250px;
     }
     
     a{
@@ -101,4 +105,11 @@
         text-align: center;
     }
 
+}
+
+#footer-copy {
+
+    p:last-of-type {
+        display: none;
+    }
 }

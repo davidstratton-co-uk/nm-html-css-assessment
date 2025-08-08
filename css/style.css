@@ -11272,10 +11272,6 @@ article[data-news-type=careers] .news-readmore {
   margin: 0;
 }
 
-#footer-social h4 {
-  margin: 1rem 0 !important;
-}
-
 #footer-main {
   padding: 2rem 1rem 0 1rem;
   color: #FFF;
@@ -11323,6 +11319,11 @@ article[data-news-type=careers] .news-readmore {
 #footer-logo img {
   width: 250px;
 }
+@media only screen and (min-width: 480px) {
+  #footer-logo img {
+    width: 320px;
+  }
+}
 
 #footer-main img {
   display: block;
@@ -11331,11 +11332,15 @@ article[data-news-type=careers] .news-readmore {
 #footer-social {
   font-size: 26px;
 }
+#footer-social h4 {
+  margin: 1rem 0 !important;
+}
 #footer-social div {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   flex-wrap: wrap;
+  width: 250px;
 }
 #footer-social a {
   color: #fff;
@@ -11344,4 +11349,8 @@ article[data-news-type=careers] .news-readmore {
   width: 35%;
   padding: 12px 2rem;
   text-align: center;
+}
+
+#footer-copy p:last-of-type {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
