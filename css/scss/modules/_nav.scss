@@ -1,3 +1,55 @@
+@use '../vars/color';
+@use '../helpers/media-query' as mq;
+@use '../helpers/typography';
+@use 'sass:map';
+@use '../vars/services';
+
 #site-nav {
     display: none;
+    background-color: color.$bg--normal;
+    text-transform: uppercase;
+    
+    p {
+        margin: 0;
+        padding: 0;
+        color: color.$text--light;
+    }
+
+    span {
+        display: block;
+        font-size: 10px;
+    }
+
+    @include mq.set-breakpoint('992') {
+
+        display: block;
+
+    }
+}
+
+#site-nav ul {
+    @extend %link-list;
+    margin: 0 auto;
+
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-evenly;
+
+    text-align: center; 
+
+    li {
+        width: 100%;
+    }
+
+    i {
+        font-size: 22px;
+        padding-bottom: 10px;
+    }
+}
+
+@each $service, $color in services.$list {
+
+    .nav-#{$service} > i {
+        color: $color;
+    }
 }

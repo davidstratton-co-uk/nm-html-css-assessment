@@ -1,7 +1,7 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
 
-#section-news {
+#news-container {
     padding: 50px 15px;
     position: relative;
     margin: auto;
@@ -34,7 +34,6 @@
     }
 
     @include mq.set-breakpoint('768') {
-        width: 750px;
 
         grid-template-columns: 2fr;
         grid-template-areas:
@@ -46,7 +45,7 @@
     }
 }
 
-.news-container {
+.news-list {
     grid-area: news-container;
 
     display: grid;

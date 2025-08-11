@@ -1,7 +1,6 @@
 @use '../vars/color';
 @use '../helpers/typography';
 @use '../helpers/media-query' as mq;
-
 // ****
 // ** Footer Text
 // ****
@@ -14,18 +13,27 @@
     }
 }
 
+#footer-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "footer-logo"
+        "footer-social"
+        "footer-nav";
+}
+
+
 // ****
 // ** Footer Backgrounds
 // ****
 #footer-main {
-    padding: 2rem 1rem 0 1rem;
+    padding-top: 27px;
     color: color.$text--light;
     background-color: color.$brand--normal;
     overflow: hidden;
 }
 
 #footer-copy {
-    padding: 1rem;
     color: color.$text--light;
     background-color: color.$brand--dark;
 }
@@ -65,19 +73,21 @@
     }
 }
 
+#footer-logo {
+    grid-area: footer-logo;
+}
+
 #footer-logo img{
     width: 250px;
     margin-bottom: 24px;
 
-    @include mq.set-breakpoint('480') {
-        width: 320px
-    }
 }
 
 // ****
 // ** Social Icons
 // ****
 #footer-social {
+    grid-area: footer-social;
     font-size: 26px;
 
     div {
@@ -95,9 +105,34 @@
         padding: 12px 2rem;
         text-align: center;
     }
+}
 
-    @include mq.set-breakpoint('768') {
-        
+#footer-nav {
+    grid-area: footer-nav;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#footer-copy {
+    padding: 10px 0;
+
+    p:last-of-type {
+        display: none;
+    }
+}
+
+@include mq.set-breakpoint('480') {
+    #footer-logo img{
+        width: 320px
+    }
+}
+
+@include mq.set-breakpoint('768') {
+    #footer-logo img{
+        width: 320px
+    }
+
+    #footer-social {
         a {
             padding: 12px 1rem;
         }
@@ -107,30 +142,33 @@
         }
     }
 
-}
 
-#footer-nav {
-    display: grid;
-    grid-template-columns: 1fr;
-    
-    @include mq.set-breakpoint('768') {
+    #footer-nav {
         grid-template-columns: 1fr 1fr;
     }
-}
 
-#footer-copy {
-
-    p:last-of-type {
-        display: none;
-    }
-
-    @include mq.set-breakpoint('768') {
-
+    #footer-copy {
+        
         p,
         p:last-of-type,
         ul {
             display: inline-block;
         }
-    
     }
 }
+
+@include mq.set-breakpoint('992') {
+    #footer-nav {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@include mq.set-breakpoint('1260') {
+    #footer-top {
+        grid-template-columns: min-content 1fr;
+        grid-template-areas: 
+            "footer-logo footer-nav"
+            "footer-social footer-nav";
+    }
+}
+

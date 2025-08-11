@@ -2,14 +2,14 @@
 
 #partner-list,
 #client-list {
+    width: 99dvw;
+    overflow: hidden;
+
     ul {
         @extend %link-list;
         display: flex;
         column-gap: 3rem;
         flex-wrap: nowrap;
-        width: 100dvw;
-        min-width: 100%;
-        overflow: hidden;
         align-items: center;
     }
 

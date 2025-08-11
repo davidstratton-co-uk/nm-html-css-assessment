@@ -1,55 +1,65 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
-
-#site-header {
+#header-top {
     padding: 20px 0;
+    background-color: color.$bg--light;
 }
 
-#site-header header {
+#header-top > div {
     display: grid;
     padding: 0 15px;
-    grid-template-columns: 1fr min-content min-content;
+    grid-template-columns: 1fr repeat(2,max-content);
     grid-template-areas: 
     "logo icon menu"
     "search search search";
     column-gap: 1rem;
     row-gap: 11px;
     align-items: center;
-     
-    @include mq.set-breakpoint('768') {
-        width: 750px;
-        padding: 0 15px;
-        margin: auto;
-
-        grid-template-columns: 1fr min-content min-content;
-        grid-template-areas: 
-        "logo search menu"
-    }
 }
 
-#site-header .header-logo {
+#header-logo {
     grid-area: logo;
     display: block;
     width: 100%;
     min-width: 100px;
     max-width: 402px;
     max-height: 70px;
-
-    @include mq.set-breakpoint('768') {
-        width: 345px;
-    }
 }
 
-#site-header .header-icon {
+#header-icon {
     grid-area: icon;
     font-size: 32px;
+}
 
-    @include mq.set-breakpoint('768') {
-        display: none;
+#header-support {
+    background-color: #4183d7;
+    color: color.$text--light;
+    grid-area: support;
+}
+
+#header-contact {
+    background-color: #999aa2;
+    color: color.$text--light;
+    grid-area: contact;
+}
+
+#header-support, 
+#header-contact {
+    display: none;
+    text-transform: uppercase;
+    height: 55px;
+    border-radius: 3px;
+    padding: 0 1rem;
+    line-height: 46px;
+    font-size: 18px;
+
+    p {
+        display: inline-block;
+        margin:  0;
     }
 }
 
-#site-header .header-menu {
+#header-menu {
     grid-area: menu;
     background-color: color.$brand--dark;
     display: flex;
@@ -60,22 +70,21 @@
     padding: 15px;
     margin: 5px 0;
     height: 56px;
-
-    .menu-top,
-    .menu-middle,
-    .menu-bottom {
-        content: "";
-        background-color: color.$bg--light;
-        display: block;
-        padding: 2px 17px;
-        overflow: hidden;
-    }
 }
 
-#site-header .header-form {
+#menu-top,
+#menu-middle,
+#menu-bottom {
+    content: "";
+    background-color: color.$bg--light;
+    display: block;
+    padding: 2px 17px;
+    overflow: hidden;
+}
+
+#header-form {
     width: 100%;
     grid-area: search;
-    border  : 1px solid color.$border--light;
     position: relative;
 
     input {
@@ -95,21 +104,87 @@
         font-size: 20px;
         height: 100%;
     }
+}
 
-    @include mq.set-breakpoint('768') {
+
+@include mq.set-breakpoint('768') {
+    #header-top > div {
+        padding: 0 15px;
+        margin: auto;
+
+        grid-template-columns: 1fr repeat(2,max-content);
+        grid-template-areas: 
+        "logo search menu";
+    }
+
+    #header-logo {
+        width: 345px;
+    }
+
+    #header-icon {
+        display: none;
+    }
+
+    #header-form {
         input {
             height: 56px;
             width: 250px;
             border: 1px solid rgba(0,0,0,.1);
             background: color.$bg--light
         }
-    
+
         button {
             right: 0px;
             padding: 7px 20px 7px;
             background-color: #999aa2;
             color: color.$text--light;
             font-size: 23px;
+        }
+    }
+}
+
+@include mq.set-breakpoint('992') {
+    #header-top > div {
+        grid-template-columns: 1fr repeat(4,max-content);
+        grid-template-areas: 
+        "logo support contact search menu";
+    }
+
+    #header-logo {
+        width: 100%;
+    }
+
+    #header-support, 
+    #header-contact {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+    }
+
+    #header-form {
+        input {
+            display: none;
+        }
+
+        button {
+            border-radius: 3px;
+            position: relative;
+            height: 55px;
+            padding: 0 15px;
+        }
+    }
+}
+
+@include mq.set-breakpoint('1260') {
+    #header-form {
+        input {
+            display: inline-block;
+            height: 55px;
+        }
+
+        button {
+            position: absolute;
+            height: 100%;
         }
     }
 }
