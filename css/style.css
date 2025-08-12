@@ -10785,19 +10785,6 @@ body {
   font-style: normal;
 }
 
-#footer-copy ul,
-#footer-nav ul, #partner-list ul,
-#client-list ul, #site-nav > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-#footer-copy ul a,
-#footer-nav ul a, #partner-list ul a,
-#client-list ul a, #site-nav > ul a {
-  text-decoration: none;
-}
-
 html {
   font-size: 16px;
 }
@@ -11093,6 +11080,13 @@ body.sidebar-active #site-wrapper::after {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
+  list-style: none;
+}
+#site-nav > ul > a {
+  text-decoration: none;
+}
+#site-nav > ul > a:hover {
+  text-decoration: underline;
 }
 #site-nav > ul > li {
   padding: 15px 0;
@@ -11108,6 +11102,7 @@ body.sidebar-active #site-wrapper::after {
 }
 .nav-dev:hover > a, .nav-dev:hover > a > i, .nav-dev:focus-within > a, .nav-dev:focus-within > a > i {
   color: #FFF;
+  text-decoration: none;
 }
 .nav-dev:hover .nav-dropdown-dev, .nav-dev:focus-within .nav-dropdown-dev {
   background-color: rgb(86.2064516129, 108.6560483871, 136.4935483871);
@@ -11140,6 +11135,7 @@ body.sidebar-active #site-wrapper::after {
 }
 .nav-support:hover > a, .nav-support:hover > a > i, .nav-support:focus-within > a, .nav-support:focus-within > a > i {
   color: #FFF;
+  text-decoration: none;
 }
 .nav-support:hover .nav-dropdown-support, .nav-support:focus-within .nav-dropdown-support {
   background-color: rgb(41.3913043478, 109.6869565217, 196.6086956522);
@@ -11172,6 +11168,7 @@ body.sidebar-active #site-wrapper::after {
 }
 .nav-marketing:hover > a, .nav-marketing:hover > a > i, .nav-marketing:focus-within > a, .nav-marketing:focus-within > a > i {
   color: #FFF;
+  text-decoration: none;
 }
 .nav-marketing:hover .nav-dropdown-marketing, .nav-marketing:focus-within .nav-dropdown-marketing {
   background-color: rgb(39.1, 173.4, 96.05);
@@ -11204,6 +11201,7 @@ body.sidebar-active #site-wrapper::after {
 }
 .nav-telecoms:hover > a, .nav-telecoms:hover > a > i, .nav-telecoms:focus-within > a, .nav-telecoms:focus-within > a > i {
   color: #FFF;
+  text-decoration: none;
 }
 .nav-telecoms:hover .nav-dropdown-telecoms, .nav-telecoms:focus-within .nav-dropdown-telecoms {
   background-color: rgb(195.0584415584, 46.1980519481, 42.0915584416);
@@ -11236,6 +11234,7 @@ body.sidebar-active #site-wrapper::after {
 }
 .nav-webdesign:hover > a, .nav-webdesign:hover > a > i, .nav-webdesign:focus-within > a, .nav-webdesign:focus-within > a > i {
   color: #FFF;
+  text-decoration: none;
 }
 .nav-webdesign:hover .nav-dropdown-webdesign, .nav-webdesign:focus-within .nav-dropdown-webdesign {
   background-color: rgb(124.6054054054, 86.0108108108, 158.7891891892);
@@ -11268,6 +11267,7 @@ body.sidebar-active #site-wrapper::after {
 }
 .nav-security:hover > a, .nav-security:hover > a > i, .nav-security:focus-within > a, .nav-security:focus-within > a > i {
   color: #FFF;
+  text-decoration: none;
 }
 .nav-security:hover .nav-dropdown-security, .nav-security:focus-within .nav-dropdown-security {
   background-color: rgb(230.2381578947, 9.4618421053, 65.1815789474);
@@ -11300,6 +11300,7 @@ body.sidebar-active #site-wrapper::after {
 }
 .nav-course:hover > a, .nav-course:hover > a > i, .nav-course:focus-within > a, .nav-course:focus-within > a > i {
   color: #FFF;
+  text-decoration: none;
 }
 .nav-course:hover .nav-dropdown-course, .nav-course:focus-within .nav-dropdown-course {
   background-color: rgb(175.1, 55.25, 31.45);
@@ -11334,17 +11335,29 @@ body.sidebar-active #site-wrapper::after {
 }
 
 .dropdown-list {
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  list-style: none;
   padding: 0;
   margin: 0;
+}
+.dropdown-list > li > a {
+  display: block;
+  color: #FFF;
+  text-decoration: none;
+  width: 100%;
+}
+.dropdown-list > li > a:hover {
+  text-decoration: underline;
 }
 .dropdown-list > li {
   width: 33%;
   margin-top: 15px;
   text-align: left;
+}
+.dropdown-list i {
+  margin-right: 1rem;
 }
 
 #site-sidebar {
@@ -11530,7 +11543,7 @@ body.sidebar-active #site-wrapper::after {
 
 .services-item-dev:hover {
   background-color: #67809f;
-  top: -10px;
+  translate: 0 -10px;
   transition: 0.5s ease;
 }
 .services-item-dev:hover h3,
@@ -11550,7 +11563,7 @@ body.sidebar-active #site-wrapper::after {
 
 .services-item-support:hover {
   background-color: #4183d7;
-  top: -10px;
+  translate: 0 -10px;
   transition: 0.5s ease;
 }
 .services-item-support:hover h3,
@@ -11570,7 +11583,7 @@ body.sidebar-active #site-wrapper::after {
 
 .services-item-marketing:hover {
   background-color: #2ecc71;
-  top: -10px;
+  translate: 0 -10px;
   transition: 0.5s ease;
 }
 .services-item-marketing:hover h3,
@@ -11590,7 +11603,7 @@ body.sidebar-active #site-wrapper::after {
 
 .services-item-telecoms:hover {
   background-color: #d64541;
-  top: -10px;
+  translate: 0 -10px;
   transition: 0.5s ease;
 }
 .services-item-telecoms:hover h3,
@@ -11610,7 +11623,7 @@ body.sidebar-active #site-wrapper::after {
 
 .services-item-webdesign:hover {
   background-color: #926fb1;
-  top: -10px;
+  translate: 0 -10px;
   transition: 0.5s ease;
 }
 .services-item-webdesign:hover h3,
@@ -11630,7 +11643,7 @@ body.sidebar-active #site-wrapper::after {
 
 .services-item-security:hover {
   background-color: #f62459;
-  top: -10px;
+  translate: 0 -10px;
   transition: 0.5s ease;
 }
 .services-item-security:hover h3,
@@ -11650,7 +11663,7 @@ body.sidebar-active #site-wrapper::after {
 
 .services-item-course:hover {
   background-color: #ce4125;
-  top: -10px;
+  translate: 0 -10px;
   transition: 0.5s ease;
 }
 .services-item-course:hover h3,
@@ -11713,6 +11726,22 @@ body.sidebar-active #site-wrapper::after {
     grid-column: span 3;
   }
 }
+@media only screen and (min-width: 1260px) {
+  #services-list {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .services-item-dev,
+  .services-item-support,
+  .services-item-marketing {
+    grid-column: span 4;
+  }
+  .services-item-telecoms,
+  .services-item-webdesign,
+  .services-item-security,
+  .services-item-course {
+    grid-column: span 3;
+  }
+}
 #partner-list,
 #client-list {
   width: 99dvw;
@@ -11725,6 +11754,17 @@ body.sidebar-active #site-wrapper::after {
        column-gap: 90px;
   flex-wrap: nowrap;
   align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#partner-list ul a,
+#client-list ul a {
+  text-decoration: none;
+}
+#partner-list ul a:hover,
+#client-list ul a:hover {
+  text-decoration: underline;
 }
 #partner-list li,
 #client-list li {
@@ -11903,7 +11943,7 @@ body.sidebar-active #site-wrapper::after {
   border-radius: 3px;
 }
 .news-item:hover {
-  top: -10px;
+  translate: 0 -10px;
   transition: 0.5s ease;
 }
 .news-item img {
@@ -12055,10 +12095,18 @@ article[data-news-type=careers] .news-readmore {
   display: flex;
   flex-direction: column;
   row-gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-#footer-copy a,
-#footer-nav a {
+#footer-copy ul a,
+#footer-nav ul a {
   color: #FFF;
+  text-decoration: none;
+}
+#footer-copy ul a:hover,
+#footer-nav ul a:hover {
+  text-decoration: underline;
 }
 
 #footer-logo {

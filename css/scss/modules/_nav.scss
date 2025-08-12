@@ -33,7 +33,6 @@
 }
 
 #site-nav > ul {
-    @extend %link-list;
     margin: 0 auto;
 
     padding: 15px 0;
@@ -41,6 +40,16 @@
     justify-content: space-evenly;
 
     text-align: center; 
+    
+    list-style: none;
+
+    > a {
+        text-decoration: none;
+        
+        &:hover {
+        text-decoration: underline;
+        }
+    }
 
     > li {
         padding: 15px 0;
@@ -59,13 +68,14 @@
         &:hover,
         &:focus-within {
 
+            background-color: $color;
+
             & > a,
             & > a > i {
                 color: color.$text--light;
+                text-decoration: none;
             }
             
-            background-color: $color;
-
             .nav-dropdown-#{$service} {
                 background-color: sass-color.scale($color, $lightness: -15%);
                 display: flex;
@@ -106,17 +116,31 @@
 }
 
 .dropdown-list {
-    list-style: none;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    list-style: none;
     padding: 0;
     margin: 0;
 
+    > li > a {
+        display: block;
+        color: color.$text--light;
+        text-decoration: none;
+        width: 100%;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 
     > li {
         width: 33%;
         margin-top: 15px;
         text-align: left;
+    }
+
+    i {
+        margin-right: 1rem;
     }
 }

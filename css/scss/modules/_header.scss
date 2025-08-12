@@ -1,5 +1,7 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
+
+//FIXME: No Cursor on 
 #header-top {
     padding: 20px 0;
     background-color: color.$bg--light;

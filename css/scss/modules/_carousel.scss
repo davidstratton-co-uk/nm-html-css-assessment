@@ -6,11 +6,21 @@
     overflow: hidden;
 
     ul {
-        @extend %link-list;
         display: flex;
         column-gap: 90px;
         flex-wrap: nowrap;
         align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        a {
+            text-decoration: none;
+            
+            &:hover {
+            text-decoration: underline;
+            }
+        }
     }
 
     li {
