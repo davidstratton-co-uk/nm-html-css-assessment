@@ -1,9 +1,13 @@
 @use '../helpers/typography';
 
 #partner-list,
+#section-clients {
+    overflow-x: clip;
+}
+
+#partner-list,
 #client-list {
     width: 99dvw;
-    overflow: hidden;
 
     ul {
         display: flex;
@@ -24,7 +28,7 @@
     }
 
     li {
-        max-width: 100%;
+        width: 100%;
         height: auto;
         min-width: max-content;
     }
