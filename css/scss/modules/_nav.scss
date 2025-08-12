@@ -76,12 +76,31 @@
                 text-decoration: none;
             }
             
+            &::after {
+                content: "";
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                border-color: $color transparent transparent transparent;
+                transform: rotate(0deg);
+                position: absolute;
+                top: 100%;
+                border-width: 35px 67.14px 0 67.14px;
+                translate: -67.14px;
+
+                @include mq.set-breakpoint('1260') {
+                    border-width: 35px 83.57px 0 83.57px;
+                    translate: -83.57px;
+                }
+            }
+
             .nav-dropdown-#{$service} {
                 background-color: sass-color.scale($color, $lightness: -15%);
                 display: flex;
                 position: absolute;
                 left: 0;
-                min-width: 100dvw;
+                top: 100%;
+                width: 100%;
                 padding: 45px 0;
                 justify-content: center;
 
@@ -102,7 +121,6 @@
     }
 
     .nav-dropdown-#{$service} {
-        margin-top: 15px;
         color: color.$text--light;
         display: none;
 
