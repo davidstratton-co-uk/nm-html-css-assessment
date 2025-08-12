@@ -2,17 +2,18 @@
 @use '../helpers/media-query' as mq;
 @use '../helpers/typography';
 @use 'sass:map';
+@use 'sass:color' as sass-color;
 @use '../vars/services';
 
 #site-nav {
     display: none;
     background-color: color.$bg--normal;
-    text-transform: uppercase;
     
     p {
         margin: 0;
         padding: 0;
         color: color.$text--light;
+        text-transform: uppercase;
     }
 
     span {
@@ -27,7 +28,11 @@
     }
 }
 
-#site-nav ul {
+#site-nav > .container {
+    padding: 0 15px;
+}
+
+#site-nav > ul {
     @extend %link-list;
     margin: 0 auto;
 
@@ -37,7 +42,8 @@
 
     text-align: center; 
 
-    li {
+    > li {
+        padding: 15px 0;
         width: 100%;
     }
 
@@ -49,7 +55,68 @@
 
 @each $service, $color in services.$list {
 
-    .nav-#{$service} > i {
+    .nav-#{$service} {
+        &:hover,
+        &:focus-within {
+
+            & > a,
+            & > a > i {
+                color: color.$text--light;
+            }
+            
+            background-color: $color;
+
+            .nav-dropdown-#{$service} {
+                background-color: sass-color.scale($color, $lightness: -15%);
+                display: flex;
+                position: absolute;
+                left: 0;
+                min-width: 100dvw;
+                padding: 45px 0;
+                justify-content: center;
+
+                > div {
+                    width: 1200px;
+                }
+
+                h2 {
+                    text-align: left;
+                }
+
+            }
+        }
+    }
+
+    .nav-#{$service} > a > i {
         color: $color;
+    }
+
+    .nav-dropdown-#{$service} {
+        margin-top: 15px;
+        color: color.$text--light;
+        display: none;
+
+    }
+}
+
+.dropdown-title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.dropdown-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+
+
+    > li {
+        width: 33%;
+        margin-top: 15px;
+        text-align: left;
     }
 }

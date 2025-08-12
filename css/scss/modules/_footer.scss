@@ -104,6 +104,22 @@
         display: inline-block;
         padding: 12px 2rem;
         text-align: center;
+
+        &.i-facebook:hover {
+            background-color: #3b5998;
+        }
+
+        &.i-linkedin:hover {
+            background-color: #0077b5;
+        }
+
+        &.i-twitter:hover {
+            background-color: #00aced;
+        }
+
+        &.i-instagram:hover {
+            background-color: #d93175;
+        }
     }
 }
 
@@ -166,6 +182,8 @@
 @include mq.set-breakpoint('1260') {
     #footer-top {
         grid-template-columns: min-content 1fr;
+        grid-template-rows: max-content 1fr;
+        column-gap: 4rem;
         grid-template-areas: 
             "footer-logo footer-nav"
             "footer-social footer-nav";

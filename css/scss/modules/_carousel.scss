@@ -8,7 +8,7 @@
     ul {
         @extend %link-list;
         display: flex;
-        column-gap: 3rem;
+        column-gap: 90px;
         flex-wrap: nowrap;
         align-items: center;
     }

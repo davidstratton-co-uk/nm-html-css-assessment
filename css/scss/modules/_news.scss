@@ -63,6 +63,16 @@
         }
 
     }
+
+    @include mq.set-breakpoint('1260') {
+
+        grid-template-columns: 1fr 1fr 1fr;
+
+        > :last-child {
+            display: flex;
+        }
+
+    }
 }
 
 .news-item {

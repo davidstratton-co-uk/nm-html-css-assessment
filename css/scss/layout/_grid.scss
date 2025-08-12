@@ -2,12 +2,13 @@
 // ****
 // ** Main Grid
 // ****
-body {
+#site-wrapper {
+    grid-area: site-wrapper;
     width: 100dvw;
     max-width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4,max-content);
+    grid-template-rows: repeat(3,max-content);
     grid-template-areas:
         "site-header"
         "site-main"
@@ -46,4 +47,41 @@ main {
     @include mq.set-breakpoint('1260') {
         width: 1200px;
     }
+}
+
+// ****
+// ** Sidebar Active
+// ****
+body.sidebar-active #site-sidebar {
+    grid-area: site-sidebar;  
+    
+    position: fixed;
+    width: 350px;
+    top: 0;
+    right: 0;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+body.sidebar-active {
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    grid-template-areas:
+        "site-wrapper site-sidebar";
+}
+
+body.sidebar-active #site-wrapper {
+    translate: -350px;
+}
+
+body.sidebar-active #site-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 999;
 }
