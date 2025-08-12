@@ -11469,7 +11469,7 @@ body.sidebar-active #site-wrapper::after {
   margin: 0;
 }
 .dropdown-list > li > a {
-  display: block;
+  display: flex;
   color: #FFF;
   text-decoration: none;
   width: 100%;

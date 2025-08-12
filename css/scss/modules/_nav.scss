@@ -142,7 +142,7 @@
     margin: 0;
 
     > li > a {
-        display: block;
+        display: flex;
         color: color.$text--light;
         text-decoration: none;
         width: 100%;
