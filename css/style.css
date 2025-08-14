@@ -10790,6 +10790,7 @@ html {
 }
 
 body {
+  min-width: 320px;
   letter-spacing: 0.4px;
   margin: 0;
   padding: 0;
@@ -11529,6 +11530,7 @@ body.sidebar-active #site-wrapper::after {
 .hero-content h2,
 .hero-content p,
 .hero-content a {
+  text-align: center;
   margin: 1rem 0;
   color: #FFF;
 }
@@ -11916,58 +11918,64 @@ body.sidebar-active #site-wrapper::after {
   padding: 50px 0 50px 0;
 }
 
-#section-testimony {
+#section-about {
   background-color: #323544;
 }
 
-#section-testimony > div {
+#section-about > div {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 2rem;
   padding: 50px 15px;
 }
-#section-testimony > div h2 {
+@media only screen and (min-width: 992px) {
+  #section-about > div {
+    flex-direction: row;
+  }
+}
+#section-about > div h2 {
   color: #fff;
   font-size: 2.25rem;
   font-weight: 600;
   margin: 0 0 2rem;
   line-height: 1.1;
 }
-#section-testimony > div p {
+#section-about > div p {
   color: #fff;
   font-weight: 400;
   line-height: 1.875rem;
   margin-bottom: 25px;
 }
-#section-testimony > div p:first-of-type {
+#section-about > div p:first-of-type {
   font-weight: 600;
 }
 
-#section-testimony > div > .testimony-about,
-#section-testimony > div > div {
-  width: 50%;
+@media only screen and (min-width: 992px) {
+  #section-about > div > .about-netmatters,
+  #section-about > div > div {
+    width: 50%;
+  }
 }
-
-.testimony-rating {
+.quote-rating {
   display: flex;
   flex-wrap: wrap;
   font-size: 40px;
   color: orange;
 }
 
-.testimony-content {
+.quote-content {
   font-weight: 600;
   font-size: 1.3rem;
   font-style: italic;
 }
 
-#section-testimony .testimony-author {
+#section-about .quote-author {
   font-size: 1.1rem;
   color: #a3a8ac;
   font-weight: 600;
   padding-bottom: 25px;
 }
-#section-testimony .testimony-author a {
+#section-about .quote-author a {
   text-decoration: none;
   color: #fff;
 }
@@ -12198,6 +12206,7 @@ body.sidebar-active #site-wrapper::after {
   align-self: center;
   width: 45px;
   grid-area: avatar;
+  border-radius: 50%;
 }
 .news-footer p {
   color: #333645;

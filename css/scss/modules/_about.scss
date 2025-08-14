@@ -1,15 +1,19 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
 
-#section-testimony {
+#section-about {
     background-color: color.$brand--normal;
 }
 
-#section-testimony > div {
+#section-about > div {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 2rem;
     padding: 50px 15px;
+
+    @include mq.set-breakpoint('992') {
+        flex-direction: row;
+    }
 
     h2 {
         color: #fff;
@@ -33,25 +37,29 @@
 
 }
 
-#section-testimony > div > .testimony-about,
-#section-testimony > div > div {
-    width: 50%;
+
+@include mq.set-breakpoint('992') {
+    #section-about > div > .about-netmatters,
+    #section-about > div > div {
+        width: 50%;
+    }
 }
 
-.testimony-rating {
+
+.quote-rating {
     display: flex;
     flex-wrap: wrap;
     font-size: 40px;
     color: orange;
 }
 
-.testimony-content {
+.quote-content {
     font-weight: 600;
     font-size: 1.3rem;
     font-style: italic;
 }
 
-#section-testimony .testimony-author {
+#section-about .quote-author {
     font-size: 1.1rem;
     color: #a3a8ac;
     font-weight: 600;
@@ -86,9 +94,4 @@
 
 .link-trustpilot {
     background-color: #00b67b;
-}
-
-@include mq.set-breakpoint('992') {
-
-
 }
