@@ -1,6 +1,8 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
 
+//FIXME: Cursor doesn't not change on hover over button
+
 #hero-list {
     height: 550px;
 }

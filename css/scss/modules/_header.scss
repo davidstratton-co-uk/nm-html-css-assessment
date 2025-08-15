@@ -1,7 +1,11 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
 
-//FIXME: No Cursor on 
+//FIXME: No Cursor on full hover on nav
+//FIXME: Buttons Do not have correct hover effect
+//FIXME: Search has Incorrect Focus Styling
+//FIXME: Desktop - Search Should have border radius on top and bottom right corners only
+//FIXME: iPad Portrait - Search should have border radius on top and bottom right corners only 
 #header-top {
     padding: 20px 0;
     background-color: color.$bg--light;

@@ -11986,8 +11986,7 @@ body.sidebar-active #site-wrapper::after {
   display: inline-block;
   color: #fff;
   text-decoration: none;
-  background-color: #212330;
-  padding: 10px 25px;
+  padding: 10px 20px;
   margin: 0.5rem 8px 0.5rem 0px;
   border-radius: 5px;
   font-size: 20px;
@@ -11997,12 +11996,25 @@ body.sidebar-active #site-wrapper::after {
   align-self: baseline;
 }
 
+.link-dark {
+  background-color: #272936;
+}
+.link-dark:hover {
+  background-color: #121318;
+}
+
 .link-google {
   background-color: #4387f6;
+}
+.link-google:hover {
+  background-color: #166af4;
 }
 
 .link-trustpilot {
   background-color: #00b67b;
+}
+.link-trustpilot:hover {
+  background-color: #009b69;
 }
 
 #section-clients {

@@ -2,6 +2,10 @@
 @use '../helpers/typography';
 @use '../helpers/media-query' as mq;
 
+//FIXME:  Underline visable on mouse over of button in tooltip
+//FIXME:  Incorrect Colour of Background Buttons on Tooltips
+//TODO:   Darken Colour of background on Hover of Tooltip button  
+
 #section-clients {
     padding: 50px 0 50px 0;
 

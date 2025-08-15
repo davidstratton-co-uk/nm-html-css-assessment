@@ -1,6 +1,8 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
 
+//FIXME: No Cursor Change on Hover of News Item
+
 #news-container {
     padding: 50px 15px;
     position: relative;

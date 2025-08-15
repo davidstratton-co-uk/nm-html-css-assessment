@@ -77,8 +77,7 @@
     display: inline-block;
     color: #fff;
     text-decoration: none;
-    background-color: color.$brand--dark;
-    padding: 10px 25px;
+    padding: 10px 20px;
     margin: 0.5rem 8px 0.5rem 0px;
     border-radius: 5px;
     font-size: 20px;
@@ -88,10 +87,26 @@
     align-self: baseline;
 }
 
+.link-dark {
+    background-color: #272936;
+
+    &:hover {
+        background-color: #121318;
+    }  
+}
+
 .link-google {
     background-color: #4387f6;
+
+    &:hover {
+        background-color: #166af4;
+    }  
 }
 
 .link-trustpilot {
     background-color: #00b67b;
+
+    &:hover {
+        background-color: #009b69;
+    }  
 }
