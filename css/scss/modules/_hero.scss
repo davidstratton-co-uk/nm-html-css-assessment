@@ -1,8 +1,8 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
-
-//FIXME: Cursor doesn't not change on hover over button
-
+@use 'sass:map';
+@use 'sass:color' as sass-color;
+@use '../vars/services';
 #hero-list {
     height: 550px;
 }
@@ -10,7 +10,7 @@
 .hero-item {
     height: 100%;
     position: relative;
-    z-index: -1;
+    z-index: 0;
 
     &::before {
         content: '';
@@ -23,16 +23,6 @@
         z-index: -1;
     }
 
-}
-
-.hero-item[data-hero-num="4"] {
-    background: url("../assets/img/hero/hero-4.png");
-    background-position: top;
-    background-size: cover;
-
-    a {
-        background-color: #2ecc71;
-    }
 }
 
 .hero-content {
@@ -73,6 +63,26 @@
 
 #hero-scroll {
     display: none;
+}
+
+.hero-item[data-hero-num="4"] {
+    background: url("../assets/img/hero/hero-4.png");
+    background-position: top;
+    background-size: cover;
+}
+
+@each $service, $color in services.$list {
+
+    .news-more--#{$service} {
+        background-color: $color;
+        text-decoration: none;
+    }
+
+    .news-more--#{$service}:hover {
+        background-color: sass-color.scale($color, $lightness: -15%);
+        text-decoration: none;
+    }
+
 }
 
 @include mq.set-breakpoint('992') {

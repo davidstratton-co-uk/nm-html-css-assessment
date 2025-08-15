@@ -11498,7 +11498,7 @@ body.sidebar-active #site-wrapper::after {
 .hero-item {
   height: 100%;
   position: relative;
-  z-index: -1;
+  z-index: 0;
 }
 .hero-item::before {
   content: "";
@@ -11509,15 +11509,6 @@ body.sidebar-active #site-wrapper::after {
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
-}
-
-.hero-item[data-hero-num="4"] {
-  background: url("../assets/img/hero/hero-4.png");
-  background-position: top;
-  background-size: cover;
-}
-.hero-item[data-hero-num="4"] a {
-  background-color: #2ecc71;
 }
 
 .hero-content {
@@ -11553,6 +11544,82 @@ body.sidebar-active #site-wrapper::after {
 
 #hero-scroll {
   display: none;
+}
+
+.hero-item[data-hero-num="4"] {
+  background: url("../assets/img/hero/hero-4.png");
+  background-position: top;
+  background-size: cover;
+}
+
+.news-more--dev {
+  background-color: #67809f;
+  text-decoration: none;
+}
+
+.news-more--dev:hover {
+  background-color: rgb(86.2064516129, 108.6560483871, 136.4935483871);
+  text-decoration: none;
+}
+
+.news-more--support {
+  background-color: #4183d7;
+  text-decoration: none;
+}
+
+.news-more--support:hover {
+  background-color: rgb(41.3913043478, 109.6869565217, 196.6086956522);
+  text-decoration: none;
+}
+
+.news-more--marketing {
+  background-color: #2ecc71;
+  text-decoration: none;
+}
+
+.news-more--marketing:hover {
+  background-color: rgb(39.1, 173.4, 96.05);
+  text-decoration: none;
+}
+
+.news-more--telecoms {
+  background-color: #d64541;
+  text-decoration: none;
+}
+
+.news-more--telecoms:hover {
+  background-color: rgb(195.0584415584, 46.1980519481, 42.0915584416);
+  text-decoration: none;
+}
+
+.news-more--webdesign {
+  background-color: #926fb1;
+  text-decoration: none;
+}
+
+.news-more--webdesign:hover {
+  background-color: rgb(124.6054054054, 86.0108108108, 158.7891891892);
+  text-decoration: none;
+}
+
+.news-more--security {
+  background-color: #f62459;
+  text-decoration: none;
+}
+
+.news-more--security:hover {
+  background-color: rgb(230.2381578947, 9.4618421053, 65.1815789474);
+  text-decoration: none;
+}
+
+.news-more--course {
+  background-color: #ce4125;
+  text-decoration: none;
+}
+
+.news-more--course:hover {
+  background-color: rgb(175.1, 55.25, 31.45);
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 992px) {
