@@ -12206,6 +12206,22 @@ body.sidebar-active #site-wrapper::after {
   }
 }
 
+.news-item {
+  position: relative;
+}
+.news-item .news-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  text-decoration: none;
+}
+.news-item .news-link:hover {
+  text-decoration: none;
+}
+
 .news-footer {
   border-top: 1px solid #ccc;
   display: grid;
@@ -12240,6 +12256,11 @@ body.sidebar-active #site-wrapper::after {
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 600;
+  text-decoration: none;
+  z-index: 1;
+}
+.news-type:hover {
+  text-decoration: underline;
 }
 
 .news-readmore {
