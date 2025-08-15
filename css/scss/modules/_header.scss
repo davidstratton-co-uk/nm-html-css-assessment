@@ -1,9 +1,6 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
 
-//FIXME: No Cursor on full hover on nav
-
-//FIXME: Search Input Styling without focus styling
 #header-top {
     padding: 20px 0;
     background-color: color.$bg--light;
@@ -37,11 +34,13 @@
 
 #header-support {
     background-color: #4183d7;
+    border-color: #4183d7;
     color: color.$text--light;
     grid-area: support;
 
     &:hover {
         background-color: #2a6ec6;
+        border-color:#2665b5;
     }
 }
 
@@ -55,11 +54,13 @@
 
 #header-contact {
     background-color: #999aa2;
+    border-color: #999aa2;
     color: color.$text--light;
     grid-area: contact;
 
     &:hover{
         background-color: #84858f;
+        border-color: #797a85;
     }
 }
 
@@ -88,7 +89,8 @@
     justify-content: center;
     border-radius: 3px;
     padding: 15px;
-    margin: 5px 0;
+    margin: 0;
+    border: 0;
     height: 56px;
 
     &:hover {
@@ -161,6 +163,7 @@
             width: 250px;
             border: 1px solid rgba(0,0,0,.1);
             background: color.$bg--light;
+            border-radius: 0 3px 3px 0;
 
             &:focus {
                 border-color: #5bc0de;
@@ -208,10 +211,10 @@
         }
 
         button {
-            border-radius: 3px;
             position: relative;
             height: 55px;
             padding: 0 15px;
+            border-radius: 3px;
         }
     }
 }
@@ -226,6 +229,7 @@
         button {
             position: absolute;
             height: 100%;
+            border-radius: 0 3px 3px 0;
         }
     }
 }
