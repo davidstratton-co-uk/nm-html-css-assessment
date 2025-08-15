@@ -11112,14 +11112,7 @@ body.sidebar-active #site-wrapper::after {
   text-align: center;
   list-style: none;
 }
-#site-nav > ul > a {
-  text-decoration: none;
-}
-#site-nav > ul > a:hover {
-  text-decoration: underline;
-}
 #site-nav > ul > li {
-  padding: 15px 0;
   width: 100%;
 }
 #site-nav > ul i {
@@ -11127,6 +11120,10 @@ body.sidebar-active #site-wrapper::after {
   padding-bottom: 10px;
 }
 
+.nav-dev > a {
+  display: block;
+  padding: 15px 0;
+}
 .nav-dev:hover, .nav-dev:focus-within {
   background-color: #67809f;
 }
@@ -11178,6 +11175,10 @@ body.sidebar-active #site-wrapper::after {
   display: none;
 }
 
+.nav-support > a {
+  display: block;
+  padding: 15px 0;
+}
 .nav-support:hover, .nav-support:focus-within {
   background-color: #4183d7;
 }
@@ -11229,6 +11230,10 @@ body.sidebar-active #site-wrapper::after {
   display: none;
 }
 
+.nav-marketing > a {
+  display: block;
+  padding: 15px 0;
+}
 .nav-marketing:hover, .nav-marketing:focus-within {
   background-color: #2ecc71;
 }
@@ -11280,6 +11285,10 @@ body.sidebar-active #site-wrapper::after {
   display: none;
 }
 
+.nav-telecoms > a {
+  display: block;
+  padding: 15px 0;
+}
 .nav-telecoms:hover, .nav-telecoms:focus-within {
   background-color: #d64541;
 }
@@ -11331,6 +11340,10 @@ body.sidebar-active #site-wrapper::after {
   display: none;
 }
 
+.nav-webdesign > a {
+  display: block;
+  padding: 15px 0;
+}
 .nav-webdesign:hover, .nav-webdesign:focus-within {
   background-color: #926fb1;
 }
@@ -11382,6 +11395,10 @@ body.sidebar-active #site-wrapper::after {
   display: none;
 }
 
+.nav-security > a {
+  display: block;
+  padding: 15px 0;
+}
 .nav-security:hover, .nav-security:focus-within {
   background-color: #f62459;
 }
@@ -11433,6 +11450,10 @@ body.sidebar-active #site-wrapper::after {
   display: none;
 }
 
+.nav-course > a {
+  display: block;
+  padding: 15px 0;
+}
 .nav-course:hover, .nav-course:focus-within {
   background-color: #ce4125;
 }

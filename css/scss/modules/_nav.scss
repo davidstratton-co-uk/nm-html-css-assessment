@@ -43,16 +43,7 @@
     
     list-style: none;
 
-    > a {
-        text-decoration: none;
-        
-        &:hover {
-        text-decoration: underline;
-        }
-    }
-
     > li {
-        padding: 15px 0;
         width: 100%;
     }
 
@@ -65,11 +56,16 @@
 @each $service, $color in services.$list {
 
     .nav-#{$service} {
+
+        > a {
+            display: block;
+            padding: 15px 0;
+        }
+
         &:hover,
         &:focus-within {
 
             background-color: $color;
-
             & > a,
             & > a > i {
                 color: color.$text--light;
