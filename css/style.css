@@ -10921,11 +10921,23 @@ body.sidebar-active #site-wrapper::after {
   color: #FFF;
   grid-area: support;
 }
+#header-support:hover {
+  background-color: #2a6ec6;
+}
+
+#header-support:hover,
+#header-contact:hover,
+#header-form > button:hover {
+  cursor: pointer;
+}
 
 #header-contact {
   background-color: #999aa2;
   color: #FFF;
   grid-area: contact;
+}
+#header-contact:hover {
+  background-color: #84858f;
 }
 
 #header-support,
@@ -10955,6 +10967,9 @@ body.sidebar-active #site-wrapper::after {
   padding: 15px;
   margin: 5px 0;
   height: 56px;
+}
+#header-menu:hover {
+  cursor: pointer;
 }
 
 #menu-top,
@@ -11008,12 +11023,21 @@ body.sidebar-active #site-wrapper::after {
     border: 1px solid rgba(0, 0, 0, 0.1);
     background: #FFF;
   }
+  #header-form input:focus {
+    border-color: #5bc0de;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(91, 192, 222, 0.6);
+  }
   #header-form button {
     right: 0px;
     padding: 7px 20px 7px;
     background-color: #999aa2;
     color: #FFF;
     font-size: 23px;
+    border-radius: 0 3px 3px 0;
+  }
+  #header-form button:hover {
+    background-color: #84858f;
   }
 }
 @media only screen and (min-width: 992px) {

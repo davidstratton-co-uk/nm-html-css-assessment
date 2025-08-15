@@ -2,10 +2,8 @@
 @use '../helpers/media-query' as mq;
 
 //FIXME: No Cursor on full hover on nav
-//FIXME: Buttons Do not have correct hover effect
-//FIXME: Search has Incorrect Focus Styling
-//FIXME: Desktop - Search Should have border radius on top and bottom right corners only
-//FIXME: iPad Portrait - Search should have border radius on top and bottom right corners only 
+
+//FIXME: Search Input Styling without focus styling
 #header-top {
     padding: 20px 0;
     background-color: color.$bg--light;
@@ -41,12 +39,28 @@
     background-color: #4183d7;
     color: color.$text--light;
     grid-area: support;
+
+    &:hover {
+        background-color: #2a6ec6;
+    }
+}
+
+#header-support,
+#header-contact,
+#header-form > button {
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 #header-contact {
     background-color: #999aa2;
     color: color.$text--light;
     grid-area: contact;
+
+    &:hover{
+        background-color: #84858f;
+    }
 }
 
 #header-support, 
@@ -76,6 +90,10 @@
     padding: 15px;
     margin: 5px 0;
     height: 56px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 #menu-top,
@@ -136,7 +154,13 @@
             height: 56px;
             width: 250px;
             border: 1px solid rgba(0,0,0,.1);
-            background: color.$bg--light
+            background: color.$bg--light;
+
+            &:focus {
+                border-color: #5bc0de;
+                outline: 0;
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(91,192,222,.6);
+            }           
         }
 
         button {
@@ -145,6 +169,11 @@
             background-color: #999aa2;
             color: color.$text--light;
             font-size: 23px;
+            border-radius: 0 3px 3px 0;
+
+            &:hover {
+                background-color: #84858f;
+            }
         }
     }
 }
