@@ -11957,14 +11957,6 @@ body.sidebar-active #site-wrapper::after {
   margin: 0;
   padding: 0;
 }
-#partner-list ul a,
-#client-list ul a {
-  text-decoration: none;
-}
-#partner-list ul a:hover,
-#client-list ul a:hover {
-  text-decoration: underline;
-}
 #partner-list li,
 #client-list li {
   width: 100%;
@@ -12091,12 +12083,18 @@ body.sidebar-active #site-wrapper::after {
   max-height: 70px;
 }
 
+#client-list > ul > li {
+  position: relative;
+  display: flex;
+}
+
 .client-outer {
   display: none;
   position: absolute;
   bottom: 100%;
   left: -200px;
   right: -200px;
+  z-index: 10;
 }
 
 .client-inner {
@@ -12125,8 +12123,6 @@ body.sidebar-active #site-wrapper::after {
 }
 .client-inner a {
   color: #fff;
-  background-color: #f7b322;
-  border-color: #f7b322;
   display: flex;
   align-items: center;
   padding: 15px;
@@ -12152,14 +12148,79 @@ body.sidebar-active #site-wrapper::after {
   transform: rotate(0deg);
 }
 
-#client-list > ul > li {
-  position: relative;
-  display: flex;
-}
-
 #client-list > ul > li:hover .client-outer,
 #client-list > ul > li:focus-within .client-outer {
   display: block;
+}
+
+.client-link--dev {
+  background-color: #67809f;
+  text-decoration: none;
+}
+
+.client-link--dev:hover {
+  background-color: rgb(86.2064516129, 108.6560483871, 136.4935483871);
+  text-decoration: none;
+}
+
+.client-link--support {
+  background-color: #4183d7;
+  text-decoration: none;
+}
+
+.client-link--support:hover {
+  background-color: rgb(41.3913043478, 109.6869565217, 196.6086956522);
+  text-decoration: none;
+}
+
+.client-link--marketing {
+  background-color: #2ecc71;
+  text-decoration: none;
+}
+
+.client-link--marketing:hover {
+  background-color: rgb(39.1, 173.4, 96.05);
+  text-decoration: none;
+}
+
+.client-link--telecoms {
+  background-color: #d64541;
+  text-decoration: none;
+}
+
+.client-link--telecoms:hover {
+  background-color: rgb(195.0584415584, 46.1980519481, 42.0915584416);
+  text-decoration: none;
+}
+
+.client-link--webdesign {
+  background-color: #926fb1;
+  text-decoration: none;
+}
+
+.client-link--webdesign:hover {
+  background-color: rgb(124.6054054054, 86.0108108108, 158.7891891892);
+  text-decoration: none;
+}
+
+.client-link--security {
+  background-color: #f62459;
+  text-decoration: none;
+}
+
+.client-link--security:hover {
+  background-color: rgb(230.2381578947, 9.4618421053, 65.1815789474);
+  text-decoration: none;
+}
+
+.client-link--course {
+  background-color: #ce4125;
+  text-decoration: none;
+}
+
+.client-link--course:hover {
+  background-color: rgb(175.1, 55.25, 31.45);
+  text-decoration: none;
 }
 
 #news-container {

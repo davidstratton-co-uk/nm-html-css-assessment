@@ -1,10 +1,9 @@
 @use '../vars/color';
 @use '../helpers/typography';
 @use '../helpers/media-query' as mq;
-
-//FIXME:  Underline visable on mouse over of button in tooltip
-//FIXME:  Incorrect Colour of Background Buttons on Tooltips
-//TODO:   Darken Colour of background on Hover of Tooltip button  
+@use 'sass:map';
+@use 'sass:color' as sass-color;
+@use '../vars/services';
 
 #section-clients {
     padding: 50px 0 50px 0;
@@ -14,12 +13,18 @@
     }
 }
 
+#client-list > ul > li {
+    position: relative;
+    display: flex;
+}
+
 .client-outer {
     display: none;
     position: absolute;
     bottom: 100%;
     left: -200px;
     right: -200px;
+    z-index: 10;
 }
 
 .client-inner {
@@ -51,8 +56,6 @@
 
     a {
         color: #fff;
-        background-color: #f7b322;
-        border-color: #f7b322;
         display: flex;
         align-items: center;
         padding: 15px;
@@ -80,12 +83,20 @@
     }
 }
 
-#client-list > ul > li {
-    position: relative;
-    display: flex;
-}
-
 #client-list > ul > li:hover .client-outer,
 #client-list > ul > li:focus-within .client-outer {
     display: block;
+}
+
+@each $service, $color in services.$list {
+
+    .client-link--#{$service} {
+        background-color: $color;
+        text-decoration: none;
+    }
+
+    .client-link--#{$service}:hover {
+        background-color: sass-color.scale($color, $lightness: -15%);
+        text-decoration: none;
+    }
 }
