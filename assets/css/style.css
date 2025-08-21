@@ -8544,7 +8544,7 @@ summary {
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("../assets/fonts/fa-solid-900.woff2");
+  src: url("../fonts/fa-solid-900.woff2");
 }
 .fas {
   --fa-family: var(--fa-family-classic);
@@ -8574,7 +8574,7 @@ summary {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("../assets/fonts/fa-brands-400.woff2");
+  src: url("../fonts/fa-brands-400.woff2");
 }
 .fab,
 .fa-brands,
@@ -10816,7 +10816,6 @@ h4 {
 
 #site-header {
   grid-area: site-header;
-  position: sticky;
   top: 0;
   z-index: 10;
 }
@@ -10884,6 +10883,15 @@ body.sidebar-active #site-wrapper::after {
   left: 0;
   background: rgba(0, 0, 0, 0.4);
   z-index: 999;
+}
+
+#site-header {
+  position: relative;
+  transition: 5s ease;
+}
+
+#site-header.sticky {
+  position: sticky;
 }
 
 #header-top {

@@ -1,6 +1,15 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
 
+#site-header {
+    position: relative;
+    transition: 5s ease;
+}
+
+#site-header.sticky {
+    position: sticky;
+}
+
 #header-top {
     padding: 20px 0;
     background-color: color.$bg--light;
