@@ -10885,7 +10885,7 @@ body.sidebar-active #site-wrapper::after {
   z-index: 999;
 }
 
-#chat-icon {
+#cookies-btn-manage {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -10898,7 +10898,6 @@ body.sidebar-active #site-wrapper::after {
   display: none;
 }
 
-#site-cookies,
 #site-cookies.active {
   display: grid;
   position: fixed;
@@ -10912,27 +10911,70 @@ body.sidebar-active #site-wrapper::after {
 }
 
 #site-cookies > div {
-  margin: auto;
+  margin: 2rem;
   display: grid;
   background-color: white;
+  border-radius: 5px;
 }
 
 #site-cookies > div > h2 {
-  padding: 1rem;
+  font-weight: 400;
+  font-size: 1.6rem;
+  padding: 1.5rem;
+  color: #333645;
 }
 
 #site-cookies > div > p {
-  padding: 1rem;
+  padding: 1.5rem;
   border: #ccc solid 1px;
   line-height: 1.7;
   margin: 0;
   color: #333645;
 }
+#site-cookies > div > p a {
+  text-decoration: none;
+  line-height: 1.7;
+  margin: 0;
+  color: #333645;
+}
+#site-cookies > div > p a:hover {
+  text-decoration: underline;
+}
 
 #site-cookies > div > div {
-  padding: 1rem;
+  padding: 1.5rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#cookies-btn-settings,
+#cookies-btn-accept {
+  display: block;
+  color: #FFF;
+  padding: 0.8rem;
+  font-size: 1.125rem;
+  text-align: center;
+  border-radius: 3px;
+  border: none;
+}
+#cookies-btn-settings:hover,
+#cookies-btn-accept:hover {
+  cursor: pointer;
+}
+
+#cookies-btn-settings {
+  background-color: #999AA2;
+}
+#cookies-btn-settings:hover {
+  background-color: rgb(128.2846153846, 129.5269230769, 139.4653846154);
+}
+
+#cookies-btn-accept {
+  background-color: #926FB1;
+}
+#cookies-btn-accept:hover {
+  background-color: rgb(124.6054054054, 86.0108108108, 158.7891891892);
 }
 
 #site-header {

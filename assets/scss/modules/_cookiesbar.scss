@@ -1,7 +1,8 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
+@use 'sass:color' as sass-color;
 
-#chat-icon {
+#cookies-btn-manage {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -14,7 +15,6 @@
     display: none;
 }
 
-#site-cookies,
 #site-cookies.active {
     display: grid;
     position: fixed;
@@ -28,25 +28,73 @@
 }
 
 #site-cookies > div {
-    margin: auto;
+    margin: 2rem;
     display: grid;
     background-color: white;
+    border-radius: 5px;
 }
 
 #site-cookies > div > h2 {
-    padding: 1rem;
+    font-weight: 400;
+    font-size: 1.6rem;
+    padding: 1.5rem;
+    color: #333645;
 }
 
 #site-cookies > div > p {
-    padding: 1rem;
+    padding: 1.5rem;
     border: #ccc solid 1px;
     line-height: 1.7;
     margin: 0;
     color: #333645;
+
+    a {
+        text-decoration: none;
+        line-height: 1.7;
+        margin: 0;
+        color: #333645;   
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 #site-cookies > div > div {
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#cookies-btn-settings,
+#cookies-btn-accept {
+    display: block;
+    color: color.$text--light;
+    padding: .8rem;
+    font-size: 1.125rem;
+    text-align: center;
+    border-radius: 3px;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+#cookies-btn-settings {
+    background-color: #999AA2;
+
+    &:hover {
+        background-color: sass-color.scale(#999AA2, $lightness: -15%);
+    }
+}
+
+#cookies-btn-accept {
+    background-color: #926FB1;
+
+    &:hover {
+       
+        background-color: sass-color.scale(#926FB1, $lightness: -15%);
+    }
 }

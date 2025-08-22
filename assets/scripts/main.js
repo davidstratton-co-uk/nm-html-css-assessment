@@ -1,4 +1,48 @@
- /**
+/**
+ *  Cookies Bar Accept
+ * 
+ *  Checks if user has previously accepted
+ *  Displays Cookie Bar
+ *  Removes Cookie Bar On Accept
+ *  Stores Value on Accept
+ * 
+ */
+const siteCookies = document.querySelector("#site-cookies");
+const cookiesManage = document.querySelector("#cookies-btn-manage");
+const cookiesSettings = document.querySelector("#cookies-btn-settings");
+const cookiesAccept = document.querySelector("#cookies-btn-accept");
+
+const settingsHandler = () => {
+    // Loads Cookie Content Selection Panel
+    // Temp Clears Consent
+    localStorage.removeItem("hasGivenConsent");
+}
+
+const acceptHandler = () => {
+    localStorage.setItem("hasGivenConsent", "true");
+    toggleCookiesBar();
+};
+
+const toggleCookiesBar = () => {
+    siteCookies.classList.toggle("active");
+}
+
+const cookiesHandler = () => {
+    let hasGivenConsent = localStorage.getItem("hasGivenConsent");
+
+    if (!hasGivenConsent) {
+        toggleCookiesBar();
+    }   
+}
+
+
+
+document.addEventListener('DOMContentLoaded', cookiesHandler);
+cookiesManage.addEventListener("click", toggleCookiesBar);
+cookiesAccept.addEventListener("click", acceptHandler);
+cookiesSettings.addEventListener("click", settingsHandler);
+
+/**
   *  On Scroll Header Sticky Class Handler
   * 
   *  Sets class based on scroll direction
