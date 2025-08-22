@@ -1,4 +1,9 @@
 // ****
+// ** Forward Cookies Bar
+// ****
+@forward 'cookiesbar';
+
+// ****
 // ** Forward Header
 // ****
 @forward 'header';
@@ -52,3 +57,8 @@
 // ** Forward Footer
 // ****
 @forward 'footer';
+
+// ****
+// ** Forward Chat
+// ****
+@forward 'chat';

@@ -1,0 +1,52 @@
+@use '../vars/color';
+@use '../helpers/media-query' as mq;
+
+#chat-icon {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: color.$bg--light;
+    color: color.$text--dark;
+    z-index: 50;
+}
+
+#site-cookies {
+    display: none;
+}
+
+#site-cookies,
+#site-cookies.active {
+    display: grid;
+    position: fixed;
+    height: 100%;
+    min-height: 100dvh;
+    z-index: 100;
+    background: rgba(0,0,0,0.7);
+    grid-template-columns: min(100%, 600px);
+    justify-content: center;
+    align-items: center;
+}
+
+#site-cookies > div {
+    margin: auto;
+    display: grid;
+    background-color: white;
+}
+
+#site-cookies > div > h2 {
+    padding: 1rem;
+}
+
+#site-cookies > div > p {
+    padding: 1rem;
+    border: #ccc solid 1px;
+    line-height: 1.7;
+    margin: 0;
+    color: #333645;
+}
+
+#site-cookies > div > div {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+}

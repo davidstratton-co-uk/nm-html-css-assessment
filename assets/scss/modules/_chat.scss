@@ -1,0 +1,11 @@
+@use '../vars/color';
+@use '../helpers/media-query' as mq;
+
+#chat-icon {
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    background-color: color.$bg--normal;
+    color: color.$text--light;
+    z-index: 50;
+}
