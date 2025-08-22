@@ -1,10 +1,10 @@
 /**
  *  Cookies Bar Accept
  */
-const siteCookies = document.querySelector("#site-cookies");
-const cookiesManage = document.querySelector("#cookies-btn-manage");
-const cookiesSettings = document.querySelector("#cookies-btn-settings");
-const cookiesAccept = document.querySelector("#cookies-btn-accept");
+const siteConsent = document.querySelector("#site-consent");
+const consentManage = document.querySelector("#consent-btn-manage");
+const consentSettings = document.querySelector("#consent-btn-settings");
+const consentAccept = document.querySelector("#consent-btn-accept");
 
 const settingsHandler = () => {
     // Temp Clears Consent
@@ -13,25 +13,25 @@ const settingsHandler = () => {
 
 const acceptHandler = () => {
     localStorage.setItem("hasGivenConsent", "true");
-    toggleCookiesBar();
+    toggleConsentBar();
 };
 
-const toggleCookiesBar = () => {
-    siteCookies.classList.toggle("active");
+const toggleConsentBar = () => {
+    siteConsent.classList.toggle("active");
 }
 
-const cookiesHandler = () => {
+const consentHandler = () => {
     let hasGivenConsent = localStorage.getItem("hasGivenConsent");
 
     if (!hasGivenConsent) {
-        toggleCookiesBar();
+        toggleConsentBar();
     }   
 }
 
-document.addEventListener('DOMContentLoaded', cookiesHandler);
-cookiesManage.addEventListener("click", toggleCookiesBar);
-cookiesAccept.addEventListener("click", acceptHandler);
-cookiesSettings.addEventListener("click", settingsHandler);
+document.addEventListener('DOMContentLoaded', consentHandler);
+consentManage.addEventListener("click", toggleConsentBar);
+consentAccept.addEventListener("click", acceptHandler);
+consentSettings.addEventListener("click", settingsHandler);
 
 /**
   *  On Scroll Header Sticky Class Handler
@@ -67,3 +67,41 @@ const scrollHandler = () => {
 }
 
 window.addEventListener("scroll", scrollHandler);
+
+/**
+ *  Scrolling Hero
+ */
+//TODO: Add Auto Scroll
+//TODO: Delay Auto Scroll if button is pushed
+//TODO: Infinite Scroll - Flex Order? Do you need recalc position?
+const heroPagination = document.querySelector("#hero-pagination");
+const heroList = document.querySelector("#hero-list");
+let currentHero = 1;
+
+const toggleHero = (current, target) => {
+    let width = document.documentElement.clientWidth;
+    
+    heroPagination.children[current - 1].classList.remove("active");
+    heroPagination.children[target - 1].classList.add("active");
+    heroList.children[current - 1].classList.remove("active");
+    heroList.children[target - 1].classList.add("active");
+
+    heroList.scrollTo({
+    left: (width * (target - 1)),
+    behavior: 'smooth'
+  })
+    return newCurrent = target;
+}
+
+const buttonHandler = (e) => {
+    if (e.target.type === "LI" || "BUTTON") {
+        let targetHero = e.target.parentNode.getAttribute("data-hero-num");
+        currentHero = toggleHero(currentHero, targetHero);
+    }
+
+    // let itemNum = e.target.attr("data-hero-num");
+    // console.log(itemNum)
+}
+
+document.addEventListener('DOMContentLoaded', autoScrollHandler);
+heroPagination.addEventListener("click", buttonHandler);

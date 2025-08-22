@@ -2,7 +2,7 @@
 @use '../helpers/media-query' as mq;
 @use 'sass:color' as sass-color;
 
-#cookies-btn-manage {
+#consent-btn-manage {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -16,11 +16,11 @@
     padding: 0.3rem 0.4rem;
 }
 
-#site-cookies {
+#site-consent {
     display: none;
 }
 
-#site-cookies.active {
+#site-consent.active {
     display: grid;
     position: fixed;
     height: 100%;
@@ -32,21 +32,21 @@
     align-items: center;
 }
 
-#site-cookies > div {
+#site-consent > div {
     margin: 2rem;
     display: grid;
     background-color: white;
     border-radius: 5px;
 }
 
-#site-cookies > div > h2 {
+#site-consent > div > h2 {
     font-weight: 400;
     font-size: 1.6rem;
     padding: 1.5rem;
     color: #333645;
 }
 
-#site-cookies > div > p {
+#site-consent > div > p {
     padding: 1.5rem;
     border: #ccc solid 1px;
     line-height: 1.7;
@@ -65,15 +65,15 @@
     }
 }
 
-#site-cookies > div > div {
+#site-consent > div > div {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-#cookies-btn-settings,
-#cookies-btn-accept {
+#consent-btn-settings,
+#consent-btn-accept {
     display: block;
     color: color.$text--light;
     padding: .8rem;
@@ -87,7 +87,7 @@
     }
 }
 
-#cookies-btn-settings {
+#consent-btn-settings {
     background-color: #999AA2;
 
     &:hover {
@@ -95,7 +95,7 @@
     }
 }
 
-#cookies-btn-accept {
+#consent-btn-accept {
     background-color: #926FB1;
 
     &:hover {
