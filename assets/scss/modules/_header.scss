@@ -91,30 +91,6 @@
 
 #header-menu {
     grid-area: menu;
-    background-color: color.$brand--dark;
-    display: flex;
-    flex-direction: column;
-    row-gap: 6px;
-    justify-content: center;
-    border-radius: 3px;
-    padding: 15px;
-    margin: 0;
-    border: 0;
-    height: 56px;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-#menu-top,
-#menu-middle,
-#menu-bottom {
-    content: "";
-    background-color: color.$bg--light;
-    display: block;
-    padding: 2px 17px;
-    overflow: hidden;
 }
 
 #header-form {

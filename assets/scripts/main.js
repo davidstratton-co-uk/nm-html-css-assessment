@@ -69,6 +69,45 @@ const scrollHandler = () => {
 window.addEventListener("scroll", scrollHandler);
 
 /**
+ *  Hamburger Menu
+ */
+const menuButton = document.querySelector("#header-menu");
+const sidebar = document.querySelector("#site-sidebar");
+const chatButton = document.querySelector("#chat-icon");
+const siteCover = document.querySelector("#site-wrapper");
+
+const toggleMenuButton = () => {
+    menuButton.classList.toggle("active");
+}
+
+const toggleSidebar = () => {
+    document.body.classList.toggle("sidebar-active");
+    sidebar.classList.toggle("active");
+}
+
+const toggleChatButton = () => {
+    chatButton.classList.toggle("hidden");
+}
+
+const menuHandler = () => {
+    toggleMenuButton();
+    toggleSidebar();
+    toggleChatButton();
+}
+
+
+//TODO: Add Sidemenu Slide in
+const siteHandler = (event) => {
+    if (menuButton.classList.contains("active") && event.target !== menuButton) {
+        menuHandler();
+    }
+}
+
+siteCover.addEventListener("click", siteHandler);
+menuButton.addEventListener("click", menuHandler);
+
+
+/**
  *  Scrolling Hero
  */
 //TODO: Add Auto Scroll
@@ -117,7 +156,6 @@ const clientImages = document.querySelector("#client-list");
 
 
 const slide = (imageSet, byPixels) => {
-    console.log(`${imageSet} Auto Scroll Called`);
     let width = document.documentElement.clientWidth;
 
     imageSet.scrollBy({

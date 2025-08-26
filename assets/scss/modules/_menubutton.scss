@@ -1,0 +1,48 @@
+@use '../vars/color';
+@use '../helpers/media-query' as mq;
+@use 'sass:map';
+@use '../vars/services';
+
+#header-menu {
+    grid-area: menu;
+    background-color: color.$brand--dark;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    justify-content: center;
+    border-radius: 3px;
+    padding: 15px;
+    margin: 0;
+    border: 0;
+    height: 56px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+#menu-top,
+#menu-middle,
+#menu-bottom {
+    content: "";
+    background-color: color.$bg--light;
+    display: block;
+    padding: 2px 17px;
+    overflow: hidden;
+    transition: .5s ease;
+}
+
+
+//FIXME: Correct Animation expecting whole menu to rotate
+//       Look into animation keyframes
+#header-menu.active #menu-middle {
+    opacity: 0;
+}
+
+#header-menu.active #menu-top {
+    transform: translate(0, 10px) rotate(45deg);
+}
+
+#header-menu.active #menu-bottom {
+    transform: translate(0, -10px) rotate(-45deg);
+}
