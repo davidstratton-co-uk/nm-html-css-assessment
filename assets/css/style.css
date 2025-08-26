@@ -11787,6 +11787,39 @@ body.sidebar-active #site-wrapper::after {
   font-size: 1.2rem;
   margin: 0;
   padding: 0;
+  color: #fff;
+}
+
+.sidebar-header[data-service=dev] {
+  color: #67809f !important;
+}
+
+.sidebar-header[data-service=support] {
+  color: #4183d7 !important;
+}
+
+.sidebar-header[data-service=marketing] {
+  color: #2ecc71 !important;
+}
+
+.sidebar-header[data-service=telecoms] {
+  color: #d64541 !important;
+}
+
+.sidebar-header[data-service=webdesign] {
+  color: #926fb1 !important;
+}
+
+.sidebar-header[data-service=security] {
+  color: #f62459 !important;
+}
+
+.sidebar-header[data-service=course] {
+  color: #ce4125 !important;
+}
+
+.sidebar-header[data-service=software] {
+  color: #f7b322 !important;
 }
 
 #section-hero {
