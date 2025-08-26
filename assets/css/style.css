@@ -11728,14 +11728,15 @@ body.sidebar-active #site-wrapper::after {
   background-color: #323544;
   display: none;
   color: #fff;
-  padding: 1.5rem;
 }
 #site-sidebar ul {
   list-style: none;
-  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
+}
+#site-sidebar ul ul {
+  padding: 0;
 }
 #site-sidebar > ul {
   gap: 1.5rem;
@@ -11751,9 +11752,8 @@ body.sidebar-active #site-wrapper::after {
 #site-sidebar > ul ul li:not(:first-child) a {
   border-top: 1px solid hsla(0, 0%, 100%, 0.05);
 }
-#site-sidebar a:not(.sidebar-header) {
+#site-sidebar a:not(.sidebar-header, .sidebar-subheader) {
   background-color: rgba(0, 0, 0, 0.25);
-  padding: 0.5rem;
 }
 #site-sidebar a {
   font-size: 1rem;
@@ -11764,6 +11764,14 @@ body.sidebar-active #site-wrapper::after {
 }
 #site-sidebar a:hover {
   text-decoration: none;
+}
+
+.sidebar-top {
+  padding: 1.5rem;
+}
+.sidebar-top a {
+  padding: 0.625rem;
+  line-height: 1.4;
 }
 
 .sidebar-header {
@@ -11820,6 +11828,17 @@ body.sidebar-active #site-wrapper::after {
 
 .sidebar-header[data-service=software] {
   color: #f7b322 !important;
+}
+
+.sidebar-bottom {
+  padding: 0;
+}
+.sidebar-bottom li {
+  padding: 20px;
+}
+
+.sidebar-subheader {
+  background-color: #323544;
 }
 
 #section-hero {

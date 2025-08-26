@@ -7,14 +7,16 @@
     background-color: color.$bg--normal;
     display: none;
     color: #fff;
-    padding: 1.5rem;
-
+    
     ul {
         list-style: none;
-        padding: 0;
         margin: 0;
         display: flex;
         flex-direction: column;
+    }
+
+    ul ul {
+        padding:0;
     }
 
     > ul {
@@ -25,8 +27,6 @@
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
-
-
     }
 
     > ul ul li {
@@ -40,9 +40,8 @@
         }
     }
 
-    a:not(.sidebar-header) {
+    a:not(.sidebar-header, .sidebar-subheader) {
         background-color: rgba(0, 0, 0, .25);
-        padding: .5rem;
     }
 
     a {
@@ -55,6 +54,15 @@
         &:hover {
             text-decoration: none;
         }
+    }
+}
+
+.sidebar-top {
+    padding: 1.5rem;
+
+    a {
+        padding: .625rem;
+        line-height: 1.4;
     }
 }
 
@@ -92,4 +100,16 @@
     .sidebar-header[data-service="#{$service}"] {
             color: $color !important;
     }
+}
+
+.sidebar-bottom {
+    padding: 0;
+
+    li {
+        padding: 20px;
+    }
+}
+
+.sidebar-subheader {
+    background-color: color.$bg--normal;
 }
