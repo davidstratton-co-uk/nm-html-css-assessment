@@ -1,22 +1,26 @@
 @use '../helpers/typography';
 
-#partner-list,
-#section-clients {
-    overflow-x: clip;
-}
+// #partner-list,
+// #section-clients {
+//     overflow-x: clip;
+//     overflow-y: visible;
+// }
 
 #partner-list,
 #client-list {
-    width: 99dvw;
+    width: 100dvw;
+    display: flex;
+    column-gap: 90px;
+    flex-wrap: nowrap;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+    overflow-x: scroll;
 
-    ul {
-        display: flex;
-        column-gap: 90px;
-        flex-wrap: nowrap;
-        align-items: center;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+    &::-webkit-scrollbar {
+        display: none;
     }
 
     li {

@@ -103,5 +103,40 @@ const buttonHandler = (e) => {
     // console.log(itemNum)
 }
 
-document.addEventListener('DOMContentLoaded', autoScrollHandler);
+// document.addEventListener('DOMContentLoaded', autoScrollHandler);
 heroPagination.addEventListener("click", buttonHandler);
+
+/**
+ *  Scrolling Partner and Client Images
+ */
+//FIXME: Due to how Scroll Containers work, the tooltips are no longer
+//       displayed correctly due to overflow clipping.
+//       Research Popover API, Mousein, MouseOut, MouseOver Events.
+const partnerImages = document.querySelector("#partner-list");
+const clientImages = document.querySelector("#client-list");
+
+
+const slide = (imageSet, byPixels) => {
+    console.log(`${imageSet} Auto Scroll Called`);
+    let width = document.documentElement.clientWidth;
+
+    imageSet.scrollBy({
+        left: byPixels,
+        behavior: 'smooth'
+    })
+
+    setTimeout(() => {
+        slide(imageSet, byPixels);
+    }, 5000);
+}
+const partnerScrollHandler = () => {
+    slide(partnerImages, 100);
+}
+
+const clientScrollHandler = () => {
+    slide(clientImages, 100);
+}
+
+
+document.addEventListener('DOMContentLoaded', partnerScrollHandler);
+document.addEventListener('DOMContentLoaded', clientScrollHandler);

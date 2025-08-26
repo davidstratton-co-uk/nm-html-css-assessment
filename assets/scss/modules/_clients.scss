@@ -13,7 +13,7 @@
     }
 }
 
-#client-list > ul > li {
+#client-list > li {
     position: relative;
     display: flex;
 }
@@ -83,8 +83,8 @@
     }
 }
 
-#client-list > ul > li:hover .client-outer,
-#client-list > ul > li:focus-within .client-outer {
+#client-list > li:hover .client-outer,
+#client-list > li:focus-within .client-outer {
     display: block;
 }
 
