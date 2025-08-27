@@ -1,12 +1,12 @@
 @use '../helpers/media-query' as mq;
 // ****
-// ** Main Grid
+// ** Site Wrapper Grid
 // ****
 #site-wrapper {
-    grid-area: site-wrapper;
-    width: 100dvw;
-    max-width: 100%;
+    width: 100%;
     display: grid;
+    transition: .5s ease;
+    z-index: 10;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3,max-content);
     grid-template-areas:
@@ -49,26 +49,12 @@ main {
 }
 
 // ****
-// ** Sidebar Active
+// ** Body Grid Active
 // ****
-body.sidebar-active #site-sidebar {
-    grid-area: site-sidebar;  
-    display:grid;
-    position: fixed;
-    width: 275px;
-    top: 0;
-    right: 0;
-    overflow-y: scroll;
-    height: 100%;
-
-    @include mq.set-breakpoint('992') {
-        width: 350px;
-    }
-}
-
-body.sidebar-active {
-    overflow-x: hidden;
+body {
     display: grid;
+    overflow-x: hidden;
+
     grid-template-columns: 1fr 275px;
     grid-template-areas:
         "site-wrapper site-sidebar";
@@ -76,6 +62,12 @@ body.sidebar-active {
     @include mq.set-breakpoint('992') {
         grid-template-columns: 1fr 350px;
     }
+}
+
+#site-wrapper {
+    grid-area: 1 / 1 / -1 / -1;
+    z-index: 10;
+    background-color: #fff;
 }
 
 body.sidebar-active #site-wrapper {
@@ -86,16 +78,35 @@ body.sidebar-active #site-wrapper {
     }
 }
 
-body.sidebar-active #site-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 0;
+#site-sidebar {
+    grid-area: 1 / 2 / 1 / 2;
+    display:grid;
+    width: 275px;
+    overflow-y: scroll;
+    height: 100%;
+    position: fixed;
     right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 999;
-    cursor: pointer;
+    z-index: 9;
+
+    @include mq.set-breakpoint('992') {
+        width: 350px;
+    }
 }
+
+body.sidebar-active #site-sidebar {
+    z-index: 10;
+}
+
+// body.sidebar-active #site-wrapper::after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     background: rgba(0,0,0,0.4);
+//     z-index: 999;
+//     cursor: pointer;
+// }
 
 

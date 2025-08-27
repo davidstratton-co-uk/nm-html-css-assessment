@@ -32,9 +32,6 @@
     transition: .5s ease;
 }
 
-
-//FIXME: Correct Animation expecting whole menu to rotate
-//       Look into animation keyframes
 #header-menu.active #menu-middle {
     opacity: 0;
 }

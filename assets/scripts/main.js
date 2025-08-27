@@ -40,10 +40,9 @@ consentSettings.addEventListener("click", settingsHandler);
   *  Stops repeated changes if scrolling same as previous direction
   *  
   */
-//TODO: Add Slide in Effect?
-//TODO: Remove when Idle?
-//FIXME: Add a minimum height before effect starts
+//FIXME: Add Slide in Effect?
 const siteHeader = document.querySelector("#site-header");
+const noStickyDistance = 600;
 
 let prevScrollTop = document.documentElement.scrollTop || window.pageYOffset;
 let hasScrolledUp = false;
@@ -58,7 +57,7 @@ const scrollHandler = () => {
     }
 
     // Scroll Up
-    if (curScrollTop <= prevScrollTop && !hasScrolledUp) {
+    if (curScrollTop >= noStickyDistance && curScrollTop <= prevScrollTop && !hasScrolledUp) {
         siteHeader.classList.add("sticky");
         hasScrolledUp = true;
     }
@@ -70,6 +69,8 @@ window.addEventListener("scroll", scrollHandler);
 
 /**
  *  Hamburger Menu
+ * 
+ * 
  */
 const menuButton = document.querySelector("#header-menu");
 const sidebar = document.querySelector("#site-sidebar");
@@ -95,8 +96,7 @@ const menuHandler = () => {
     toggleChatButton();
 }
 
-
-//TODO: Add Sidemenu Slide in
+//FIXME: Add Sidemenu Slide in
 const siteHandler = (event) => {
     if (menuButton.classList.contains("active") && event.target !== menuButton) {
         menuHandler();
@@ -110,14 +110,14 @@ menuButton.addEventListener("click", menuHandler);
 /**
  *  Scrolling Hero
  */
-//TODO: Add Auto Scroll
-//TODO: Delay Auto Scroll if button is pushed
-//TODO: Infinite Scroll - Flex Order? Do you need recalc position?
+//FIXME: Infinite Scroll - Flex Order? Do you need recalc position?
 const heroPagination = document.querySelector("#hero-pagination");
 const heroList = document.querySelector("#hero-list");
+let autoHero = '';
 let currentHero = 1;
 
 const toggleHero = (current, target) => {
+
     let width = document.documentElement.clientWidth;
     
     heroPagination.children[current - 1].classList.remove("active");
@@ -126,23 +126,45 @@ const toggleHero = (current, target) => {
     heroList.children[target - 1].classList.add("active");
 
     heroList.scrollTo({
-    left: (width * (target - 1)),
-    behavior: 'smooth'
-  })
-    return newCurrent = target;
+        left: (width * (target - 1)),
+        behavior: 'smooth'
+    })
+
+    return currentHero = target;
 }
 
 const buttonHandler = (e) => {
     if (e.target.type === "LI" || "BUTTON") {
+        clearTimeout(autoHero);
         let targetHero = e.target.parentNode.getAttribute("data-hero-num");
-        currentHero = toggleHero(currentHero, targetHero);
-    }
 
-    // let itemNum = e.target.attr("data-hero-num");
-    // console.log(itemNum)
+        currentHero = toggleHero(currentHero, targetHero); 
+    }
 }
 
-// document.addEventListener('DOMContentLoaded', autoScrollHandler);
+const slideHero = (currentHero) => {
+    heroNum = heroList.children.length - 1;
+
+    let nextHero = currentHero + 1;
+
+    if (currentHero == heroNum) {
+        nextHero = 1;
+    }
+
+    currentHero = toggleHero(currentHero, nextHero);
+
+    autoHero = setTimeout(() => {
+        slideHero(currentHero);
+    }, 5000);
+}
+
+const heroHandler = () => {
+    autoHero = setTimeout(() => {
+        slideHero(currentHero);
+    }, 5000);
+}
+
+document.addEventListener('DOMContentLoaded', heroHandler);
 heroPagination.addEventListener("click", buttonHandler);
 
 /**
@@ -167,6 +189,7 @@ const slide = (imageSet, byPixels) => {
         slide(imageSet, byPixels);
     }, 5000);
 }
+
 const partnerScrollHandler = () => {
     slide(partnerImages, 100);
 }

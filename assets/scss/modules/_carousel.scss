@@ -8,7 +8,8 @@
 
 #partner-list,
 #client-list {
-    width: 100dvw;
+    width: 100%;
+    max-width: 99dvw;
     display: flex;
     column-gap: 90px;
     flex-wrap: nowrap;

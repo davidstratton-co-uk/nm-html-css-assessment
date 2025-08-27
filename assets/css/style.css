@@ -10806,10 +10806,10 @@ h4 {
 }
 
 #site-wrapper {
-  grid-area: site-wrapper;
-  width: 100dvw;
-  max-width: 100%;
+  width: 100%;
   display: grid;
+  transition: 0.5s ease;
+  z-index: 10;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, max-content);
   grid-template-areas: "site-header" "site-main" "site-footer";
@@ -10854,32 +10854,22 @@ main {
   }
 }
 
-body.sidebar-active #site-sidebar {
-  grid-area: site-sidebar;
+body {
   display: grid;
-  position: fixed;
-  width: 275px;
-  top: 0;
-  right: 0;
-  overflow-y: scroll;
-  height: 100%;
-}
-@media only screen and (min-width: 992px) {
-  body.sidebar-active #site-sidebar {
-    width: 350px;
-  }
-}
-
-body.sidebar-active {
   overflow-x: hidden;
-  display: grid;
   grid-template-columns: 1fr 275px;
   grid-template-areas: "site-wrapper site-sidebar";
 }
 @media only screen and (min-width: 992px) {
-  body.sidebar-active {
+  body {
     grid-template-columns: 1fr 350px;
   }
+}
+
+#site-wrapper {
+  grid-area: 1/1/-1/-1;
+  z-index: 10;
+  background-color: #fff;
 }
 
 body.sidebar-active #site-wrapper {
@@ -10891,16 +10881,24 @@ body.sidebar-active #site-wrapper {
   }
 }
 
-body.sidebar-active #site-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
+#site-sidebar {
+  grid-area: 1/2/1/2;
+  display: grid;
+  width: 275px;
+  overflow-y: scroll;
+  height: 100%;
+  position: fixed;
   right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 999;
-  cursor: pointer;
+  z-index: 9;
+}
+@media only screen and (min-width: 992px) {
+  #site-sidebar {
+    width: 350px;
+  }
+}
+
+body.sidebar-active #site-sidebar {
+  z-index: 10;
 }
 
 #consent-btn-manage {
@@ -11741,7 +11739,6 @@ body.sidebar-active #site-wrapper::after {
 
 #site-sidebar {
   background-color: #323544;
-  display: none;
   color: #fff;
 }
 #site-sidebar ul {
@@ -11891,7 +11888,8 @@ body.sidebar-active #site-wrapper::after {
 }
 
 #hero-list {
-  width: 100dvw;
+  width: 100%;
+  max-width: 100dvw;
   height: 600px;
   display: flex;
   flex-direction: row;
@@ -11944,7 +11942,6 @@ body.sidebar-active #site-wrapper::after {
 .hero-item {
   height: 100%;
   width: 100%;
-  min-width: 100dvw;
   position: relative;
   z-index: 0;
   scroll-snap-align: center;
@@ -11962,6 +11959,7 @@ body.sidebar-active #site-wrapper::after {
 
 .hero-content {
   height: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12447,7 +12445,8 @@ body.sidebar-active #site-wrapper::after {
 }
 #partner-list,
 #client-list {
-  width: 100dvw;
+  width: 100%;
+  max-width: 99dvw;
   display: flex;
   -moz-column-gap: 90px;
        column-gap: 90px;
