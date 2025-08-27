@@ -55,23 +55,35 @@ body.sidebar-active #site-sidebar {
     grid-area: site-sidebar;  
     display:grid;
     position: fixed;
-    width: 350px;
+    width: 275px;
     top: 0;
     right: 0;
     overflow-y: scroll;
     height: 100%;
+
+    @include mq.set-breakpoint('992') {
+        width: 350px;
+    }
 }
 
 body.sidebar-active {
     overflow-x: hidden;
     display: grid;
-    grid-template-columns: 1fr 350px;
+    grid-template-columns: 1fr 275px;
     grid-template-areas:
         "site-wrapper site-sidebar";
+
+    @include mq.set-breakpoint('992') {
+        grid-template-columns: 1fr 350px;
+    }
 }
 
 body.sidebar-active #site-wrapper {
-    translate: -350px;
+    translate: -275px;
+
+    @include mq.set-breakpoint('992') {
+        translate: -350px;
+    }
 }
 
 body.sidebar-active #site-wrapper::after {
@@ -85,3 +97,5 @@ body.sidebar-active #site-wrapper::after {
     z-index: 999;
     cursor: pointer;
 }
+
+
