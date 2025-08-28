@@ -40,7 +40,6 @@ consentSettings.addEventListener("click", settingsHandler);
   *  Stops repeated changes if scrolling same as previous direction
   *  
   */
-//FIXME: Add Slide in Effect?
 const siteHeader = document.querySelector("#site-header");
 const noStickyDistance = 600;
 
@@ -116,7 +115,6 @@ siteCover.addEventListener("click", siteHandler);
 /**
  *  Scrolling Hero
  */
-//FIXME: Infinite Scroll - Flex Order? Do you need recalc position?
 const heroPagination = document.querySelector("#hero-pagination");
 const heroList = document.querySelector("#hero-list");
 let autoHero = '';
@@ -177,12 +175,8 @@ heroPagination.addEventListener("click", buttonHandler);
 /**
  *  Scrolling Partner and Client Images
  */
-//FIXME: Due to how Scroll Containers work, the tooltips are no longer
-//       displayed correctly due to overflow clipping.
-//       Research Popover API, Mousein, MouseOut, MouseOver Events.
 const partnerImages = document.querySelector("#partner-list");
 const clientImages = document.querySelector("#client-list");
-
 
 const slide = (imageSet, byPixels) => {
     let width = document.documentElement.clientWidth;

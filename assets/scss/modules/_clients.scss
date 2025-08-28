@@ -18,18 +18,21 @@
     display: flex;
 }
 
-.client-outer {
-    display: none;
-    position: absolute;
-    bottom: 100%;
-    left: -200px;
-    right: -200px;
-    z-index: 10;
+[popover="hint"] {
+  inset: unset;
+  position: absolute;
+  bottom: anchor(top);
+  justify-self: anchor-center;
+  margin: 0;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  overflow: hidden;
 }
 
 .client-inner {
     background-color: #333645;
-    margin: 0 auto 50px;
+    margin: 0 auto 45px;
     flex-direction: column;
     max-width: 280px;
     padding: 20px;
@@ -81,11 +84,6 @@
         border-color: #333645 transparent transparent transparent;
         transform: rotate(0deg);
     }
-}
-
-#client-list > li:hover .client-outer,
-#client-list > li:focus-within .client-outer {
-    display: block;
 }
 
 @each $service, $color in services.$list {

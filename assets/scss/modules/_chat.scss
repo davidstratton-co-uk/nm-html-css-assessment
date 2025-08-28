@@ -1,6 +1,5 @@
 @use '../vars/color';
 @use '../helpers/media-query' as mq;
-//FIXME: Is it possible to make the darkbackground switch when a darkbackground is behind it?
 #chat-icon {
     position: fixed;
     bottom: 1.5rem;
