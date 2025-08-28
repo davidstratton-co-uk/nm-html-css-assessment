@@ -2,7 +2,6 @@
 @use '../helpers/media-query' as mq;
 @use 'sass:map';
 @use '../vars/services';
-//TODO: add slide transition for sidemenu open and close.
 
 #site-sidebar {
     background-color: color.$bg--normal;

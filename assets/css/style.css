@@ -10829,26 +10829,22 @@ main {
   grid-area: site-footer;
 }
 
-.hero-content,
 .container {
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
 }
 @media only screen and (min-width: 768px) {
-  .hero-content,
   .container {
     width: 750px;
   }
 }
 @media only screen and (min-width: 992px) {
-  .hero-content,
   .container {
     width: 970px;
   }
 }
 @media only screen and (min-width: 1260px) {
-  .hero-content,
   .container {
     width: 1200px;
   }
@@ -10899,6 +10895,18 @@ body.sidebar-active #site-wrapper {
 
 body.sidebar-active #site-sidebar {
   z-index: 10;
+}
+
+body.sidebar-active #site-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  cursor: pointer;
 }
 
 #consent-btn-manage {

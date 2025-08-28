@@ -77,6 +77,8 @@ const sidebar = document.querySelector("#site-sidebar");
 const chatButton = document.querySelector("#chat-icon");
 const siteCover = document.querySelector("#site-wrapper");
 
+let isMenuActive = false;
+
 const toggleMenuButton = () => {
     menuButton.classList.toggle("active");
 }
@@ -90,21 +92,25 @@ const toggleChatButton = () => {
     chatButton.classList.toggle("hidden");
 }
 
-const menuHandler = () => {
+const toggleMenu = () => {
     toggleMenuButton();
     toggleSidebar();
     toggleChatButton();
 }
 
-//FIXME: Add Sidemenu Slide in
 const siteHandler = (event) => {
-    if (menuButton.classList.contains("active") && event.target !== menuButton) {
-        menuHandler();
+    if (menuButton.classList.contains("active") && event.currentTarget === siteCover) {
+        console.log(`Target 1: ${event.currentTarget}`);
+        toggleMenu();
+    }
+    if (event.target === menuButton || event.target.parentNode === menuButton) {
+        console.log(`Target 2: ${event.currentTarget}`);
+        toggleMenu();
     }
 }
 
 siteCover.addEventListener("click", siteHandler);
-menuButton.addEventListener("click", menuHandler);
+
 
 
 /**
@@ -134,7 +140,8 @@ const toggleHero = (current, target) => {
 }
 
 const buttonHandler = (e) => {
-    if (e.target.type === "LI" || "BUTTON") {
+
+    if (e.target !== e.currentTarget) {
         clearTimeout(autoHero);
         let targetHero = e.target.parentNode.getAttribute("data-hero-num");
 
