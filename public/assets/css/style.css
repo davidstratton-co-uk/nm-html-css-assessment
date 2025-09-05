@@ -11921,6 +11921,7 @@ body.sidebar-active #site-wrapper::after {
 
 #hero-pagination {
   position: absolute;
+  position-anchor: --my-carousel;
   z-index: 5;
   bottom: 0;
   display: flex;
@@ -11982,6 +11983,7 @@ body.sidebar-active #site-wrapper::after {
 .hero-content h2,
 .hero-content p,
 .hero-content a {
+  text-align: center;
   margin: 1rem 0;
   color: #FFF;
 }
@@ -11993,25 +11995,13 @@ body.sidebar-active #site-wrapper::after {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
+  text-align: center;
 }
 .hero-content a {
   font-size: 1.25rem;
   padding: 5px 20px;
   line-height: 50px;
   text-transform: uppercase;
-}
-
-.hero-content > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-@media only screen and (min-width: 992px) {
-  .hero-content > div {
-    align-items: start;
-    text-align: left;
-  }
 }
 
 .hero-item {
@@ -12154,6 +12144,11 @@ body.sidebar-active #site-wrapper::after {
     background: linear-gradient(270deg, transparent 25%, #000);
   }
 }
+#hero-list {
+  anchor-name: --my-carousel;
+  scroll-behavior: smooth;
+}
+
 #services-container {
   padding: 50px 15px;
   margin: 0 auto;
