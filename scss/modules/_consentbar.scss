@@ -65,11 +65,15 @@
     }
 }
 
-#site-consent > div > div {
+.consent-buttons {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    @include mq.set-breakpoint("768") {
+        flex-direction: row;
+    }
 }
 
 #consent-btn-settings,
@@ -81,7 +85,8 @@
     text-align: center;
     border-radius: 3px;
     border: none;
-
+    flex-grow: 1;
+    
     &:hover {
         cursor: pointer;
     }

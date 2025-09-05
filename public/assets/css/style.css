@@ -10970,11 +10970,16 @@ body.sidebar-active #site-wrapper::after {
   text-decoration: underline;
 }
 
-#site-consent > div > div {
+.consent-buttons {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .consent-buttons {
+    flex-direction: row;
+  }
 }
 
 #consent-btn-settings,
@@ -10986,6 +10991,7 @@ body.sidebar-active #site-wrapper::after {
   text-align: center;
   border-radius: 3px;
   border: none;
+  flex-grow: 1;
 }
 #consent-btn-settings:hover,
 #consent-btn-accept:hover {
