@@ -97,7 +97,6 @@
     h2,
     p,
     a {
-        text-align: center;
         margin: 1rem 0;
         color: color.$text--light;
     }
@@ -111,7 +110,6 @@
         font-size: 1.25rem;
         line-height: 1.75rem;
         font-weight: 600;
-        text-align: center;
     }
 
     a {
@@ -119,6 +117,18 @@
         padding: 5px 20px;
         line-height: 50px;
         text-transform: uppercase;
+    }
+}
+
+.hero-content > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include mq.set-breakpoint("992") {
+        align-items: start;
+        text-align: left;
     }
 }
 
