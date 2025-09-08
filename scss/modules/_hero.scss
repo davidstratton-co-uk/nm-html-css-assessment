@@ -3,88 +3,57 @@
 @use 'sass:map';
 @use 'sass:color' as sass-color;
 @use '../vars/services';
-#section-hero {
-    position: relative;
+
+.embla {
+    overflow: hidden;
+    background: black;
 }
 
-#hero-list {
-    width: 100%;
-    max-width: 100dvw;
+.embla__container {
+    display: flex;
     height: 600px;
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    anchor-name: --my-carousel;
 }
 
-#hero-pagination {
-    position: absolute;
-    position-anchor: --my-carousel;
-    z-index: 5;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-bottom: 1.5rem;
-    list-style: none;
-    gap: 1rem;
-
-    li {
-        display: flex;
-        position:relative;
-    }
-
-    button {
-        border-radius: 50%;
-        height: 12px;
-        width: 12px;
-        background: hsla(0, 0%, 100%, .5);
-        border: none;
-    }
-
-    li.active button {
-
-        &:after {
-            content: "";
-            position: absolute;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-        }
-    }
-}
-
-.hero-item {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    z-index: 0;
-    scroll-snap-align: center;
+.embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    background-position: top;
+    background-size: cover;
+    display: grid;
 
     &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(0,0,0,0.5);
-        z-index: -1;
+        width: 100%;
+        height: 100%;
+        grid-area: 1 / 1;
+        content: " ";
+        z-index: 5;
+        background: rgba(0,0,0,0.5);
     }
 
+    @include mq.set-breakpoint('992') {
+    
+        &::before {
+            background: rgba(0,0,0,0.5) linear-gradient(270deg, transparent 25%, #000);
+        }
+    }
+
+    @include mq.set-breakpoint('1260') {
+    
+        &::before {
+            background: linear-gradient(270deg, transparent 25%, #000);
+        }
+
+    }
+}
+
+.embla__slide > img {
+    display: block;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+    grid-area: 1 / 1;
 }
 
 .hero-content {
@@ -92,13 +61,14 @@
     width: 100vw;
     display:flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    text-align: center;
+    grid-area: 1 / 1;
+    z-index: 10;
 
     h2,
     p,
     a {
-        text-align: center;
         margin: 1rem 0;
         color: color.$text--light;
     }
@@ -112,7 +82,6 @@
         font-size: 1.25rem;
         line-height: 1.75rem;
         font-weight: 600;
-        text-align: center;
     }
 
     a {
@@ -121,33 +90,21 @@
         line-height: 50px;
         text-transform: uppercase;
     }
-}
 
-.hero-item {
-    background-position: top;
-    background-size: cover;
-}
+    @include mq.set-breakpoint('992') {
+    
+        text-align: left;
 
-.hero-item[data-hero-num="1"] {
-    background-image: url("../img/hero/hero-1.png");
-}
-.hero-item[data-hero-num="2"] {
-    background-image: url("../img/hero/hero-2.jpg");
-}
-.hero-item[data-hero-num="3"] {
-    background-image: url("../img/hero/hero-3.png");
-}
-.hero-item[data-hero-num="4"] {
-    background-image: url("../img/hero/hero-4.png");
-}
-.hero-item[data-hero-num="5"] {
-    background-image: url("../img/hero/hero-5.png");
-}
-.hero-item[data-hero-num="6"] {
-    background-image: url("../img/hero/hero-6.jpg");
-}
-.hero-item[data-hero-num="7"] {
-    background-image: url("../img/hero/hero-7.png");
+        h2 {
+            font-size: 64px;
+            line-height: 80px;
+        }
+
+        p {
+            font-size: 26px;
+            line-height: 48px;
+        }
+    }
 }
 
 @each $service, $color in services.$list {
@@ -164,39 +121,46 @@
 
 }
 
-@include mq.set-breakpoint('992') {
-    
-    .hero-item::before {
-        background: rgba(0,0,0,0.5) linear-gradient(270deg, transparent 25%, #000);
-    }
 
-    .hero-content {
-        align-items: flex-start;
 
-        h2,
-        p,
-        a {
-        text-align: left;
-        }
-
-        h2 {
-            font-size: 64px;
-            line-height: 80px;
-        }
-
-        p {
-            font-size: 26px;
-            line-height: 48px;
-            text-align: left;
-        }
-    }
-    
+.embla__controls {
+    position: absolute;
+    position-anchor: --my-carousel;
+    top: calc(anchor(bottom) - 70px);
+    justify-self: anchor-center;
 }
 
-@include mq.set-breakpoint('1260') {
-    
-    .hero-item::before {
-        background: linear-gradient(270deg, transparent 25%, #000);
-    }
-
+.embla__dots {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
+
+.embla__dot {
+    // -webkit-tap-highlight-color: rgba(49, 49, 49, 0.5);
+    // -webkit-appearance: none;
+    // appearance: none;
+    // touch-action: manipulation;
+    // display: inline-flex;
+    // text-decoration: none;
+    // cursor: pointer;
+    // border: 0;
+    // padding: 0;
+    // margin: 0;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    background: hsla(0, 0%, 100%, .5);
+    border: none;
+}
+
+.embla__dot--selected {
+    background-color: white;
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+

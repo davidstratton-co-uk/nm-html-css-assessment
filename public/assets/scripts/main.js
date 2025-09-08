@@ -1,37 +1,38 @@
-/**
- *  Cookies Bar Accept
- */
-const siteConsent = document.querySelector("#site-consent");
-const consentManage = document.querySelector("#consent-btn-manage");
-const consentSettings = document.querySelector("#consent-btn-settings");
-const consentAccept = document.querySelector("#consent-btn-accept");
+    /**
+     *  Cookies Bar Accept
+     */
+    const siteConsent = document.querySelector("#site-consent");
+    const consentManage = document.querySelector("#consent-btn-manage");
+    const consentSettings = document.querySelector("#consent-btn-settings");
+    const consentAccept = document.querySelector("#consent-btn-accept");
 
-const settingsHandler = () => {
+    const settingsHandler = () => {
+
     // Temp Clears Consent
     localStorage.removeItem("hasGivenConsent");
-}
+    }
 
-const acceptHandler = () => {
+    const acceptHandler = () => {
     localStorage.setItem("hasGivenConsent", "true");
     toggleConsentBar();
-};
+    };
 
-const toggleConsentBar = () => {
+    const toggleConsentBar = () => {
     siteConsent.classList.toggle("active");
-}
+    }
 
-const consentHandler = () => {
+    const consentHandler = () => {
     let hasGivenConsent = localStorage.getItem("hasGivenConsent");
 
     if (!hasGivenConsent) {
         toggleConsentBar();
     }   
-}
+    }
 
-document.addEventListener('DOMContentLoaded', consentHandler);
-consentManage.addEventListener("click", toggleConsentBar);
-consentAccept.addEventListener("click", acceptHandler);
-consentSettings.addEventListener("click", settingsHandler);
+    document.addEventListener('DOMContentLoaded', consentHandler);
+    consentManage.addEventListener("click", toggleConsentBar);
+    consentAccept.addEventListener("click", acceptHandler);
+    consentSettings.addEventListener("click", settingsHandler);
 
 /**
   *  On Scroll Header Sticky Class Handler
@@ -99,11 +100,9 @@ const toggleMenu = () => {
 
 const siteHandler = (event) => {
     if (menuButton.classList.contains("active") && event.currentTarget === siteCover) {
-        console.log(`Target 1: ${event.currentTarget}`);
         toggleMenu();
     }
     if (event.target === menuButton || event.target.parentNode === menuButton) {
-        console.log(`Target 2: ${event.currentTarget}`);
         toggleMenu();
     }
 }
@@ -111,94 +110,79 @@ const siteHandler = (event) => {
 siteCover.addEventListener("click", siteHandler);
 
 
-
 /**
- *  Scrolling Hero
+ *  Hero Carousel
  */
-const heroPagination = document.querySelector("#hero-pagination");
-const heroList = document.querySelector("#hero-list");
-let autoHero = '';
-let currentHero = 1;
 
-const toggleHero = (current, target) => {
+const emblaNode = document.querySelector('.embla')
+const options = { loop: true }
+const plugins = [EmblaCarouselAutoplay()]
+const emblaApi = EmblaCarousel(emblaNode, options, plugins)
 
-    let width = document.documentElement.clientWidth;
+const viewportNode = document.querySelector('.embla__viewport')
+const dotsNode = document.querySelector('.embla__dots')
+
+const addDotBtnsAndClickHandlers = (
+  emblaApi,
+  dotsNode,
+  onButtonClick
+) => {
+  let dotNodes = [];
+
+  const addDotBtnsWithClickHandlers = () => {
+    dotsNode.innerHTML = emblaApi
+        .scrollSnapList()
+        .map(() => '<button class="embla__dot" type="button"></button>')
+        .join('');
+
+    const scrollTo = (index) => {
+      emblaApi.scrollTo(index)
+      if (onButtonClick) onButtonClick(emblaApi)
+    }
+
+    dotNodes = Array.from(dotsNode.querySelectorAll('.embla__dot'));
+
+    dotNodes.forEach((dotNode, index) => {
+      dotNode.addEventListener('click', () => scrollTo(index), false)
+    });
     
-    heroPagination.children[current - 1].classList.remove("active");
-    heroPagination.children[target - 1].classList.add("active");
-    heroList.children[current - 1].classList.remove("active");
-    heroList.children[target - 1].classList.add("active");
+  }
 
-    heroList.scrollTo({
-        left: (width * (target - 1)),
-        behavior: 'smooth'
-    })
+  const toggleDotBtnsActive = () => {
+    const previous = emblaApi.previousScrollSnap();
+    const selected = emblaApi.selectedScrollSnap();
+    dotNodes[previous].classList.remove('embla__dot--selected');
+    dotNodes[selected].classList.add('embla__dot--selected');
+  }
 
-    return currentHero = target;
+  emblaApi
+    .on('init', addDotBtnsWithClickHandlers)
+    .on('reInit', addDotBtnsWithClickHandlers)
+    .on('init', toggleDotBtnsActive)
+    .on('reInit', toggleDotBtnsActive)
+    .on('select', toggleDotBtnsActive);
+
+  return () => {
+    dotsNode.innerHTML = '';
+  }
 }
 
-const buttonHandler = (e) => {
+const onNavButtonClick = (emblaApi) => {
+  const autoplay = emblaApi?.plugins()?.autoplay;
+  if (!autoplay) return
 
-    if (e.target !== e.currentTarget) {
-        clearTimeout(autoHero);
-        let targetHero = e.target.parentNode.getAttribute("data-hero-num");
+  const resetOrStop =
+    autoplay.options.stopOnInteraction === false
+      ? autoplay.reset
+      : autoplay.stop;
 
-        currentHero = toggleHero(currentHero, targetHero); 
-    }
+  resetOrStop();
 }
 
-const slideHero = (currentHero) => {
-    heroNum = heroList.children.length - 1;
+const removeDotBtnsAndClickHandlers = addDotBtnsAndClickHandlers(
+  emblaApi,
+  dotsNode,
+  onNavButtonClick
+)
 
-    let nextHero = currentHero + 1;
-
-    if (currentHero == heroNum) {
-        nextHero = 1;
-    }
-
-    currentHero = toggleHero(currentHero, nextHero);
-
-    autoHero = setTimeout(() => {
-        slideHero(currentHero);
-    }, 5000);
-}
-
-const heroHandler = () => {
-    autoHero = setTimeout(() => {
-        slideHero(currentHero);
-    }, 5000);
-}
-
-document.addEventListener('DOMContentLoaded', heroHandler);
-heroPagination.addEventListener("click", buttonHandler);
-
-/**
- *  Scrolling Partner and Client Images
- */
-const partnerImages = document.querySelector("#partner-list");
-const clientImages = document.querySelector("#client-list");
-
-const slide = (imageSet, byPixels) => {
-    let width = document.documentElement.clientWidth;
-
-    imageSet.scrollBy({
-        left: byPixels,
-        behavior: 'smooth'
-    })
-
-    setTimeout(() => {
-        slide(imageSet, byPixels);
-    }, 5000);
-}
-
-const partnerScrollHandler = () => {
-    slide(partnerImages, 100);
-}
-
-const clientScrollHandler = () => {
-    slide(clientImages, 100);
-}
-
-
-document.addEventListener('DOMContentLoaded', partnerScrollHandler);
-document.addEventListener('DOMContentLoaded', clientScrollHandler);
+emblaApi.on('destroy', removeDotBtnsAndClickHandlers)
