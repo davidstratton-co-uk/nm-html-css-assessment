@@ -116,7 +116,7 @@ siteCover.addEventListener("click", siteHandler);
 
 const emblaNode = document.querySelector('.embla')
 const options = { loop: true }
-const plugins = [EmblaCarouselAutoplay()]
+const plugins = [EmblaCarouselAutoplay({stopOnInteraction: false})]
 const emblaApi = EmblaCarousel(emblaNode, options, plugins)
 
 const viewportNode = document.querySelector('.embla__viewport')
