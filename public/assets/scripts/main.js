@@ -114,13 +114,13 @@ siteCover.addEventListener("click", siteHandler);
  *  Hero Carousel
  */
 
-const emblaNode = document.querySelector('.embla')
-const options = { loop: true }
-const plugins = [EmblaCarouselAutoplay({stopOnInteraction: false})]
-const emblaApi = EmblaCarousel(emblaNode, options, plugins)
+const emblaNode = document.querySelector('#section-hero .embla');
+const options = { loop: true };
+const plugins = [EmblaCarouselAutoplay({stopOnInteraction: false})];
+const emblaApi = EmblaCarousel(emblaNode, options, plugins);
 
-const viewportNode = document.querySelector('.embla__viewport')
-const dotsNode = document.querySelector('.embla__dots')
+const viewportNode = document.querySelector('.embla__viewport');
+const dotsNode = document.querySelector('.embla__dots');
 
 const addDotBtnsAndClickHandlers = (
   emblaApi,
@@ -165,7 +165,7 @@ const addDotBtnsAndClickHandlers = (
   return () => {
     dotsNode.innerHTML = '';
   }
-}
+};
 
 const onNavButtonClick = (emblaApi) => {
   const autoplay = emblaApi?.plugins()?.autoplay;
@@ -177,12 +177,16 @@ const onNavButtonClick = (emblaApi) => {
       : autoplay.stop;
 
   resetOrStop();
-}
+};
 
 const removeDotBtnsAndClickHandlers = addDotBtnsAndClickHandlers(
   emblaApi,
   dotsNode,
   onNavButtonClick
-)
+);
 
-emblaApi.on('destroy', removeDotBtnsAndClickHandlers)
+emblaApi.on('destroy', removeDotBtnsAndClickHandlers);
+
+
+const emblaNode2 = document.querySelector('#section-partners .embla');
+const emblaApi2 = EmblaCarousel(emblaNode2, options, plugins);

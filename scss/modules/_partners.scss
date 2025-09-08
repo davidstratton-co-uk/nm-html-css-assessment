@@ -1,3 +1,30 @@
 #section-partners {
     padding: 50px 0 50px 0;
+    display: grid;
+}
+
+#section-partners .embla {
+    overflow: hidden;
+}
+
+#section-partners .embla__container {
+    display: flex;
+    flex-direction: row;
+    anchor-name: --partners-carousel;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 70px;
+}
+
+#section-partners .embla__slide {
+    height: 70px;
+}
+
+#section-partners img {
+    filter: grayscale(1);
+}
+
+#section-partners img:hover {
+    filter: grayscale(0);
 }

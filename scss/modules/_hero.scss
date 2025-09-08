@@ -4,18 +4,18 @@
 @use 'sass:color' as sass-color;
 @use '../vars/services';
 
-.embla {
+
+#section-hero .embla {
     overflow: hidden;
-    background: black;
 }
 
-.embla__container {
+#section-hero .embla__container {
     display: flex;
     height: 550px;
     anchor-name: --my-carousel;
 }
 
-.embla__slide {
+#section-hero .embla__slide {
     flex: 0 0 100%;
     min-width: 0;
     background-position: top;
@@ -47,7 +47,7 @@
     }
 }
 
-.embla__slide > img {
+#section-hero .embla__slide > img {
     object-fit: cover;
     object-position: top;
     width: 100%;
@@ -55,7 +55,7 @@
     grid-area: 1 / 1;
 }
 
-.hero-content {
+#section-hero .hero-content {
     height: 100%;
     width: 100vw;
     display:flex;
@@ -125,20 +125,20 @@
 
 
 
-.embla__controls {
+#section-hero .embla__controls {
     position: absolute;
     position-anchor: --my-carousel;
     top: calc(anchor(bottom) - 70px);
     justify-self: anchor-center;
 }
 
-.embla__dots {
+#section-hero .embla__dots {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
-.embla__dot {
+#section-hero .embla__dot {
     // -webkit-tap-highlight-color: rgba(49, 49, 49, 0.5);
     // -webkit-appearance: none;
     // appearance: none;
@@ -160,7 +160,7 @@
     border: none;
 }
 
-.embla__dot--selected {
+#section-hero .embla__dot--selected {
     background-color: white;
     outline: 2px solid white;
     outline-offset: 4px;
