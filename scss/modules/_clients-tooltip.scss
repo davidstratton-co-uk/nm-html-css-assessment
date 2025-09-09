@@ -1,0 +1,94 @@
+@use '../vars/color';
+@use '../helpers/typography';
+@use '../helpers/media-query' as mq;
+@use 'sass:map';
+@use 'sass:color' as sass-color;
+@use '../vars/services';
+
+#section-clients .client-outer {
+  inset: unset;
+  position: absolute;
+  bottom: 70px;
+  margin: 0;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  display: none;
+  width: 280px;
+}
+
+#section-clients .embla__slide:hover .client-outer,
+#section-clients .embla__slide:focus .client-outer,
+#section-clients .embla__slide:focus-within .client-outer {
+    display: block;
+}
+
+#section-clients .client-inner {
+    background-color: #333645;
+    margin: 0 auto 45px;
+    flex-direction: column;
+    max-width: 280px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+
+    h3 {
+        position: relative;
+        font-size: 1.125rem;
+        color: #fff;
+        padding-bottom: 17px;
+        
+        margin: 0;
+    }
+
+    p {
+        color: #fff;
+        font-size: .8125rem;
+        line-height: 1.375rem;
+        margin: 0;
+        text-align: center;
+    }
+
+    a {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        margin-top: 10px;
+        text-transform: uppercase;
+        border-radius: 3px;
+        gap: 5px;
+    }
+}
+
+#section-clients .client-arrow {
+    color: white;
+    position: absolute;
+    height: 0;
+    bottom: -40px;
+
+    &::after {
+        content: "";
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 40px 35px 0 35px;
+        border-color: #333645 transparent transparent transparent;
+        transform: rotate(0deg);
+    }
+}
+
+@each $service, $color in services.$list {
+
+    .client-link--#{$service} {
+        background-color: $color;
+        text-decoration: none;
+    }
+
+    .client-link--#{$service}:hover {
+        background-color: sass-color.scale($color, $lightness: -15%);
+        text-decoration: none;
+    }
+}

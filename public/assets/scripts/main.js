@@ -188,5 +188,34 @@ const removeDotBtnsAndClickHandlers = addDotBtnsAndClickHandlers(
 emblaApi.on('destroy', removeDotBtnsAndClickHandlers);
 
 
-const emblaNode2 = document.querySelector('#section-partners .embla');
-const emblaApi2 = EmblaCarousel(emblaNode2, options, plugins);
+/**
+ *  Partner Carousel
+ */
+
+const partnerEmblaNode = document.querySelector('#section-partners .embla');
+const partnerOptions = { loop: true, watchDrag: false };
+const partnerPlugins = [EmblaCarouselAutoplay({stopOnInteraction: false})];
+const partnerEmblaApi = EmblaCarousel(partnerEmblaNode, partnerOptions, partnerPlugins);
+
+// /**
+//  *  Client Carousel
+//  */
+
+const clientEmblaNode = document.querySelector('#section-clients .embla');
+const clientOptions = { loop: true, watchDrag: false };
+const clientPlugins = [EmblaCarouselAutoplay()];
+const clientEmblaApi = EmblaCarousel(clientEmblaNode, clientOptions, clientPlugins);
+const autoplay = clientEmblaApi?.plugins()?.autoplay;
+
+const clientMouseoverHandler = (event) => {
+  if (event.target.tagName === "IMG"){
+    autoplay.stop();
+  }
+}
+
+const clientMouseoutHandler = (event) => {
+    autoplay.play();
+}
+
+clientEmblaNode.addEventListener("mouseover", clientMouseoverHandler);
+clientEmblaNode.addEventListener("mouseout", clientMouseoutHandler);

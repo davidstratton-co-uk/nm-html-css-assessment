@@ -44,19 +44,24 @@
 @forward 'partners';
 
 // ****
-// ** Forward Testimony
+// ** Forward About
 // ****
 @forward 'about';
-
-// ****
-// ** Forward Partners
-// ****
-@forward 'clients';
 
 // ****
 // ** Forward News
 // ****
 @forward 'news';
+
+// ****
+// ** Forward Clients
+// ****
+@forward 'clients';
+
+// ****
+// ** Forward Clients tooltip
+// ****
+@forward 'clients-tooltip';
 
 // ****
 // ** Forward Footer

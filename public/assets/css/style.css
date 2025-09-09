@@ -10793,8 +10793,6 @@ body {
   letter-spacing: 0.4px;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 h1,
@@ -10806,27 +10804,16 @@ h4 {
 }
 
 #site-wrapper {
-  width: 100%;
-  display: grid;
   transition: 0.5s ease;
+  position: relative;
   z-index: 10;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, max-content);
-  grid-template-areas: "site-header" "site-main" "site-footer";
+  background-color: #fff;
+  overflow: clip;
 }
 
 #site-header {
-  grid-area: site-header;
   top: 0;
   z-index: 10;
-}
-
-main {
-  grid-area: site-main;
-}
-
-#site-footer {
-  grid-area: site-footer;
 }
 
 .container {
@@ -10850,27 +10837,6 @@ main {
   }
 }
 
-.site-section {
-  display: grid;
-}
-
-body {
-  display: grid;
-  grid-template-columns: 1fr 275px;
-  grid-template-areas: "site-wrapper site-sidebar";
-}
-@media only screen and (min-width: 992px) {
-  body {
-    grid-template-columns: 1fr 350px;
-  }
-}
-
-#site-wrapper {
-  grid-area: 1/1/-1/-1;
-  z-index: 10;
-  background-color: #fff;
-}
-
 body.sidebar-active #site-wrapper {
   translate: -275px;
 }
@@ -10881,13 +10847,14 @@ body.sidebar-active #site-wrapper {
 }
 
 #site-sidebar {
-  grid-area: 1/2/1/2;
   display: grid;
   width: 275px;
   overflow-y: scroll;
   height: 100%;
   position: fixed;
   right: 0;
+  top: 0;
+  z-index: 5;
 }
 @media only screen and (min-width: 992px) {
   #site-sidebar {
@@ -11876,6 +11843,9 @@ body.sidebar-active #site-wrapper::after {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   font-size: 1rem;
 }
+.sidebar-bottom li:hover .sidebar-subheader {
+  background-color: hsla(0, 0%, 100%, 0.05);
+}
 
 #sidebar-services {
   display: none;
@@ -11893,10 +11863,6 @@ body.sidebar-active #site-wrapper::after {
   #sidebar-support {
     display: none;
   }
-}
-
-#section-hero .embla {
-  overflow: hidden;
 }
 
 #section-hero .embla__container {
@@ -12412,24 +12378,22 @@ body.sidebar-active #site-wrapper::after {
 }
 #section-partners {
   padding: 50px 0 50px 0;
-  display: grid;
-}
-
-#section-partners .embla {
-  overflow: hidden;
 }
 
 #section-partners .embla__container {
-  display: flex;
-  flex-direction: row;
-  anchor-name: --partners-carousel;
+  display: grid;
+  grid-auto-flow: column;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  gap: 70px;
 }
 
 #section-partners .embla__slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 35px;
   height: 70px;
 }
 
@@ -12729,6 +12693,188 @@ article[data-news-type=insights] .news-readmore {
 article[data-news-type=careers] .news-type,
 article[data-news-type=careers] .news-readmore {
   background-color: #4183d7;
+}
+
+#section-clients {
+  padding: 50px 0 50px 0;
+}
+
+#section-clients .embla__container {
+  display: grid;
+  grid-auto-flow: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#section-clients .embla__slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 35px;
+  height: 70px;
+}
+
+#section-clients img {
+  filter: grayscale(1);
+  width: auto !important;
+  max-height: 70px;
+  max-width: 200px;
+}
+
+#section-clients img:hover {
+  filter: grayscale(0);
+}
+
+#section-clients .client-outer {
+  inset: unset;
+  position: absolute;
+  bottom: 70px;
+  margin: 0;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  display: none;
+  width: 280px;
+}
+
+#section-clients .embla__slide:hover .client-outer,
+#section-clients .embla__slide:focus .client-outer,
+#section-clients .embla__slide:focus-within .client-outer {
+  display: block;
+}
+
+#section-clients .client-inner {
+  background-color: #333645;
+  margin: 0 auto 45px;
+  flex-direction: column;
+  max-width: 280px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+}
+#section-clients .client-inner h3 {
+  position: relative;
+  font-size: 1.125rem;
+  color: #fff;
+  padding-bottom: 17px;
+  margin: 0;
+}
+#section-clients .client-inner p {
+  color: #fff;
+  font-size: 0.8125rem;
+  line-height: 1.375rem;
+  margin: 0;
+  text-align: center;
+}
+#section-clients .client-inner a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  gap: 5px;
+}
+
+#section-clients .client-arrow {
+  color: white;
+  position: absolute;
+  height: 0;
+  bottom: -40px;
+}
+#section-clients .client-arrow::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 40px 35px 0 35px;
+  border-color: #333645 transparent transparent transparent;
+  transform: rotate(0deg);
+}
+
+.client-link--dev {
+  background-color: #67809f;
+  text-decoration: none;
+}
+
+.client-link--dev:hover {
+  background-color: rgb(86.2064516129, 108.6560483871, 136.4935483871);
+  text-decoration: none;
+}
+
+.client-link--support {
+  background-color: #4183d7;
+  text-decoration: none;
+}
+
+.client-link--support:hover {
+  background-color: rgb(41.3913043478, 109.6869565217, 196.6086956522);
+  text-decoration: none;
+}
+
+.client-link--marketing {
+  background-color: #2ecc71;
+  text-decoration: none;
+}
+
+.client-link--marketing:hover {
+  background-color: rgb(39.1, 173.4, 96.05);
+  text-decoration: none;
+}
+
+.client-link--telecoms {
+  background-color: #d64541;
+  text-decoration: none;
+}
+
+.client-link--telecoms:hover {
+  background-color: rgb(195.0584415584, 46.1980519481, 42.0915584416);
+  text-decoration: none;
+}
+
+.client-link--webdesign {
+  background-color: #926fb1;
+  text-decoration: none;
+}
+
+.client-link--webdesign:hover {
+  background-color: rgb(124.6054054054, 86.0108108108, 158.7891891892);
+  text-decoration: none;
+}
+
+.client-link--security {
+  background-color: #f62459;
+  text-decoration: none;
+}
+
+.client-link--security:hover {
+  background-color: rgb(230.2381578947, 9.4618421053, 65.1815789474);
+  text-decoration: none;
+}
+
+.client-link--course {
+  background-color: #ce4125;
+  text-decoration: none;
+}
+
+.client-link--course:hover {
+  background-color: rgb(175.1, 55.25, 31.45);
+  text-decoration: none;
+}
+
+.client-link--software {
+  background-color: #f7b322;
+  text-decoration: none;
+}
+
+.client-link--software:hover {
+  background-color: rgb(230.5058951965, 159.5810043668, 8.3441048035);
+  text-decoration: none;
 }
 
 #footer-main,

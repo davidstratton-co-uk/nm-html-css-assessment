@@ -4,31 +4,18 @@
 // ** Site Wrapper Grid
 // ****
 #site-wrapper {
-    width: 100%;
-    display: grid;
     transition: .5s ease;
+    position: relative;
     z-index: 10;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3,max-content);
-    grid-template-areas:
-        "site-header"
-        "site-main"
-        "site-footer";
+    background-color: #fff;
+    overflow: clip;
 }
 
 #site-header {
-    grid-area: site-header;
     top: 0;
     z-index: 10;
 }
 
-main {
-    grid-area: site-main;
-}
-
-#site-footer {
-    grid-area: site-footer;
-}
 
 .container {
     width: 100%;
@@ -48,29 +35,11 @@ main {
     }
 }
 
-.site-section {
-    display: grid;
-}
-
 // ****
 // ** Body Grid Active
 // ****
 body {
-    display: grid;
 
-    grid-template-columns: 1fr 275px;
-    grid-template-areas:
-        "site-wrapper site-sidebar";
-
-    @include mq.set-breakpoint('992') {
-        grid-template-columns: 1fr 350px;
-    }
-}
-
-#site-wrapper {
-    grid-area: 1 / 1 / -1 / -1;
-    z-index: 10;
-    background-color: #fff;
 }
 
 body.sidebar-active #site-wrapper {
@@ -82,22 +51,19 @@ body.sidebar-active #site-wrapper {
 }
 
 #site-sidebar {
-    grid-area: 1 / 2 / 1 / 2;
     display:grid;
     width: 275px;
     overflow-y: scroll;
     height: 100%;
     position: fixed;
     right: 0;
+    top: 0;
+    z-index: 5;
 
     @include mq.set-breakpoint('992') {
         width: 350px;
     }
 }
-
-// body.sidebar-active #site-sidebar {
-//     z-index: 10;
-// }
 
 body.sidebar-active #site-wrapper::after {
     content: "";
