@@ -11243,9 +11243,6 @@ body.sidebar-active #site-wrapper::after {
   padding: 45px 0;
   justify-content: center;
 }
-.nav-dev:hover .nav-dropdown-dev > div, .nav-dev:focus-within .nav-dropdown-dev > div {
-  width: 1200px;
-}
 .nav-dev:hover .nav-dropdown-dev h2, .nav-dev:focus-within .nav-dropdown-dev h2 {
   text-align: left;
 }
@@ -11297,9 +11294,6 @@ body.sidebar-active #site-wrapper::after {
   width: 100%;
   padding: 45px 0;
   justify-content: center;
-}
-.nav-support:hover .nav-dropdown-support > div, .nav-support:focus-within .nav-dropdown-support > div {
-  width: 1200px;
 }
 .nav-support:hover .nav-dropdown-support h2, .nav-support:focus-within .nav-dropdown-support h2 {
   text-align: left;
@@ -11353,9 +11347,6 @@ body.sidebar-active #site-wrapper::after {
   padding: 45px 0;
   justify-content: center;
 }
-.nav-marketing:hover .nav-dropdown-marketing > div, .nav-marketing:focus-within .nav-dropdown-marketing > div {
-  width: 1200px;
-}
 .nav-marketing:hover .nav-dropdown-marketing h2, .nav-marketing:focus-within .nav-dropdown-marketing h2 {
   text-align: left;
 }
@@ -11407,9 +11398,6 @@ body.sidebar-active #site-wrapper::after {
   width: 100%;
   padding: 45px 0;
   justify-content: center;
-}
-.nav-telecoms:hover .nav-dropdown-telecoms > div, .nav-telecoms:focus-within .nav-dropdown-telecoms > div {
-  width: 1200px;
 }
 .nav-telecoms:hover .nav-dropdown-telecoms h2, .nav-telecoms:focus-within .nav-dropdown-telecoms h2 {
   text-align: left;
@@ -11463,9 +11451,6 @@ body.sidebar-active #site-wrapper::after {
   padding: 45px 0;
   justify-content: center;
 }
-.nav-webdesign:hover .nav-dropdown-webdesign > div, .nav-webdesign:focus-within .nav-dropdown-webdesign > div {
-  width: 1200px;
-}
 .nav-webdesign:hover .nav-dropdown-webdesign h2, .nav-webdesign:focus-within .nav-dropdown-webdesign h2 {
   text-align: left;
 }
@@ -11517,9 +11502,6 @@ body.sidebar-active #site-wrapper::after {
   width: 100%;
   padding: 45px 0;
   justify-content: center;
-}
-.nav-security:hover .nav-dropdown-security > div, .nav-security:focus-within .nav-dropdown-security > div {
-  width: 1200px;
 }
 .nav-security:hover .nav-dropdown-security h2, .nav-security:focus-within .nav-dropdown-security h2 {
   text-align: left;
@@ -11573,9 +11555,6 @@ body.sidebar-active #site-wrapper::after {
   padding: 45px 0;
   justify-content: center;
 }
-.nav-course:hover .nav-dropdown-course > div, .nav-course:focus-within .nav-dropdown-course > div {
-  width: 1200px;
-}
 .nav-course:hover .nav-dropdown-course h2, .nav-course:focus-within .nav-dropdown-course h2 {
   text-align: left;
 }
@@ -11627,9 +11606,6 @@ body.sidebar-active #site-wrapper::after {
   width: 100%;
   padding: 45px 0;
   justify-content: center;
-}
-.nav-software:hover .nav-dropdown-software > div, .nav-software:focus-within .nav-dropdown-software > div {
-  width: 1200px;
 }
 .nav-software:hover .nav-dropdown-software h2, .nav-software:focus-within .nav-dropdown-software h2 {
   text-align: left;
