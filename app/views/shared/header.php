@@ -25,12 +25,16 @@
                         <a href="#"><h1><img id="header-logo" src="assets/img/nm-logo-dark.png" alt="Netmatters Logo"></h1></a>
                         <i id="header-icon" class="fa-solid fa-phone-volume"></i>
                         <div id="header-support">
-                            <i class="fa-solid fa-mouse"></i>
-                            <p>Support</p>
+                            <a href="#">
+                                <i class="fa-solid fa-mouse"></i>
+                                <span>Support</span>
+                            </a>
                         </div>
                         <div id="header-contact">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            <p>Contact</p>
+                            <a href="contactus.php">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Contact</span>
+                            </a>
                         </div>
                         <button id="header-menu" type="button" class="menu-spin">
                             <span id="menu-top"></span>
