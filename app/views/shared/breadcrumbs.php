@@ -3,8 +3,11 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><?=$page_heading?></li>
+        </ul>
     </div>
 </div>
 <div class="page-heading">
-    <h2><?=$page_heading?></h2>
+    <div class="container">
+        <h2><?=$page_heading?></h2>
+    </div>
 </div>

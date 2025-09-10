@@ -1,0 +1,59 @@
+@use '../helpers/media-query' as mq;
+
+.breadcrumbs {
+    display: none;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, .1);
+    padding: 14px 0 13px;
+    border-top: 1px solid #333645;
+    color: #333645;
+    font-size: .8125rem;
+
+    @include mq.set-breakpoint('768') {
+        display: block;
+    }
+
+    @include mq.set-breakpoint('992') {
+        border-top: none;
+    }
+
+    ul {
+        display: flex;
+        gap: 0.3rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: #333645;
+        font-weight: 700;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }    
+    }
+
+    li:not(:first-child)::before {
+        content: "/\A0";
+        padding: 0 5px;
+        color: #333645;
+    }
+}
+
+.page-heading {
+    background-color: #333645;
+    color: #ffffff;
+    padding: 24px 0;
+
+    @include mq.set-breakpoint('992') {
+        display: none;
+    }
+
+    h2 {
+        font-weight: 400;
+        font-size: 2.25rem;
+    }
+
+
+}

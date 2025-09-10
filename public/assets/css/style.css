@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -11692,6 +11693,60 @@ body.sidebar-active #site-wrapper::after {
 
 #header-menu.active #menu-bottom {
   transform: translate(0, -10px) rotate(-45deg);
+}
+
+.breadcrumbs {
+  display: none;
+  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+  padding: 14px 0 13px;
+  border-top: 1px solid #333645;
+  color: #333645;
+  font-size: 0.8125rem;
+}
+@media only screen and (min-width: 768px) {
+  .breadcrumbs {
+    display: block;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .breadcrumbs {
+    border-top: none;
+  }
+}
+.breadcrumbs ul {
+  display: flex;
+  gap: 0.3rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumbs a {
+  color: #333645;
+  font-weight: 700;
+  text-decoration: none;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+.breadcrumbs li:not(:first-child)::before {
+  content: "/ ";
+  padding: 0 5px;
+  color: #333645;
+}
+
+.page-heading {
+  background-color: #333645;
+  color: #ffffff;
+  padding: 24px 0;
+}
+@media only screen and (min-width: 992px) {
+  .page-heading {
+    display: none;
+  }
+}
+.page-heading h2 {
+  font-weight: 400;
+  font-size: 2.25rem;
 }
 
 #site-sidebar {
