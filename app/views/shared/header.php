@@ -17,7 +17,7 @@
         <title>Full Service Digital Agency | Cambridgeshire & Norfolk | Netmatters</title>
     </head>
     <body class="">
-        <?php include __DIR__ . '/onsentbar.php';?>
+        <?php include __DIR__ . '/consentbar.php';?>
         <div id="site-wrapper">
             <header id="site-header">
                 <div id="header-top">

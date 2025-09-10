@@ -196,54 +196,58 @@
             <section id="section-news">
                 <div id="news-container" class="container">
                     <header><h2>Latest News</h2></header>
-                    <div class="news-list">                
-                        <article class="news-item" data-news-type="insights">
-                            <a href="#" class="news-link"></a>
-                            <header class="news-header">
-                                <a href="#" class="news-type">Insights</a>
-                                <img src="uploads/2025/6/27/how-much-could-vKZG.png" alt="News Header Image" >
-                            </header>
-                            <h3><a href="#">How Much Could Bespoke Software Add to Your E...</a></h3>
-                            <p>If you're a Managing Director or Senior Manager preparing your business  for exit, you know that incr...</p>
-                            <a class="news-readmore">Read More</a>
-                            <footer class="news-footer">
-                                <img src="users/1/avatar_user_1.png" alt="" >
-                                <p>Posted by Netmatters</p>
-                                <p>27th June 2025</p>  
-                            </footer>
-                        </article>
+                    <div class="news-list">
+                        <?php
 
-                        <article class="news-item" data-news-type="insights">
-                            <a href="#" class="news-link"></a>
-                            <header class="news-header">
-                                <a href="#" class="news-type">Insights</a>
-                                <img src="uploads/2025/6/26/how-can-ai-L9M0.png" alt="News Header Image" >
-                            </header>
-                            <h3><a href="#">How Can AI Benefit My Business?</a></h3>
-                            <p>The idea of integrating AI into your business operations may seem daunting, but there are undeniable...</p>
-                            <a class="news-readmore">Read More</a>
-                            <footer class="news-footer">
-                                <img src="users/1/avatar_user_1.png" alt="" >
-                                <p>Posted by Netmatters</p>
-                                <p>26th June 2025</p>
-                            </footer>
-                        </article>
+                            $config = parse_ini_file('../.env');
 
-                        <article class="news-item" data-news-type="careers">
+                            $servername = $config["DBADDRESS"];
+                            $dbname = $config["DBNAME"];
+                            $username = $config["DBUSER"];
+                            $password = $config["DBPASS"];
+
+                            try {
+                            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                            } catch(PDOException $e) {
+                            echo "Connection failed: " . $e->getMessage();
+                            }
+
+
+                            $query =   "SELECT np.post_id, np.post_type_id, nt.type_name, np.post_slug, np.post_img, np.post_title, np.post_excerpt, u.user_uuid, u.user_avatar, CONCAT(u.user_first_name, ' ', u.user_last_name) as user_fullname, np.post_published_date
+                                        FROM nm_news_posts as np
+                                        INNER JOIN nm_news_types as nt ON np.post_type_id = nt.type_id
+                                        INNER JOIN nm_users as u ON np.post_author_id = u.user_id
+                                        ORDER BY np.post_published_date DESC
+                                        LIMIT 3";
+
+                            $stmt = $conn->prepare($query);
+                            $stmt->execute();
+
+                            $result = $stmt->FetchAll(PDO::FETCH_ASSOC);
+
+                            foreach($result as $row){ 
+                        ?>
+                        <article class="news-item" data-news-type="<?=$row["type_name"]?>">
                             <a href="#" class="news-link"></a>
                             <header class="news-header">
-                                <a href="#2" class="news-type">Careers</a>
-                                <img src="uploads/2025/6/20/1st-line-technician-1QNr.png" alt="News Header Image" >
+                                <a href="#" class="news-type"><?=$row["type_name"]?></a>
+                                <img src="<?=$row["post_img"]?>" alt="News Header Image">
                             </header>
-                            <h3><a href="#">1st Line Technician</a></h3>
-                            <p>Salary Range £25,000 -£29,000 + Pension Hours 40 hours per week, Monday - Friday Location Wymondham,...</p>
+                            <h3><a href="#"><?=$row["post_title"]?></a></h3>
+                            <p><?=$row["post_excerpt"]?>...</p>
                             <a class="news-readmore">Read More</a>
                             <footer class="news-footer">
-                                <img src="users/2/avatar_user_2.png" alt="" >
-                                <p>Posted by Bethany Shakespeare</p>
-                                <p>20th June 2025</p>
+                                <img src="users/<?=$row["user_uuid"]?>/<?=$row["user_avatar"]?>" alt="" >
+                                <p>Posted by <?=$row["user_fullname"]?></p>
+                                <p><?=$row["post_published_date"]?></p>  
                             </footer>
                         </article>
+                        
+                        <?php
+                            }
+                        ?>
                     </div>
                     <a href="#">View All <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
