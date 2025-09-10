@@ -14,7 +14,7 @@
             import("https://unpkg.com/@oddbird/css-anchor-positioning");
             }
         </script>
-        <title>Full Service Digital Agency | Cambridgeshire & Norfolk | Netmatters</title>
+        <title><?= $page_title?> | Netmatters</title>
     </head>
     <body class="">
         <?php include __DIR__ . '/consentbar.php';?>
@@ -24,18 +24,14 @@
                     <div class="container">
                         <a href="#"><h1><img id="header-logo" src="assets/img/nm-logo-dark.png" alt="Netmatters Logo"></h1></a>
                         <i id="header-icon" class="fa-solid fa-phone-volume"></i>
-                        <div id="header-support">
-                            <a href="#">
-                                <i class="fa-solid fa-mouse"></i>
-                                <span>Support</span>
-                            </a>
-                        </div>
-                        <div id="header-contact">
-                            <a href="contactus.php">
-                                <i class="fa-solid fa-paper-plane"></i>
-                                <span>Contact</span>
-                            </a>
-                        </div>
+                        <a id="header-support" href="#">
+                            <i class="fa-solid fa-mouse"></i>
+                            <span>Support</span>
+                        </a>
+                        <a href="contactus.php" id="header-contact">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Contact</span>
+                        </a>
                         <button id="header-menu" type="button" class="menu-spin">
                             <span id="menu-top"></span>
                             <span id="menu-middle"></span>

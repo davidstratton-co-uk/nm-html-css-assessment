@@ -1,4 +1,10 @@
-<?php include __DIR__ . '/../app/views/shared/header.php';?>
+<?php 
+
+$page_title = "Full Service Digital Agency | Cambridgeshire & Norfolk";
+
+include __DIR__ . '/../app/views/shared/header.php';
+
+?>
             <section id="section-hero" class="site-section">
                 <div class="embla">
                     <div class="embla__container">

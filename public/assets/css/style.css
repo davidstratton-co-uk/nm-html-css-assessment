@@ -10809,6 +10809,7 @@ h4 {
   z-index: 10;
   background-color: #fff;
   overflow: clip;
+  min-height: 100dvh;
 }
 
 #site-header {
@@ -11053,6 +11054,7 @@ body.sidebar-active #site-wrapper::after {
   padding: 0 1rem;
   line-height: 46px;
   font-size: 18px;
+  text-decoration: none;
 }
 #header-support p,
 #header-contact p {
