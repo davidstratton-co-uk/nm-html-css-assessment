@@ -80,18 +80,18 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
             </div>
             <div id="section-contact-us" class="site-section">
                 <div class="container">
-                    <div>
+                    <div class="contact-text">
                         <div>
                             <p>Email us on:<p>
-                            <p>sales@netmatters.com<p>
+                            <p><a href="#">sales@netmatters.com</a><p>
                             <p>Speak to Sales on:<p>
-                            <p>01603 515007<p>
+                            <p><a href="tel#">01603 515007</a><p>
                             <p>Business hours:<p>
                             <p>Monday - Friday 07:00 - 18:00<p> 
                         </div>
                         <div>
-                            <h4>Out of Hours IT Support<h4>
-                            <div>
+                            <button class="btn-ooh"><h4>Out of Hours IT Support <i class="fa fa-chevron-down"></i><h4></button>
+                            <div class="ooh-text">
                                 <p>Netmatters IT are offering an Out of Hours service for Emergency and Critical tasks.<p>
                                 <p>
                                     <strong>Monday - Friday 18:00 - 22:00</strong>

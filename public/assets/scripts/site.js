@@ -108,3 +108,13 @@ const siteHandler = (event) => {
 }
 
 siteCover.addEventListener("click", siteHandler);
+
+
+const oohButton = document.querySelector(".btn-ooh");
+const oohText = document.querySelector(".ooh-text");
+
+const toggleAcordian = (event) =>  {
+    oohText.classList.toggle("active");
+}
+
+oohButton?.addEventListener("click", toggleAcordian);

@@ -1,2 +1,46 @@
 @use '../../vars/color';
 @use '../../helpers/media-query' as mq;
+
+#section-contact-us {
+
+}
+
+.contact-text {
+    p {
+        font-weight: 600;
+        color: #333645;
+        line-height: 1.875rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: #926fb1;
+        font-weight: 600;
+        font-size: 1.625rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.btn-ooh {
+    all: unset;
+    cursor: pointer;
+}
+
+.ooh-text {
+    overflow: clip;
+    transition: 1s ease-in-out;
+    max-height: 0;
+
+    &.active {
+        max-height: 500px ;
+    }
+
+    p {
+        font-weight: 400;
+
+    }
+}
+

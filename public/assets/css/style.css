@@ -11911,6 +11911,12 @@ body.sidebar-active #site-wrapper::after {
   min-height: 580px;
   max-height: 580px;
 }
+@media only screen and (min-width: 992px) {
+  #section-hero .embla__slide[data-hero-num="1"] {
+    min-height: 550px;
+    max-height: 550px;
+  }
+}
 
 #section-hero .embla__slide {
   flex: 0 0 100%;
@@ -11948,6 +11954,11 @@ body.sidebar-active #site-wrapper::after {
   width: 100%;
   height: 100%;
   grid-area: 1/1;
+}
+@media only screen and (min-width: 992px) {
+  #section-hero .embla__slide > img {
+    max-height: 550px;
+  }
 }
 
 #section-hero .hero-content {
@@ -13172,4 +13183,36 @@ article[data-news-type=Careers] .news-readmore {
   text-decoration: none;
   background-color: #7e57a0;
   border-color: #735093;
+}
+
+.contact-text p {
+  font-weight: 600;
+  color: #333645;
+  line-height: 1.875rem;
+}
+.contact-text a {
+  text-decoration: none;
+  color: #926fb1;
+  font-weight: 600;
+  font-size: 1.625rem;
+}
+.contact-text a:hover {
+  text-decoration: underline;
+}
+
+.btn-ooh {
+  all: unset;
+  cursor: pointer;
+}
+
+.ooh-text {
+  overflow: clip;
+  transition: 1s ease-in-out;
+  max-height: 0;
+}
+.ooh-text.active {
+  max-height: 500px;
+}
+.ooh-text p {
+  font-weight: 400;
 }/*# sourceMappingURL=style.css.map */
