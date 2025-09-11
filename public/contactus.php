@@ -102,14 +102,14 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <form action="#" method="#">
+                    <div class="contact-form-container">
+                        <form class="contact-form" action="#" method="#">
                             <label for="name">
-                                <span>Your Name <span>*</span></span>
+                                <span>Your Name <span class="required-icon">*</span></span>
                                 <input id="name" name="name" type="text">
                             </label>
                             <label for="company">
-                                <span>Company Name <span>*</span></span>
+                                <span>Company Name <span class="required-icon">*</span></span>
                                 <input id="company" name="company" type="text">
                             </label>
                             <label for="email">
@@ -117,20 +117,20 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                                 <input id="email" name="email" type="text">
                             </label>
                             <label for="phone">
-                                <span>Your Telephone Number <span>*</span></span>
+                                <span>Your Telephone Number <span class="required-icon">*</span></span>
                                 <input id="phone" name="phone" type="text">
                             </label>
                             <label for="message">
-                                <span>Message <span>*</span></span>
+                                <span>Message <span class="required-icon">*</span></span>
                                 <textarea id="message" name="message"></textarea>
                             </label>
-                            <div>
+                            <label for="marketing">
                                 <input id="marketing" name="marketing" type="checkbox">
                                 <p>Please tick this box if you wish to receive marketing information from us. Please see our Privacy Policy for more information on how we keep your data safe.</p>
-                            </div>
-                            <div>
-                                <button type="submit"></button>
-                                <p><span>*</span>Fields Required</p>
+                            </label>
+                            <div class="form-footer">
+                                <small><span class="required-icon">*</span>Fields Required</small>
+                                <button type="submit">Send Enquiry</button>
                             </div>
                         </form>
                     </div>
