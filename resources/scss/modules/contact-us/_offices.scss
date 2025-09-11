@@ -3,13 +3,18 @@
 
 #section-offices {
     margin-top: 50px;
+    margin-bottom: 40px;
 }
 
 .office-list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     margin-top: 20px;
     gap: 60px;
+
+    @include mq.set-breakpoint('992') {
+        grid-template-columns: repeat(3,1fr);
+        gap: 30px;
+    }
 }
 
 .office {
@@ -30,6 +35,7 @@
     h2 {
         color: #333645;
         font-weight: 400;
+        font-size: 1.25rem;
     }
 
     a {

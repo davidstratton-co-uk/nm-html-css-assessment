@@ -94,8 +94,8 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                             <div class="ooh-text">
                                 <p>Netmatters IT are offering an Out of Hours service for Emergency and Critical tasks.<p>
                                 <p>
-                                    <strong>Monday - Friday 18:00 - 22:00</strong>
-                                    <strong>Saturday 08:00 - 16:00</strong>
+                                    <strong>Monday - Friday 18:00 - 22:00</strong><br>
+                                    <strong>Saturday 08:00 - 16:00</strong><br>
                                     <strong>Sunday 10:00 - 18:00</strong>
                                 </p>
                                 <p>To log a critical task, you will need to call our main line number and select Option 2 to leave an Out of Hours  voicemail. A technician will contact you on the number provided within 45 minutes of your call. </p>
@@ -109,11 +109,11 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                                 <input id="name" name="name" type="text">
                             </label>
                             <label for="company">
-                                <span>Company Name <span class="required-icon">*</span></span>
+                                <span>Company Name </span>
                                 <input id="company" name="company" type="text">
                             </label>
                             <label for="email">
-                                <span>Your Email </span>
+                                <span>Your Email <span class="required-icon">*</span></span>
                                 <input id="email" name="email" type="text">
                             </label>
                             <label for="phone">
@@ -126,10 +126,10 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                             </label>
                             <label for="marketing">
                                 <input id="marketing" name="marketing" type="checkbox">
-                                <p>Please tick this box if you wish to receive marketing information from us. Please see our Privacy Policy for more information on how we keep your data safe.</p>
+                                <p>Please tick this box if you wish to receive marketing information from us. Please see our <a href="#">Privacy Policy</a> for more information on how we keep your data safe.</p>
                             </label>
                             <div class="form-footer">
-                                <small><span class="required-icon">*</span>Fields Required</small>
+                                <small><span class="required-icon">*</span> Fields Required</small>
                                 <button type="submit">Send Enquiry</button>
                             </div>
                         </form>

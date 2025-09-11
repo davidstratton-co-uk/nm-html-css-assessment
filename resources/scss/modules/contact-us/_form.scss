@@ -2,10 +2,27 @@
 @use '../../helpers/media-query' as mq;
 
 #section-contact-us {
+    padding-bottom: 50px;
+}
 
+#section-contact-us .container {
+    display: grid;
+    
+    @include mq.set-breakpoint('1260') {
+        grid-template-columns: repeat(3,1fr);
+        gap: 30px;
+
+        .contact-form-container {
+            order: -1;
+            grid-column: span 2;
+        }
+    }
 }
 
 .contact-text {
+
+    grid-row: span 2;
+
     p {
         font-weight: 600;
         color: #333645;
@@ -27,11 +44,16 @@
 .btn-ooh {
     all: unset;
     cursor: pointer;
+    font-weight: 600;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .ooh-text {
     overflow: clip;
-    transition: 1s ease-in-out;
+    transition: .5s ease-in-out;
     max-height: 0;
 
     &.active {
@@ -53,6 +75,16 @@
 .contact-form {
     display: grid;
     gap: 10px;
+
+    @include mq.set-breakpoint('992') {
+        grid-template-columns: repeat(2, 1fr);
+
+        label[for="message"],
+        label[for="marketing"],
+        .form-footer {
+            grid-column: span 2;
+        }
+    }
 
     label {
         font-weight: 600;
@@ -78,6 +110,16 @@
         transition: 
             border-color .15s ease-in-out,
             box-shadow .15s ease-in-out;
+
+        &:focus {
+            border-color: #5bc0de;
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(91,192,222,.6);
+        }
+    }
+
+    .has-error {
+        border-color: #d64541;
     }
 
     input {
@@ -103,6 +145,10 @@
             margin: 0;
             padding: 0;
         }
+
+        a {
+            color: inherit;
+        }
     }
 
     label[for="marketing"] input[type="checkbox"] {
@@ -118,7 +164,8 @@
         font-size: 22px;
         text-align: center;
         line-height: 1.41;
-        
+        cursor: pointer;
+
         &::before { 
             content: "\2713";
             width: 30px;
@@ -135,11 +182,20 @@
     }
 
     .form-footer {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        justify-items: center;
         align-items: center;
         gap: 10px;
         margin-top: 40px;
+
+        @include mq.set-breakpoint('480'){
+            grid-template-columns: max-content 1fr;
+
+            small {
+                justify-self: right;
+                order: 2;
+            }
+        }
 
         button {
         color: #fff;
@@ -152,6 +208,12 @@
         font-size: 1.063rem;
         border-radius: 3px;
         width: fit-content;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #22242e;
+            border-color: #191a22;
+        }
         }
     }
 }
