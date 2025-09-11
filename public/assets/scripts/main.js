@@ -4,7 +4,7 @@
 
 const emblaNode = document.querySelector('#section-hero .embla');
 const options = { loop: true };
-const plugins = [EmblaCarouselAutoplay({stopOnInteraction: false})];
+const plugins = [EmblaCarouselAutoplay({stopOnInteraction: false}), EmblaCarouselAutoHeight()];
 const emblaApi = EmblaCarousel(emblaNode, options, plugins);
 
 const viewportNode = document.querySelector('.embla__viewport');

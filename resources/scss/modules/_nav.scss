@@ -47,6 +47,10 @@
         width: 100%;
     }
 
+    li > a {
+        text-decoration: none;
+    }
+
     i {
         font-size: 22px;
         padding-bottom: 10px;

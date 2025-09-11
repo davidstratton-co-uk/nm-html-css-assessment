@@ -105,15 +105,15 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                                 <input id="name" name="name" type="text">
                             </label>
                             <label for="company">
-                                <span>Your Name <span>*</span></span>
+                                <span>Company Name <span>*</span></span>
                                 <input id="company" name="company" type="text">
                             </label>
                             <label for="email">
-                                <span>Company Name </span>
+                                <span>Your Email </span>
                                 <input id="email" name="email" type="text">
                             </label>
                             <label for="phone">
-                                <span>Your Email <span>*</span></span>
+                                <span>Your Telephone Number <span>*</span></span>
                                 <input id="phone" name="phone" type="text">
                             </label>
                             <label for="message">
