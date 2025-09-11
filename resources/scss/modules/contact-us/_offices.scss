@@ -1,0 +1,78 @@
+@use '../../vars/color';
+@use '../../helpers/media-query' as mq;
+
+#section-offices {
+    margin-top: 50px;
+}
+
+.office-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 60px;
+}
+
+.office {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+}
+
+.office-img img {
+    width: 100%;
+}
+
+.office-content {
+    margin: 30px;
+
+    h2 {
+        color: #333645;
+        font-weight: 400;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    p {
+        font-size: .8125rem;
+        line-height: 1.375rem;
+        font-weight: 400;
+        margin-bottom: 15px;
+        color: #666;
+    }
+
+    span.tel {
+        font-weight: 700;
+        color: #926fb1;
+        font-size: 1.6rem; 
+    }
+}
+
+.view-more a {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: .9em;
+    padding: 5px 30px;
+    color: #fff;
+    background-color: #926fb1;
+    border-color: #926fb1;
+    line-height: 35px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+        background-color: #7e57a0;
+        border-color: #735093;
+    }
+}
