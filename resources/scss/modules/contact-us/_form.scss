@@ -72,6 +72,35 @@
     padding: 30px;
 }
 
+.form-msg-area {
+    grid-column: span 2;
+}
+
+%form-msg {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #ffffff;
+}
+
+.form-msg-error {
+    @extend %form-msg;
+    background-color: #D64541;
+}
+
+.form-msg-success {
+    @extend %form-msg;
+    background-color: #2ECC71;
+}
+
+.form-msg-btn {
+    all: unset;
+    
+    cursor: pointer;
+}
+
 .contact-form {
     display: grid;
     gap: 10px;

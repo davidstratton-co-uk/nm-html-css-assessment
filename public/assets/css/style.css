@@ -13255,6 +13255,32 @@ article[data-news-type=Careers] .news-readmore {
   padding: 30px;
 }
 
+.form-msg-area {
+  grid-column: span 2;
+}
+
+.form-msg-success, .form-msg-error {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #ffffff;
+}
+
+.form-msg-error {
+  background-color: #D64541;
+}
+
+.form-msg-success {
+  background-color: #2ECC71;
+}
+
+.form-msg-btn {
+  all: unset;
+  cursor: pointer;
+}
+
 .contact-form {
   display: grid;
   gap: 10px;

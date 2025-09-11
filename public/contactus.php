@@ -104,6 +104,10 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                     </div>
                     <div class="contact-form-container">
                         <form class="contact-form" action="#" method="#">
+                            <div class="form-msg-area">
+                                <div class="form-msg-error"><p>Error</p><button class="form-msg-btn"><i class="fa-solid fa-x"></i></button></div>
+                                <div class="form-msg-success"><p>Success</p><button class="form-msg-btn"><i class="fa-solid fa-x"></i></button></div>
+                            </div>
                             <label for="name">
                                 <span>Your Name <span class="required-icon">*</span></span>
                                 <input id="name" name="name" type="text">
