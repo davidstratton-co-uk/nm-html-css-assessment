@@ -1,25 +1,4 @@
 <?php
-
-if ($_SERVER['REQUEST_METHOD'] === "POST") {
-
-// Prevent caching
-header('Cache-Control: no-cache, must-revalidate');
-header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-
-// Set the content type
-header('Content-Type: application/json; charset=utf-8');
-
-// Your data
-$data = [
-    'status' => 'success',
-    'message' => 'Enquiry Sent successfully'
-];
-
-// Encode and output the data
-echo json_encode($data);
-
-} else {
-
 $page_title = "Contact Us";
 $page_heading = "Our Offices"; 
 
@@ -125,9 +104,9 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                     </div>
                     <div class="contact-form-container">
                         <form class="contact-form" action="javascript();" method="POST">
-                            <label for="name">
+                            <label for="username">
                                 <span>Your Name <span class="required-icon">*</span></span>
-                                <input id="name" name="name" type="text" value="Bob">
+                                <input id="username" name="username" type="text" value="Bob">
                             </label>
                             <label for="company">
                                 <span>Company Name </span>
@@ -139,11 +118,11 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                             </label>
                             <label for="phone">
                                 <span>Your Telephone Number <span class="required-icon">*</span></span>
-                                <input id="phone" name="phone" type="text" value="This is not right">
+                                <input id="phone" name="phone" type="text" value="07740899502">
                             </label>
-                            <label for="message">
+                            <label for="enquiry">
                                 <span>Message <span class="required-icon">*</span></span>
-                                <textarea id="message" name="message">Message!</textarea>
+                                <textarea id="enquiry" name="enquiry">Message!</textarea>
                             </label>
                             <label for="marketing">
                                 <input id="marketing" name="marketing" type="checkbox">
@@ -158,4 +137,3 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                 </div>
             </div>
 <?php include __DIR__ . '/../app/views/shared/footer.php';
-}

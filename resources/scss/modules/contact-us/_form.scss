@@ -194,7 +194,8 @@
         text-align: center;
         line-height: 1.41;
         cursor: pointer;
-
+        
+        @charset "UTF-8";
         &::before { 
             content: "\2713";
             width: 30px;

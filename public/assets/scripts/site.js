@@ -185,20 +185,23 @@ const postForm = () => {
     console.log("Called Form Sending");
 
     const params = {
-        name: contactFormInputs[0].value,
+        username: contactFormInputs[0].value,
         company: contactFormInputs[1].value,
         email: contactFormInputs[2].value,
         phone: contactFormInputs[3].value,
-        message: contactFormInputs[4].value,
+        enquiry: contactFormInputs[4].value,
         marketing: contactFormInputs[5].checked
     };
 
     const options = {
-        method: 'POST',
-        body: JSON.stringify( params )  
+        method: "POST",
+        headers: {
+             "Content-Type": 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams(params) 
     };
 
-    fetch( 'contactus.php', options )
+    fetch( 'sendform.php', options )
     .then( response => response.json() )
     .then( response => {
         displayMsg(response.status, response.message);

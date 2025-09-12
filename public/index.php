@@ -221,7 +221,6 @@ include __DIR__ . '/../app/views/shared/header.php';
                             echo "Connection failed: " . $e->getMessage();
                             }
 
-
                             $query =   "SELECT np.post_id, np.post_type_id, nt.type_name, np.post_slug, np.post_img, np.post_title, np.post_excerpt, u.user_uuid, u.user_avatar, CONCAT(u.user_first_name, ' ', u.user_last_name) as user_fullname, np.post_published_date
                                         FROM nm_news_posts as np
                                         INNER JOIN nm_news_types as nt ON np.post_type_id = nt.type_id

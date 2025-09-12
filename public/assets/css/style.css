@@ -13365,6 +13365,7 @@ article[data-news-type=Careers] .news-readmore {
   text-align: center;
   line-height: 1.41;
   cursor: pointer;
+  @charset "UTF-8";
 }
 .contact-form label[for=marketing] input[type=checkbox]::before {
   content: "✓";
