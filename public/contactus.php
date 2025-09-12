@@ -1,4 +1,25 @@
-<?php 
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+
+// Prevent caching
+header('Cache-Control: no-cache, must-revalidate');
+header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+
+// Set the content type
+header('Content-Type: application/json; charset=utf-8');
+
+// Your data
+$data = [
+    'status' => 'success',
+    'message' => 'Enquiry Sent successfully'
+];
+
+// Encode and output the data
+echo json_encode($data);
+
+} else {
+
 $page_title = "Contact Us";
 $page_heading = "Our Offices"; 
 
@@ -90,7 +111,7 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                             <p>Monday - Friday 07:00 - 18:00<p> 
                         </div>
                         <div>
-                            <button class="btn-ooh"><h4>Out of Hours IT Support <i class="fa fa-chevron-down"></i><h4></button>
+                            <button class="btn-ooh"><span>Out of Hours IT Support </span><i class="fa fa-chevron-down"></i></button>
                             <div class="ooh-text">
                                 <p>Netmatters IT are offering an Out of Hours service for Emergency and Critical tasks.<p>
                                 <p>
@@ -103,41 +124,38 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                         </div>
                     </div>
                     <div class="contact-form-container">
-                        <form class="contact-form" action="#" method="#">
-                            <div class="form-msg-area">
-                                <div class="form-msg-error"><p>Error</p><button class="form-msg-btn"><i class="fa-solid fa-x"></i></button></div>
-                                <div class="form-msg-success"><p>Success</p><button class="form-msg-btn"><i class="fa-solid fa-x"></i></button></div>
-                            </div>
+                        <form class="contact-form" action="javascript();" method="POST">
                             <label for="name">
                                 <span>Your Name <span class="required-icon">*</span></span>
-                                <input id="name" name="name" type="text">
+                                <input id="name" name="name" type="text" value="Bob">
                             </label>
                             <label for="company">
                                 <span>Company Name </span>
-                                <input id="company" name="company" type="text">
+                                <input id="company" name="company" type="text" value="Jade">
                             </label>
                             <label for="email">
                                 <span>Your Email <span class="required-icon">*</span></span>
-                                <input id="email" name="email" type="text">
+                                <input id="email" name="email" type="text" value="bob@jade.com">
                             </label>
                             <label for="phone">
                                 <span>Your Telephone Number <span class="required-icon">*</span></span>
-                                <input id="phone" name="phone" type="text">
+                                <input id="phone" name="phone" type="text" value="This is not right">
                             </label>
                             <label for="message">
                                 <span>Message <span class="required-icon">*</span></span>
-                                <textarea id="message" name="message"></textarea>
+                                <textarea id="message" name="message">Message!</textarea>
                             </label>
                             <label for="marketing">
                                 <input id="marketing" name="marketing" type="checkbox">
-                                <p>Please tick this box if you wish to receive marketing information from us. Please see our <a href="#">Privacy Policy</a> for more information on how we keep your data safe.</p>
+                                <span>Please tick this box if you wish to receive marketing information from us. Please see our <a href="#">Privacy Policy</a> for more information on how we keep your data safe.</span>
                             </label>
                             <div class="form-footer">
                                 <small><span class="required-icon">*</span> Fields Required</small>
-                                <button type="submit">Send Enquiry</button>
+                                <button class="contact-btn" type="submit">Send Enquiry</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-<?php include __DIR__ . '/../app/views/shared/footer.php';?>
+<?php include __DIR__ . '/../app/views/shared/footer.php';
+}

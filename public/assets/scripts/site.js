@@ -24,9 +24,9 @@
     const consentHandler = () => {
     let hasGivenConsent = localStorage.getItem("hasGivenConsent");
 
-    if (!hasGivenConsent) {
-        toggleConsentBar();
-    }   
+        if (!hasGivenConsent) {
+            toggleConsentBar();
+        }   
     }
 
     document.addEventListener('DOMContentLoaded', consentHandler);
@@ -109,12 +109,119 @@ const siteHandler = (event) => {
 
 siteCover.addEventListener("click", siteHandler);
 
-
+/**
+ *  Accordion Toggle
+ */
 const oohButton = document.querySelector(".btn-ooh");
 const oohText = document.querySelector(".ooh-text");
 
-const toggleAcordian = (event) =>  {
+const toggleAcordion = (event) =>  {
     oohText.classList.toggle("active");
 }
 
-oohButton?.addEventListener("click", toggleAcordian);
+oohButton?.addEventListener("click", toggleAcordion);
+
+/**
+ *  Contact Us Form Validation
+ */
+
+const contactForm = document.querySelector(".contact-form");
+const contactFormInputs = contactForm.querySelectorAll("input, textarea");
+const contactFormRequired = contactForm.querySelectorAll("input:not(#company, #marketing), textarea");
+const contactSubmitBtn = contactForm.querySelector(".contact-btn");
+
+const displayMsg = (type, msg) => {
+    let msgArea = contactForm.querySelector("form-msg-area");
+    
+    if (!msgArea) {
+        msgArea = document.createElement("div");
+        msgArea.classList.add("form-msg-area");
+        contactForm.prepend(msgArea);
+    }
+
+    msgDiv = document.createElement("div");
+    msgDiv.classList.add(`form-msg-${type}`);
+    msgDiv.innerHTML = `<p>${msg}</p><button type="button" class="form-msg-btn"><i class="fa-solid fa-x"></i></button>`;
+    
+    msgArea.prepend(msgDiv);
+
+    msgDiv.addEventListener("click", clearMsg);
+}
+
+const clearMsg = (event) => {
+    let msgDiv = event.target.closest("div");
+
+    msgDiv.removeEventListener("click", clearMsg);
+    msgDiv.remove();
+}
+
+const isFormValid = () => {
+    const validEmail = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i);
+    const emailInput = contactForm.querySelector("#email");
+    let isValid = true;
+
+    for (i=0; i < contactFormRequired.length; i++) {
+        if (!contactFormRequired[i].value.trim()) {
+            contactFormRequired[i].classList.add("has-error");
+            isValid = false;
+        } else {
+            contactFormRequired[i].classList.remove("has-error");
+        }
+    }
+
+    if (!validEmail.test(emailInput.value)) {
+        emailInput.classList.add("has-error");
+        isValid = false;
+    } else {
+        emailInput.classList.remove("has-error");
+    }
+
+    return isValid;
+}
+
+const postForm = () => {
+    contactSubmitBtn.innerHTML = "Sending Enquiry..";
+
+    console.log("Called Form Sending");
+
+    const params = {
+        name: contactFormInputs[0].value,
+        company: contactFormInputs[1].value,
+        email: contactFormInputs[2].value,
+        phone: contactFormInputs[3].value,
+        message: contactFormInputs[4].value,
+        marketing: contactFormInputs[5].checked
+    };
+
+    const options = {
+        method: 'POST',
+        body: JSON.stringify( params )  
+    };
+
+    fetch( 'contactus.php', options )
+    .then( response => response.json() )
+    .then( response => {
+        displayMsg(response.status, response.message);
+        contactForm.reset();
+        contactSubmitBtn.innerHTML = "Send Enquiry";
+    } );
+    // Display any Error Messages
+
+   
+}
+
+const contactFormHandler = (event) => {
+
+    event.preventDefault();
+
+    if (!isFormValid()) {
+        return;
+    }
+        
+    postForm();
+        
+}
+
+contactForm?.addEventListener("submit", contactFormHandler);
+
+
