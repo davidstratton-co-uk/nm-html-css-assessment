@@ -176,6 +176,8 @@ const isFormValid = () => {
         emailInput.classList.remove("has-error");
     }
 
+    // isValid = true; // Uncomment to test php
+
     return isValid;
 }
 
@@ -217,12 +219,9 @@ const contactFormHandler = (event) => {
 
     event.preventDefault();
 
-    if (!isFormValid()) {
-        return;
-    }
-        
-    postForm();
-        
+    if (isFormValid()) {
+        postForm();
+    }     
 }
 
 contactForm?.addEventListener("submit", contactFormHandler);
