@@ -108,7 +108,7 @@
     @include mq.set-breakpoint('992') {
         grid-template-columns: repeat(2, 1fr);
 
-        label[for="message"],
+        label[for="enquiry"],
         label[for="marketing"],
         .form-footer {
             grid-column: span 2;

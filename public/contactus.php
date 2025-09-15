@@ -106,23 +106,23 @@ include __DIR__ . '/../app/views/shared/breadcrumbs.php';
                         <form class="contact-form" action="javascript();" method="POST">
                             <label for="username">
                                 <span>Your Name <span class="required-icon">*</span></span>
-                                <input id="username" name="username" type="text" value="Bob">
+                                <input id="username" name="username" type="text">
                             </label>
                             <label for="company">
                                 <span>Company Name </span>
-                                <input id="company" name="company" type="text" value="Jade">
+                                <input id="company" name="company" type="text">
                             </label>
                             <label for="email">
                                 <span>Your Email <span class="required-icon">*</span></span>
-                                <input id="email" name="email" type="text" value="bob@jade.com">
+                                <input id="email" name="email" type="text">
                             </label>
                             <label for="phone">
                                 <span>Your Telephone Number <span class="required-icon">*</span></span>
-                                <input id="phone" name="phone" type="text" value="07740899502">
+                                <input id="phone" name="phone" type="text">
                             </label>
                             <label for="enquiry">
                                 <span>Message <span class="required-icon">*</span></span>
-                                <textarea id="enquiry" name="enquiry">Message!</textarea>
+                                <textarea id="enquiry" name="enquiry"></textarea>
                             </label>
                             <label for="marketing">
                                 <input id="marketing" name="marketing" type="checkbox">

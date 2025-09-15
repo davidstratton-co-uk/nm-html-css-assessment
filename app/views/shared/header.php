@@ -22,7 +22,7 @@
             <header id="site-header">
                 <div id="header-top">
                     <div class="container">
-                        <a href="#"><h1><img id="header-logo" src="assets/img/nm-logo-dark.png" alt="Netmatters Logo"></h1></a>
+                        <a href="."><h1><img id="header-logo" src="assets/img/nm-logo-dark.png" alt="Netmatters Logo"></h1></a>
                         <i id="header-icon" class="fa-solid fa-phone-volume"></i>
                         <a id="header-support" href="#">
                             <i class="fa-solid fa-mouse"></i>

@@ -126,9 +126,9 @@ oohButton?.addEventListener("click", toggleAcordion);
  */
 
 const contactForm = document.querySelector(".contact-form");
-const contactFormInputs = contactForm.querySelectorAll("input, textarea");
-const contactFormRequired = contactForm.querySelectorAll("input:not(#company, #marketing), textarea");
-const contactSubmitBtn = contactForm.querySelector(".contact-btn");
+const contactFormInputs = contactForm?.querySelectorAll("input, textarea");
+const contactFormRequired = contactForm?.querySelectorAll("input:not(#company, #marketing), textarea");
+const contactSubmitBtn = contactForm?.querySelector(".contact-btn");
 
 const displayMsg = (type, msg) => {
     let msgArea = contactForm.querySelector("form-msg-area");

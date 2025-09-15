@@ -13289,7 +13289,7 @@ article[data-news-type=Careers] .news-readmore {
   .contact-form {
     grid-template-columns: repeat(2, 1fr);
   }
-  .contact-form label[for=message],
+  .contact-form label[for=enquiry],
   .contact-form label[for=marketing],
   .contact-form .form-footer {
     grid-column: span 2;

@@ -239,7 +239,7 @@ include __DIR__ . '/../app/views/shared/header.php';
                             <a href="#" class="news-link"></a>
                             <header class="news-header">
                                 <a href="#" class="news-type"><?=$row["type_name"]?></a>
-                                <img src="<?=$row["post_img"]?>" alt="News Header Image">
+                                <img src="uploads/<?=$row["post_img"]?>" alt="News Header Image">
                             </header>
                             <h3><a href="#"><?=$row["post_title"]?></a></h3>
                             <p><?=$row["post_excerpt"]?>...</p>
