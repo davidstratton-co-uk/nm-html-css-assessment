@@ -184,8 +184,6 @@ const isFormValid = () => {
 const postForm = () => {
     contactSubmitBtn.innerHTML = "Sending Enquiry..";
 
-    console.log("Called Form Sending");
-
     const params = {
         username: contactFormInputs[0].value,
         company: contactFormInputs[1].value,
@@ -203,16 +201,13 @@ const postForm = () => {
         body: new URLSearchParams(params) 
     };
 
-    fetch( 'sendform.php', options )
+    fetch( 'api/enquiry/create.php', options )
     .then( response => response.json() )
     .then( response => {
         displayMsg(response.status, response.message);
         contactForm.reset();
         contactSubmitBtn.innerHTML = "Send Enquiry";
     } );
-    // Display any Error Messages
-
-   
 }
 
 const contactFormHandler = (event) => {

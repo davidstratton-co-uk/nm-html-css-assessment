@@ -1,6 +1,4 @@
 <?php 
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
@@ -8,14 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!isset($_POST['username']) || trim($_POST['username']) == "") {
             http_response_code(402);
             return $data = [
-                    'status' => 'error',
-                    'message' => 'Name is Required'
-                ];    
+                'status' => 'error',
+                'message' => 'Name is Required'
+            ];    
         }
 
         $validEmailRegEx = "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i";
 
-        // Email - Check if valid
         if (!preg_match($validEmailRegEx, $_POST["email"])) {
             http_response_code(422);
             return $data = [
@@ -43,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ]; 
         }
 
-        $config = parse_ini_file('../.env');
+        $config = parse_ini_file('../../../.env');
 
         $servername = $config["DBADDRESS"];
         $dbname = $config["DBNAME"];
@@ -55,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         } catch(PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
+            echo "Connection has failed: " . $e->getMessage();
         }
 
         $inputs =   [
