@@ -142,9 +142,7 @@
 
 #section-hero .embla__controls {
     position: absolute;
-    position-anchor: --my-carousel;
-    top: calc(anchor(bottom) - 60px);
-    justify-self: anchor-center;
+    translate: calc(50dvw - 102px) -50px;
 }
 
 #section-hero .embla__dots {

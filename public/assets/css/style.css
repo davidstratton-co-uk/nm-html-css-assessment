@@ -8545,7 +8545,7 @@ summary {
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("../fonts/fa-solid-900.woff2");
+  src: url("/assets/fonts/fa-solid-900.woff2");
 }
 .fas {
   --fa-family: var(--fa-family-classic);
@@ -8575,7 +8575,7 @@ summary {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("../fonts/fa-brands-400.woff2");
+  src: url("/assets/fonts/fa-brands-400.woff2");
 }
 .fab,
 .fa-brands,
@@ -12091,9 +12091,7 @@ body.sidebar-active #site-wrapper::after {
 
 #section-hero .embla__controls {
   position: absolute;
-  position-anchor: --my-carousel;
-  top: calc(anchor(bottom) - 60px);
-  justify-self: anchor-center;
+  translate: calc(50dvw - 102px) -50px;
 }
 
 #section-hero .embla__dots {
