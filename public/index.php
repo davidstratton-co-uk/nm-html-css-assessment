@@ -233,7 +233,9 @@ include __DIR__ . '/../app/views/shared/header.php';
 
                             $result = $stmt->FetchAll(PDO::FETCH_ASSOC);
 
-                            foreach($result as $row){ 
+                            foreach($result as $row){
+                                
+                            $dt = new DateTime($row["post_published_date"]);
                         ?>
                         <article class="news-item" data-news-type="<?=$row["type_name"]?>">
                             <a href="#" class="news-link"></a>
@@ -241,13 +243,15 @@ include __DIR__ . '/../app/views/shared/header.php';
                                 <a href="#" class="news-type"><?=$row["type_name"]?></a>
                                 <img src="uploads/<?=$row["post_img"]?>" alt="News Header Image">
                             </header>
-                            <h3><a href="#"><?=$row["post_title"]?></a></h3>
-                            <p><?=$row["post_excerpt"]?>...</p>
-                            <a class="news-readmore">Read More</a>
+                            <div class="news-content">
+                                <h3><a href="#"><?=$row["post_title"]?></a></h3>
+                                <p><?=$row["post_excerpt"]?>...</p>
+                                <a class="news-readmore">Read More</a>
+                            </div>
                             <footer class="news-footer">
                                 <img src="users/<?=$row["user_uuid"]?>/<?=$row["user_avatar"]?>" alt="" >
                                 <p>Posted by <?=$row["user_fullname"]?></p>
-                                <p><?=$row["post_published_date"]?></p>  
+                                <p><?= $dt->format('jS F Y') ?></p>  
                             </footer>
                         </article>
                         
