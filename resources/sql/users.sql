@@ -34,7 +34,7 @@ CREATE TABLE `nm_users` (
   `user_last_name` varchar(50) NOT NULL,
   `user_avatar` varchar(100) NOT NULL,
   `user_join_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `nm_users`

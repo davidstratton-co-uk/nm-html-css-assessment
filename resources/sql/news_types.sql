@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `nm_news_types` (
   `type_id` int(11) NOT NULL,
   `type_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `nm_news_types`

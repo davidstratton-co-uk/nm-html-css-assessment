@@ -36,7 +36,7 @@ CREATE TABLE `nm_enquiries` (
   `enquiry_message` text NOT NULL,
   `enquiry_marketing` tinyint(1) NOT NULL,
   `enquiry_datetime_sent` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `nm_enquiries`
