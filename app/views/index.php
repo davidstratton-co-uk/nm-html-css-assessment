@@ -197,21 +197,7 @@
                     <header><h2>Latest News</h2></header>
                     <div class="news-list">
                         <?php
-
-                            $config = parse_ini_file('../.env');
-
-                            $servername = $config["DBADDRESS"];
-                            $dbname = $config["DBNAME"];
-                            $username = $config["DBUSER"];
-                            $password = $config["DBPASS"];
-
-                            try {
-                            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                            } catch(PDOException $e) {
-                            echo "Connection failed: " . $e->getMessage();
-                            }
+                            include __DIR__ . '/../controllers/dbconnect.php';
 
                             $query =   "SELECT np.post_id, np.post_type_id, nt.type_name, np.post_slug, np.post_img, np.post_title, np.post_excerpt, u.user_uuid, u.user_avatar, CONCAT(u.user_first_name, ' ', u.user_last_name) as user_fullname, np.post_published_date
                                         FROM nm_news_posts as np

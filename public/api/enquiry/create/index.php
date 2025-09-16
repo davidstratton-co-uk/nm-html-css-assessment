@@ -1,6 +1,6 @@
 <?php 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     function process_response() {
         if (!isset($_POST['username']) || trim($_POST['username']) == "") {
@@ -40,20 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ]; 
         }
 
-        $config = parse_ini_file('../../../.env');
-
-        $servername = $config["DBADDRESS"];
-        $dbname = $config["DBNAME"];
-        $username = $config["DBUSER"];
-        $password = $config["DBPASS"];
-
-        try {
-            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        } catch(PDOException $e) {
-            echo "Connection has failed: " . $e->getMessage();
-        }
+        $rootDir =  '../../../';
+        include '../../../../app/controllers/dbconnect.php';
 
         $inputs =   [
                     'username' => $_POST["username"],
@@ -92,5 +80,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = process_response();
     //Encode and output the data
     echo json_encode($data);
-}
+//}
 ?>

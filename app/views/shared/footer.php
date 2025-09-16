@@ -2,7 +2,7 @@
                 <div id="footer-main">
                     <div id="footer-top" class="container">
                         <div id="footer-logo">
-                            <img src="assets/img/nm-logo-white.png" alt="" >
+                            <img src="<?=$rootDir?>assets/img/nm-logo-white.png" alt="" >
                         </div>
                         <div id="footer-social">
                             <h4>Follow us on:</h4>

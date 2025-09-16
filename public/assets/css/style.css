@@ -13143,6 +13143,16 @@ article[data-news-type=Careers] .news-readmore {
   font-weight: 400;
   font-size: 1.25rem;
 }
+@media only screen and (min-width: 992px) {
+  .office-content h2 {
+    min-height: 3rem;
+  }
+}
+@media only screen and (min-width: 1260px) {
+  .office-content h2 {
+    min-height: unset;
+  }
+}
 .office-content a {
   text-decoration: none;
 }

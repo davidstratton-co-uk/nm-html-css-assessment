@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="assets/img/favicon.ico">
+        <link rel="shortcut icon" href="<?=$rootDir?>assets/img/favicon.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="<?=$rootDir?>assets/css/style.css">
         <title><?= $page_title?> | Netmatters</title>
     </head>
     <body class="">
@@ -17,13 +17,13 @@
             <header id="site-header">
                 <div id="header-top">
                     <div class="container">
-                        <a href="."><h1><img id="header-logo" src="assets/img/nm-logo-dark.png" alt="Netmatters Logo"></h1></a>
+                        <a href="<?=$rootDir?>"><h1><img id="header-logo" src="<?=$rootDir?>assets/img/nm-logo-dark.png" alt="Netmatters Logo"></h1></a>
                         <i id="header-icon" class="fa-solid fa-phone-volume"></i>
                         <a id="header-support" href="#">
                             <i class="fa-solid fa-mouse"></i>
                             <span>Support</span>
                         </a>
-                        <a href="contactus.php" id="header-contact">
+                        <a href="<?=$rootDir?>contact-us/" id="header-contact">
                             <i class="fa-solid fa-paper-plane"></i>
                             <span>Contact</span>
                         </a>

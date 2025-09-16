@@ -5,7 +5,7 @@
                         <div class="office">
                             <div class="office-img">
                                 <a href="#">
-                                    <img src="./assets/img/offices/cambridge.jpg" alt="Cambridge Office">
+                                    <img src="<?=$rootDir?>/assets/img/offices/cambridge.jpg" alt="Cambridge Office">
                                 </a>
                             </div>
                             <div class="office-content">
@@ -27,7 +27,7 @@
                         <div class="office">
                             <div class="office-img">
                                 <a href="#">
-                                    <img src="./assets/img/offices/wymondham.jpg" alt="Wymondham">
+                                    <img src="<?=$rootDir?>/assets/img/offices/wymondham.jpg" alt="Wymondham">
                                 </a>
                             </div>
                             <div class="office-content">
@@ -49,7 +49,7 @@
                         <div class="office">
                             <div class="office-img">
                                 <a href="#">
-                                    <img src="./assets/img/offices/yarmouth-2.jpg" alt="Yarmouth Office">
+                                    <img src="<?=$rootDir?>/assets/img/offices/yarmouth-2.jpg" alt="Yarmouth Office">
                                 </a>
                             </div>
                             <div class="office-content">

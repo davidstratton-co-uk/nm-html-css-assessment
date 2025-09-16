@@ -36,6 +36,14 @@
         color: #333645;
         font-weight: 400;
         font-size: 1.25rem;
+
+        @include mq.set-breakpoint('992') {
+            min-height: 3rem;
+        }
+
+        @include mq.set-breakpoint('1260') {
+            min-height: unset;
+        }
     }
 
     a {

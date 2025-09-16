@@ -201,7 +201,7 @@ const postForm = () => {
         body: new URLSearchParams(params) 
     };
 
-    fetch( 'api/enquiry/create.php', options )
+    fetch( '../api/enquiry/create/', options )
     .then( response => response.json() )
     .then( response => {
         displayMsg(response.status, response.message);
