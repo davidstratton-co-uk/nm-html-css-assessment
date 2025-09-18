@@ -1,43 +1,42 @@
 <?php 
 
-//if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $error_msg = [];
+
     function process_response() {
         if (!isset($_POST['username']) || trim($_POST['username']) == "") {
-            http_response_code(402);
-            return $data = [
-                'status' => 'error',
-                'message' => 'Name is Required'
-            ];    
+            $error_msg[] = 'Name is Required';   
         }
 
         $validEmailRegEx = "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i";
 
-        if (!preg_match($validEmailRegEx, $_POST["email"])) {
-            http_response_code(422);
-            return $data = [
-                'status' => 'error',
-                'message' => 'Email use incorrect format'
-            ];  
+        if (!isset($_POST['email']) || !preg_match($validEmailRegEx, $_POST["email"])) {
+            $error_msg[] = 'Email use incorrect format';
         }
 
-        $validPhoneRegEx = "/^[0-9]{9,15}(?![\S])$/i";
-        $testphone = str_replace(['+','(',')','-','#',' '],'',$_POST["phone"]);
-
-        if (!preg_match($validPhoneRegEx, $testphone)) {
-            http_response_code(422);
-            return $data = [
-                'status' => 'error',
-                'message' => 'Telephone Number Incorrect Format' . " \"" . $testphone . "\" " . $_POST["phone"]
-            ]; 
+        
+        if (isset($_POST['phone'])) {
+            $validPhoneRegEx = "/^[0-9]{9,15}(?![\S])$/i";
+            $testphone = str_replace(['+','(',')','-','#',' '],'',$_POST["phone"]);
         }
 
-        if (!isset($_POST['enquiry']) || trim($_POST['enquiry']) == "") {
+        if (!isset($_POST['phone']) || !preg_match($validPhoneRegEx, $testphone)) {
+            $error_msg[] = 'Telephone Number Incorrect Format';
+        }
+
+        if (!isset($_POST['enquiry']) || !isset($_POST['enquiry']) || trim($_POST['enquiry']) == "") {
+            $error_msg[] = 'Message is required';
+        }
+
+        if (isset($error_msg)) {
+
             http_response_code(422);
+
             return $data = [
                 'status' => 'error',
-                'message' => 'Message is required'
-            ]; 
+                'message' => $error_msg
+            ];
         }
 
         $rootDir =  '../../../';
@@ -80,5 +79,5 @@
     $data = process_response();
     //Encode and output the data
     echo json_encode($data);
-//}
+}
 ?>

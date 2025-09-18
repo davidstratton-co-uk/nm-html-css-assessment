@@ -9,20 +9,20 @@
     const settingsHandler = () => {
 
     // Temp Clears Consent
-    localStorage.removeItem("hasGivenConsent");
+        localStorage.removeItem("hasGivenConsent");
     }
 
     const acceptHandler = () => {
-    localStorage.setItem("hasGivenConsent", "true");
-    toggleConsentBar();
+        localStorage.setItem("hasGivenConsent", "true");
+        toggleConsentBar();
     };
 
     const toggleConsentBar = () => {
-    siteConsent.classList.toggle("active");
+        siteConsent.classList.toggle("active");
     }
 
     const consentHandler = () => {
-    let hasGivenConsent = localStorage.getItem("hasGivenConsent");
+        let hasGivenConsent = localStorage.getItem("hasGivenConsent");
 
         if (!hasGivenConsent) {
             toggleConsentBar();
@@ -176,7 +176,7 @@ const isFormValid = () => {
         emailInput.classList.remove("has-error");
     }
 
-    // isValid = true; // Uncomment to test php
+    //isValid = true; // Uncomment to test php
 
     return isValid;
 }
@@ -204,10 +204,18 @@ const postForm = () => {
     fetch( '../api/enquiry/create/', options )
     .then( response => response.json() )
     .then( response => {
-        displayMsg(response.status, response.message);
-        contactForm.reset();
+
         contactSubmitBtn.innerHTML = "Send Enquiry";
-    } );
+
+        if (response.status === "success") {
+            contactForm.reset();
+            displayMsg(response.status, response.message);
+        } else {
+            for (i = 0; i < response.message.length; i++) {
+                displayMsg(response.status, response.message[i]);
+            }
+        }
+    });
 }
 
 const contactFormHandler = (event) => {

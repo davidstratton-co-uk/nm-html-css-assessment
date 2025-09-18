@@ -13155,6 +13155,7 @@ article[data-news-type=Careers] .news-readmore {
 }
 .office-content a {
   text-decoration: none;
+  color: inherit;
 }
 .office-content a:hover {
   text-decoration: underline;
